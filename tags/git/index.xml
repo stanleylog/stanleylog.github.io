@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/tags/git/</link>
+    <link>https://stanleylog.github.io/tags/git/</link>
     <description>Recent content in git on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 08 Jan 2019 20:07:55 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <link>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
       <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
     </item>
     
