@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StanleyLog - 自留地 on StanleyLog - 自留地</title>
+    <link>https://stanleylog.me/</link>
+    <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Jan 2019 20:07:55 +0800</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Git入门（一）- 起步</title>
+      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <description>
+
+&lt;h2 id=&#34;与众不同的git&#34;&gt;与众不同的Git&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的好处就是很多的操作都不需要连接中央库，而且可以使用任一客户端的版本恢复损坏的中央库。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Git所有的数据都会进行哈希校验，从而防止了随意篡改文件内容的情况。甚至Git内部都不是使用文件名进行索引的，而是使用哈希值。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Git中存在与其他VCS系统不同的三种状态：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;已提交（committed）&lt;/strong&gt;: 数据已经安全的 保存在本地数据库中。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;已修改（modified）&lt;/strong&gt;: 修改了文件，但还没保存到数据库中。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;已暂存（staged）&lt;/strong&gt;: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。
+&lt;img src=&#34;https://stanleylog.me/post/image-20190110095356089.png&#34; alt=&#34;image-20190110095356089&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Git中存在三个工作区域：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Git 仓库目录&lt;/strong&gt;: Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆 仓库时，拷贝的就是这里的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;工作目录&lt;/strong&gt;: 对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘 上供你使用或修改。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;暂存区域&lt;/strong&gt;: 一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作`‘索 引’&amp;rsquo;，不过一般说法还是叫暂存区域。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h2 id=&#34;git的配置&#34;&gt;Git的配置&lt;/h2&gt;
+
+&lt;p&gt;我们可以通过git config进行配置， 配置信息分别保存在三个地方：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/etc/gitconfig（&amp;ndash;system作用域的配置）&lt;/li&gt;
+&lt;li&gt;~/.gitconfig（&amp;ndash;global作用域的配置）&lt;/li&gt;
+&lt;li&gt;git仓库的.git/config（&amp;ndash;local作用域的配置）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h3 id=&#34;查看所有git配置项&#34;&gt;查看所有git配置项&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git config --list&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;查看指定xxx配置项&#34;&gt;查看指定xxx配置项&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+git config xxx      
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;更改git的配置项&#34;&gt;更改git的配置项&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+git config --global xxx xxx 
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;The End.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料：&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;Pro Git Book&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>记儿子住院</title>
+      <link>https://stanleylog.me/post/hospitalization/</link>
+      <pubDate>Thu, 03 Jan 2019 10:41:02 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/hospitalization/</guid>
+      <description>&lt;p&gt;2019年的元旦是在北京某医院的儿科监护病房中度过，在此之前他已经连续发高烧一周的时间，每过4个小时就要服用退烧药（有时还会无效）。看着孩子天天昏睡在床上，真是百感交集、五味杂陈！元旦的前一天孩子被检查出肺炎，我和孩子爷爷带着孩子从乡医院，儿研所到地坛医院辗转了一天一夜都没有病房可以接收住院，心中真是无比凄凉，那真是叫天天不应 叫地地不灵。&lt;/p&gt;
+
+&lt;p&gt;好在第二天一早到医院遇到很负责任的大夫帮忙协调病房才有幸住到了病房。住院后经过全面的检查，医生告知我：孩子是支原体感染、大叶性肺炎（面积非常大）、甲型流感。各种强力病毒都碰到了一起了。&lt;/p&gt;
+
+&lt;p&gt;经过持续不断的输液，孩子的高烧在第二天的下午开始退烧转为低烧。后续的几天还出现了腹泻，食欲不振，疹子，肺部积液等等病症，不过总的来说病情是在逐步稳定下来。我这颗疲惫不堪的心才终于放下。&lt;/p&gt;
+
+&lt;p&gt;这是儿子自出生以来第一次因病住院，过程中辗转曲折，回想起来有一下应该可以改进的环节（很有可能就可以避免病的这么严重）及值得推荐的做法：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在住院前一周的时间虽然为了避免误诊，去了其它医院，但是并非权威专科医院。导致耽误了病情。&lt;/li&gt;
+&lt;li&gt;所幸的是在儿研所诊断出正确的病情后马不停蹄的寻找病房，而非守株待兔。&lt;/li&gt;
+&lt;li&gt;住院的过程中没有质疑医生的用药方法（有一种600+RMB的球蛋白，一天就要打7瓶，总共用了35瓶），否则不可能短期效果这么好。&lt;/li&gt;
+&lt;li&gt;家人不能只有医保，严重的病是需要一定的财力的，普通老百姓最好的方法就是一定要买大病保险。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ghost使用感受</title>
+      <link>https://stanleylog.me/post/ghost/</link>
+      <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/ghost/</guid>
+      <description>&lt;p&gt;在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nginx&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;WordPress&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nginx&lt;/li&gt;
+&lt;li&gt;NodeJS&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;Ghost&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;下面谈谈Ghost的使用感受：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;简约的设计风格（感觉超赞）&lt;/li&gt;
+&lt;li&gt;没有累赘的功能堆砌，可能是由于现在还没有成长起来&lt;/li&gt;
+&lt;li&gt;Web端的书写感受非常好，基本可以与C/S端的媲美&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上的优点，使我感觉已经回不到WP去了。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS.本网站已更换为Hugo.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://stanleylog.me/post/welcome/</link>
+      <pubDate>Sat, 15 Dec 2018 15:14:30 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/welcome/</guid>
+      <description>&lt;p&gt;2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。
+那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为了以上的目的，这个网站就被创建出来了。由于原有的域名已经被别人抢注做起了不正当生意，很是遗憾，所以只能注册了不同后缀的域名。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS.千万不要敲错域名，否则会有大大的惊喜。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: 2018-12-15&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;本站起初草草上线，从开始有想法到搭建出来不过2个小时。最近发现动态博客的霸主WordPress由于过于臃肿已经落寞了，今天开始尝试使用Ghost博客系统。给自己也是找一些新鲜感。在此期间被Ghost的简洁风格所吸引，相比Wordpress简直就不是一个时代的产物。&lt;/p&gt;
+
+&lt;p&gt;PS.在使用的Ghost的时候还得知了Ghost的创始人原来是就职于Wordpress的趣闻。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: 2018-12-22&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;由于这个网站是建设在本人的VPS（资源有限）上的，在进行Ghost优化的过程中发现了静态博客Hugo。静态博客的优点就是Server端的资源占用非常的低，因为是已经生成好的静态页面。而Hugo拥有的极速的生成效率及灵活的定制化的能力，所以简直就是一看到介绍就已经非它莫属了。&lt;/p&gt;
+
+&lt;p&gt;PS.由于一些个人原因一直没有将博客更换到Hugo，今天算忙里抽闲把这作业做了。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: 2019-01-02&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;这段时间一直在忙个人的一些其他事情，博客的优化和改造也都是使用见缝插针的时间去做。所以持续的时间比较长，现在感觉这个网站已经搞的七七八八了，今天终于可以说Happly Birthday 了。现在作为本站的正式上线时间点应该是更为合适一些。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: 2019-01-06&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
