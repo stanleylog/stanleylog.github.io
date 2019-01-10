@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://stanleylog.github.io/sitemap.xml
+Sitemap: http://stanleylog.me/sitemap.xml

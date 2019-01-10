@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on StanleyLog - 自留地</title>
-    <link>https://stanleylog.github.io/post/</link>
+    <link>http://stanleylog.me/post/</link>
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 08 Jan 2019 20:07:55 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stanleylog.me/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <link>http://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>http://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
       <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
     </item>
     
     <item>
       <title>记儿子住院</title>
-      <link>https://stanleylog.github.io/post/hospitalization/</link>
+      <link>http://stanleylog.me/post/hospitalization/</link>
       <pubDate>Thu, 03 Jan 2019 10:41:02 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/hospitalization/</guid>
+      <guid>http://stanleylog.me/post/hospitalization/</guid>
       <description>2019年的元旦是在北京某医院的儿科监护病房中度过，在此之前他已经连续发高烧一周的时间，每过4个小时就要服用退烧药（有时还会无效）。看着孩子天天昏睡在床上，真是百感交集、五味杂陈！元旦的前一天孩子被检查出肺炎，我和孩子爷爷带着孩子从乡医院，儿研所到地坛医院辗转了一天一夜都没有病房可以接收住院，心中真是无比凄凉，那真是叫天天不应 叫地地不灵。 好在第二天一早到医院遇到很负责任的大夫帮忙协调病房才有幸住到</description>
     </item>
     
     <item>
       <title>Ghost使用感受</title>
-      <link>https://stanleylog.github.io/post/ghost/</link>
+      <link>http://stanleylog.me/post/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/ghost/</guid>
+      <guid>http://stanleylog.me/post/ghost/</guid>
       <description>在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件： Nginx PHP MySQL WordPress Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件： Nginx NodeJS MySQL Ghost Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间</description>
     </item>
     
     <item>
       <title>Welcome</title>
-      <link>https://stanleylog.github.io/post/welcome/</link>
+      <link>http://stanleylog.me/post/welcome/</link>
       <pubDate>Sat, 15 Dec 2018 15:14:30 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/welcome/</guid>
+      <guid>http://stanleylog.me/post/welcome/</guid>
       <description>2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。 那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为了</description>
     </item>
     

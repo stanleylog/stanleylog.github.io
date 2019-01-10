@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>StanleyLog - 自留地 on StanleyLog - 自留地</title>
-    <link>https://stanleylog.github.io/</link>
+    <link>http://stanleylog.me/</link>
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <link>http://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>http://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
       <description>
 
 &lt;h2 id=&#34;与众不同的git&#34;&gt;与众不同的Git&lt;/h2&gt;
@@ -35,7 +35,7 @@
 &lt;p&gt;&lt;strong&gt;已修改（modified）&lt;/strong&gt;: 修改了文件，但还没保存到数据库中。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;已暂存（staged）&lt;/strong&gt;: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。
-&lt;img src=&#34;https://stanleylog.github.io/post/image-20190110095356089.png&#34; alt=&#34;image-20190110095356089&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://stanleylog.me/post/image-20190110095356089.png&#34; alt=&#34;image-20190110095356089&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Git中存在三个工作区域：&lt;/p&gt;
 
@@ -92,10 +92,10 @@ git config --global xxx xxx
     
     <item>
       <title>记儿子住院</title>
-      <link>https://stanleylog.github.io/post/hospitalization/</link>
+      <link>http://stanleylog.me/post/hospitalization/</link>
       <pubDate>Thu, 03 Jan 2019 10:41:02 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/hospitalization/</guid>
+      <guid>http://stanleylog.me/post/hospitalization/</guid>
       <description>&lt;p&gt;2019年的元旦是在北京某医院的儿科监护病房中度过，在此之前他已经连续发高烧一周的时间，每过4个小时就要服用退烧药（有时还会无效）。看着孩子天天昏睡在床上，真是百感交集、五味杂陈！元旦的前一天孩子被检查出肺炎，我和孩子爷爷带着孩子从乡医院，儿研所到地坛医院辗转了一天一夜都没有病房可以接收住院，心中真是无比凄凉，那真是叫天天不应 叫地地不灵。&lt;/p&gt;
 
 &lt;p&gt;好在第二天一早到医院遇到很负责任的大夫帮忙协调病房才有幸住到了病房。住院后经过全面的检查，医生告知我：孩子是支原体感染、大叶性肺炎（面积非常大）、甲型流感。各种强力病毒都碰到了一起了。&lt;/p&gt;
@@ -115,10 +115,10 @@ git config --global xxx xxx
     
     <item>
       <title>Ghost使用感受</title>
-      <link>https://stanleylog.github.io/post/ghost/</link>
+      <link>http://stanleylog.me/post/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/ghost/</guid>
+      <guid>http://stanleylog.me/post/ghost/</guid>
       <description>&lt;p&gt;在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件：&lt;/p&gt;
 
 &lt;ul&gt;
@@ -155,10 +155,10 @@ git config --global xxx xxx
     
     <item>
       <title>Welcome</title>
-      <link>https://stanleylog.github.io/post/welcome/</link>
+      <link>http://stanleylog.me/post/welcome/</link>
       <pubDate>Sat, 15 Dec 2018 15:14:30 +0800</pubDate>
       
-      <guid>https://stanleylog.github.io/post/welcome/</guid>
+      <guid>http://stanleylog.me/post/welcome/</guid>
       <description>&lt;p&gt;2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。
 那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为了以上的目的，这个网站就被创建出来了。由于原有的域名已经被别人抢注做起了不正当生意，很是遗憾，所以只能注册了不同后缀的域名。&lt;/p&gt;
 
