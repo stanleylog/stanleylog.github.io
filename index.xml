@@ -34,8 +34,7 @@
 
 &lt;p&gt;&lt;strong&gt;已修改（modified）&lt;/strong&gt;: 修改了文件，但还没保存到数据库中。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;已暂存（staged）&lt;/strong&gt;: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。
-&lt;img src=&#34;https://stanleylog.me/post/image-20190110095356089.png&#34; alt=&#34;image-20190110095356089&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;strong&gt;已暂存（staged）&lt;/strong&gt;: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Git中存在三个工作区域：&lt;/p&gt;
 
