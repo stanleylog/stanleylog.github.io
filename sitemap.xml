@@ -101,20 +101,6 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.me/tags/ghost/</loc>
-      
-      <lastmod>2018-12-22T16:00:32+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://stanleylog.me/categories/git%E5%85%A5%E9%97%A8/</loc>
       
       <lastmod>2019-01-08T20:07:55+08:00</lastmod>
@@ -160,6 +146,20 @@
       <loc>https://stanleylog.me/tags/</loc>
       
       <lastmod>2019-01-03T10:41:02+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.me/tags/ghost/</loc>
+      
+      <lastmod>2018-12-22T16:00:32+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
