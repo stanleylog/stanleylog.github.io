@@ -6,8 +6,116 @@
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Jan 2019 22:38:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 20:42:11 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Git入门（二）- 基础（一）</title>
+      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
+      <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
+      <description>
+
+&lt;h2 id=&#34;获取git仓库&#34;&gt;获取Git仓库&lt;/h2&gt;
+
+&lt;p&gt;获取Git仓库存在两种方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;git init&lt;/code&gt;在本地初始化仓库&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  $ git init
+  Initialized empty Git repository in /Users/stanley/git_demo/.git/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;git clone&lt;/code&gt;克隆远程服务器中仓库&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  $ git clone https://github.com/libgit2/libgit2
+  Cloning into &#39;libgit2&#39;...
+  remote: Enumerating objects: 88874, done.
+  remote: Counting objects: 100% (88874/88874), done.
+  remote: Compressing objects: 100% (24728/24728), done.
+  remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0
+  Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done.
+  Resolving deltas: 100% (62425/62425), done.
+  Checking out files: 100% (10168/10168), done.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;查看文件状态&#34;&gt;查看文件状态&lt;/h2&gt;
+
+&lt;p&gt;git中的文件存在四种状态, 我们可以使用&lt;code&gt;git status&lt;/code&gt;命令查看文件的状态：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-x&#34;&gt;Untracked            UnModified            Modified            Staged
+     |                     |                    |                  |   
+     |---Add the file --------------------------------------------&amp;gt;|  
+     |                     |                    |                  |      
+     |                     |---Edit the file---&amp;gt;|                  |      
+     |                     |                    |                  |      
+     |                     |                    |--Stage the file-&amp;gt;|      
+     |                     |                    |                  |      
+     |&amp;lt;--Remove the file---|                    |                  |      
+     |                     |                    |                  |      
+     |                     |&amp;lt;-----------------------------Commit---|      
+     |                     |                    |                  |  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;文件状态&#34;&gt;文件状态&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Untracked：未跟踪的文件， 还未使用&lt;code&gt;git add&lt;/code&gt;添加到暂存区的文件。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Unmodified： 已经&lt;code&gt;git commit&lt;/code&gt;的文件&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modified：已经使用&lt;code&gt;git commit&lt;/code&gt;提交， 之后又被修改了的文件。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Staged：使用&lt;code&gt;git add&lt;/code&gt;提交到暂存区的文件。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h3 id=&#34;状态转换&#34;&gt;状态转换:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Untracked -&amp;gt; Staged: 通过&lt;code&gt;git add&lt;/code&gt; 来完成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;UnModified -&amp;gt; Modified: 修改文件内容来完成，比如&lt;code&gt;vi&lt;/code&gt;命令&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modified -&amp;gt; Staged: 通过&lt;code&gt;git add&lt;/code&gt; 来完成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;UnModified -&amp;gt; Untracked: 通过&lt;code&gt;git rm&lt;/code&gt; 来完成&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Staged -&amp;gt; UnModified: 通过&lt;code&gt;git commit&lt;/code&gt; 来完成&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;如果认为查看文件状态的命令过于啰嗦，可以使用&lt;code&gt;git status -s&lt;/code&gt;以精简的形式展示文件状态， 如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git status -s 
+ M README 
+MM Rakefile 
+A lib/git.rb 
+M lib/simplegit.rb 
+?? LICENSE.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;参考资料：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository&#34;&gt;Pro Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.itshouce.com.cn/linux/linux-git.html&#34;&gt;http://www.itshouce.com.cn/linux/linux-git.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>传染性典型中年精神病</title>

@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/" />
-  <link rel="next" href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" />
-  <link rel="canonical" href="https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/" />
+  <link rel="prev" href="https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           传染性典型中年精神病 | StanleyLog - 自留地
+           Git入门（二）- 基础（一） | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="传染性典型中年精神病 | StanleyLog - 自留地">
+  <meta name="title" content="Git入门（二）- 基础（一） | StanleyLog - 自留地">
     
   
   
@@ -44,9 +44,9 @@
          "@id": "https://stanleylog.me/"
     },
     "articleSection" : "post",
-    "name" : "传染性典型中年精神病",
-    "headline" : "传染性典型中年精神病",
-    "description" : "夜晚当儿子和老婆在睡前闲聊，我回到卧室，带上耳机，放上白噪音，开始写这篇文章。 回想自从2017年开始自己开始得上了一种病，这种病一直折磨我到现在。是种什么病呢？这是一种唯心的、追求内心宁静的、烦躁易怒的病， 我也不知道这是种什么样的病，也许是中年危机？或者是看书看多了（看的也不多）导致脑子坏掉了？在这里我就先叫它胡思乱想病吧。 得了这种病后，自己就开始和以前不一样了。首先本人是个理工生，做事有些许完美",
+    "name" : "Git入门（二）- 基础（一）",
+    "headline" : "Git入门（二）- 基础（一）",
+    "description" : "获取Git仓库 获取Git仓库存在两种方法： 使用git init在本地初始化仓库 $ git init Initialized empty Git repository in /Users/stanley/git_demo/.git/ 使用git clone克隆远程服务器中仓库 $ git clone https://github.com/libgit2/libgit2 Cloning into 'libgit2'... remote: Enumerating objects: 88874, done. remote: Counting objects: 100% (88874/88874), done. remote: Compressing objects: 100% (24728/24728), done. remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0 Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done. Resolving deltas: 100% (62425/62425), done. Checking out files: 100% (10168/10168), done. 查看文件状态 git中的文件存在四种状态, 我们可以使用git status命令查看文件的状态： Untracked UnModified Modified Staged | | | | |---Add the file --------------------------------------------&gt;| | | | | | |---Edit the file---&gt;| | | | | | | | |--Stage the file-&gt;| | |",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-01-13 22:38:51 &#43;0800 CST",
-    "dateModified" : "2019-01-13 22:38:51 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/",
-    "wordCount" : "623",
-    "keywords" : [ "", "StanleyLog - 自留地"]
+    "datePublished": "2019-02-03 20:42:11 &#43;0800 CST",
+    "dateModified" : "2019-02-03 20:42:11 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/",
+    "wordCount" : "486",
+    "keywords" : [ "git", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">传染性典型中年精神病</h1>
+        <h1 class="post-title" itemprop="name headline">Git入门（二）- 基础（一）</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
-                on <time datetime=2019-01-13 itemprop="datePublished">2019-01-13</time>
+                on <time datetime=2019-02-03 itemprop="datePublished">2019-02-03</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/"> 胡言乱语 </a>
+                        <a href="https://stanleylog.me/categories/git%E5%85%A5%E9%97%A8/"> Git入门 </a>
                         
                 </span>
         </div>
@@ -148,15 +148,105 @@
           
           
 
-          <p>夜晚当儿子和老婆在睡前闲聊，我回到卧室，带上耳机，放上白噪音，开始写这篇文章。</p>
+          
 
-<p>回想自从2017年开始自己开始得上了一种病，这种病一直折磨我到现在。是种什么病呢？这是一种唯心的、追求内心宁静的、烦躁易怒的病， 我也不知道这是种什么样的病，也许是中年危机？或者是看书看多了（看的也不多）导致脑子坏掉了？在这里我就先叫它胡思乱想病吧。</p>
+<h2 id="获取git仓库">获取Git仓库</h2>
 
-<p>得了这种病后，自己就开始和以前不一样了。首先本人是个理工生，做事有些许完美主义，讲究无愧于心，自力更生。 而之后呢， 对于工作上的事情不再像以前那么大的劲头了（由于10多年的职业修养还算过关，并没有消极怠工），而心思在于人生坐标在哪里？如何实现自我价值？自己到底有没有价值？反正是一堆的傻问题一拥而上。对于我这种奔四的人来说现在还在想这种问题感觉有点晚熟得厉害了，有时自己都觉得可笑。</p>
+<p>获取Git仓库存在两种方法：</p>
 
-<p>有时闲暇了自己分析这个病，结论就是自己在一个<strong>非体制的环境里被体制住</strong>了。此话怎讲呢？打个比方：一个体制中的人被禁锢住是由于能力的进步是种有意义但无钱途的事，而我这种情况属于类似的情况，但是我并非在一个体制环境中，但确是一个死水一潭的湖中。得了这种病后，那真是干啥啥不得劲，吃啥啥不香。反正是种可传染性典型中年精神病儿。</p>
+<ul>
+<li>使用<code>git init</code>在本地初始化仓库</li>
+</ul>
 
-<p>而为了治好这种病，我苦苦思索了足足有半年的时间，终于豁然开朗了。那就是啥意义不意义，啥前途不前途 。还是咱主席说的好：“捋起袖子，干！”。 想来想去想破脑袋也没用，不如放低姿态重头来过。 天天回家先敲10遍HelloWord再说。</p>
+<pre><code class="language-shell">  $ git init
+  Initialized empty Git repository in /Users/stanley/git_demo/.git/
+</code></pre>
+
+<ul>
+<li>使用<code>git clone</code>克隆远程服务器中仓库</li>
+</ul>
+
+<pre><code class="language-shell">  $ git clone https://github.com/libgit2/libgit2
+  Cloning into 'libgit2'...
+  remote: Enumerating objects: 88874, done.
+  remote: Counting objects: 100% (88874/88874), done.
+  remote: Compressing objects: 100% (24728/24728), done.
+  remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0
+  Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done.
+  Resolving deltas: 100% (62425/62425), done.
+  Checking out files: 100% (10168/10168), done.
+</code></pre>
+
+<h2 id="查看文件状态">查看文件状态</h2>
+
+<p>git中的文件存在四种状态, 我们可以使用<code>git status</code>命令查看文件的状态：</p>
+
+<pre><code class="language-x">Untracked            UnModified            Modified            Staged
+     |                     |                    |                  |   
+     |---Add the file --------------------------------------------&gt;|  
+     |                     |                    |                  |      
+     |                     |---Edit the file---&gt;|                  |      
+     |                     |                    |                  |      
+     |                     |                    |--Stage the file-&gt;|      
+     |                     |                    |                  |      
+     |&lt;--Remove the file---|                    |                  |      
+     |                     |                    |                  |      
+     |                     |&lt;-----------------------------Commit---|      
+     |                     |                    |                  |  
+</code></pre>
+
+<h3 id="文件状态">文件状态</h3>
+
+<ul>
+<li><p>Untracked：未跟踪的文件， 还未使用<code>git add</code>添加到暂存区的文件。</p></li>
+
+<li><p>Unmodified： 已经<code>git commit</code>的文件</p></li>
+
+<li><p>Modified：已经使用<code>git commit</code>提交， 之后又被修改了的文件。</p></li>
+
+<li><p>Staged：使用<code>git add</code>提交到暂存区的文件。</p></li>
+</ul>
+
+<p>​</p>
+
+<h3 id="状态转换">状态转换:</h3>
+
+<ul>
+<li><p>Untracked -&gt; Staged: 通过<code>git add</code> 来完成</p></li>
+
+<li><p>UnModified -&gt; Modified: 修改文件内容来完成，比如<code>vi</code>命令</p></li>
+
+<li><p>Modified -&gt; Staged: 通过<code>git add</code> 来完成</p></li>
+
+<li><p>UnModified -&gt; Untracked: 通过<code>git rm</code> 来完成</p></li>
+
+<li><p>Staged -&gt; UnModified: 通过<code>git commit</code> 来完成</p></li>
+</ul>
+
+<p>​</p>
+
+<p>如果认为查看文件状态的命令过于啰嗦，可以使用<code>git status -s</code>以精简的形式展示文件状态， 如下：</p>
+
+<pre><code class="language-shell">$ git status -s 
+ M README 
+MM Rakefile 
+A lib/git.rb 
+M lib/simplegit.rb 
+?? LICENSE.txt
+</code></pre>
+
+<p>​</p>
+
+<hr />
+
+<p>​</p>
+
+<p>参考资料：</p>
+
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Pro Git</a></li>
+<li><a href="http://www.itshouce.com.cn/linux/linux-git.html">http://www.itshouce.com.cn/linux/linux-git.html</a></li>
+</ul>
 
     </div>
 
@@ -165,8 +255,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.me/tags//">
-                    #</a></span>
+            <span class="tag"><a href="https://stanleylog.me/tags/git/">
+                    #git</a></span>
             
             </section>
         
@@ -207,10 +297,8 @@
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/" class="prev" rel="prev" title="Git入门（一）- 起步"><i class="iconfont icon-left"></i>&nbsp;Git入门（一）- 起步</a>
+        <a href="https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/" class="prev" rel="prev" title="传染性典型中年精神病"><i class="iconfont icon-left"></i>&nbsp;传染性典型中年精神病</a>
          
-        
-        <a href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" class="next" rel="next" title="Git入门（二）- 基础（一）">Git入门（二）- 基础（一）&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
