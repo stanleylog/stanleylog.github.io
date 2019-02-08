@@ -6,8 +6,896 @@
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 03 Feb 2019 20:42:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 19:30:15 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RHEL各个版本的通用管理命令</title>
+      <link>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+
+&lt;h2 id=&#34;system-basics&#34;&gt;System basics&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;View subscription information&lt;/td&gt;
+&lt;td&gt;/etc/sysconfig/rhn/systemid&lt;/td&gt;
+&lt;td&gt;/etc/sysconfig/rhn/systemid  subscription-manager identity&lt;/td&gt;
+&lt;td&gt;subscription-manager identity&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure subscription&lt;/td&gt;
+&lt;td&gt;rhn_register  subscription-manager &lt;a href=&#34;https://access.redhat.com/articles/1189123#fn:1&#34;&gt;1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;rhn_register  rhnreg_ks  subscription-manager&lt;/td&gt;
+&lt;td&gt;subscription-manager&lt;a href=&#34;https://access.redhat.com/articles/1189123#fn:2&#34;&gt;2&lt;/a&gt;  rhn_register &lt;a href=&#34;https://access.redhat.com/articles/1189123#fn:3&#34;&gt;3&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View RHEL version information&lt;/td&gt;
+&lt;td&gt;/etc/redhat-release&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View system profile&lt;/td&gt;
+&lt;td&gt;sosreport  dmidecode  hwbrowser&lt;/td&gt;
+&lt;td&gt;sosreport  dmidecode  lstopo  lscpu&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;basic-configuration&#34;&gt;Basic configuration&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Graphical configuration tools&lt;/td&gt;
+&lt;td&gt;system-config-*&lt;/td&gt;
+&lt;td&gt;gnome-control-center&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Text-based configuration tools&lt;/td&gt;
+&lt;td&gt;system-config-*-tui&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure printer&lt;/td&gt;
+&lt;td&gt;system-config-printer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure network&lt;/td&gt;
+&lt;td&gt;system-config-network&lt;/td&gt;
+&lt;td&gt;nmcli  nmtui  nm-connection-editor&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure system language&lt;/td&gt;
+&lt;td&gt;system-config-language&lt;/td&gt;
+&lt;td&gt;localectl&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure time and date&lt;/td&gt;
+&lt;td&gt;system-config-date  date&lt;/td&gt;
+&lt;td&gt;timedatectl  date&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Synchronize time and date&lt;/td&gt;
+&lt;td&gt;ntpdate  /etc/ntp.conf&lt;/td&gt;
+&lt;td&gt;timedatectl  /etc/chrony.conf  ntpdate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure keyboard&lt;/td&gt;
+&lt;td&gt;system-config-keyboard&lt;/td&gt;
+&lt;td&gt;localectl&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure SSH&lt;/td&gt;
+&lt;td&gt;/etc/ssh/ssh_config  /etc/ssh/sshd_config  ~/.ssh/config ssh-keygen&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;jobs-and-services&#34;&gt;Jobs and services&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;List all services&lt;/td&gt;
+&lt;td&gt;chkconfig &amp;ndash;list  ls /etc/init.d/&lt;/td&gt;
+&lt;td&gt;systemctl -at service  ls /etc/systemd/system/&lt;em&gt;.service  ls /usr/lib/systemd/system/&lt;/em&gt;.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;List running services&lt;/td&gt;
+&lt;td&gt;service &amp;ndash;status-all&lt;/td&gt;
+&lt;td&gt;systemctl -t service &amp;ndash;state=active&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Start/stop service&lt;/td&gt;
+&lt;td&gt;service &lt;em&gt;name&lt;/em&gt; start  service &lt;em&gt;name&lt;/em&gt; stop&lt;/td&gt;
+&lt;td&gt;systemctl start &lt;em&gt;name&lt;/em&gt;.service  systemctl stop &lt;em&gt;name&lt;/em&gt;.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Enable/disable service&lt;/td&gt;
+&lt;td&gt;chkconfig &lt;em&gt;name&lt;/em&gt; on  chkconfig &lt;em&gt;name&lt;/em&gt; off&lt;/td&gt;
+&lt;td&gt;systemctl enable &lt;em&gt;name&lt;/em&gt;.service  systemctl disable &lt;em&gt;name&lt;/em&gt;.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View service status&lt;/td&gt;
+&lt;td&gt;service &lt;em&gt;name&lt;/em&gt; status&lt;/td&gt;
+&lt;td&gt;systemctl status &lt;em&gt;name&lt;/em&gt;.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Check if service is enabled&lt;/td&gt;
+&lt;td&gt;chkconfig &lt;em&gt;name&lt;/em&gt; &amp;ndash;list&lt;/td&gt;
+&lt;td&gt;systemctl is-enabled &lt;em&gt;name&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create new service file or modify configuration&lt;/td&gt;
+&lt;td&gt;chkconfig &amp;ndash;add&lt;/td&gt;
+&lt;td&gt;systemctl daemon-reload  /etc/systemd/system/*.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View run level/target&lt;/td&gt;
+&lt;td&gt;runlevel  who -r&lt;/td&gt;
+&lt;td&gt;systemctl get-default  who -r&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change run level/target&lt;/td&gt;
+&lt;td&gt;/etc/inittab  init &lt;em&gt;run_level&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;systemctl isolate &lt;em&gt;name&lt;/em&gt;.target systemctl set-default&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure logging&lt;/td&gt;
+&lt;td&gt;/etc/syslog.conf&lt;/td&gt;
+&lt;td&gt;/etc/rsyslog.conf&lt;/td&gt;
+&lt;td&gt;/etc/rsyslog.conf  /etc/rsyslog.d/*.conf  /var/log/journal  systemd-journald.service&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View logs&lt;/td&gt;
+&lt;td&gt;/var/log&lt;/td&gt;
+&lt;td&gt;/var/log  journalctl&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure system audit&lt;/td&gt;
+&lt;td&gt;add &lt;strong&gt;audit=1&lt;/strong&gt; to kernel cmdline  auditctl  /etc/audit/auditd.conf  /etc/audit/audit.rules  authconfig  /etc/pam.d/system-auth  pam_tty_audit kernel module&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View audit output&lt;/td&gt;
+&lt;td&gt;aureport /var/log/faillog&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Schedule/batch tasks&lt;/td&gt;
+&lt;td&gt;cron  at  batch&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Find file by name&lt;/td&gt;
+&lt;td&gt;locate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Find file by characteristic&lt;/td&gt;
+&lt;td&gt;find&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create archive&lt;/td&gt;
+&lt;td&gt;tar  cpio  zip&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;kernel-boot-and-hardware&#34;&gt;Kernel, boot, and hardware&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Single user/rescue mode&lt;/td&gt;
+&lt;td&gt;append &lt;strong&gt;1&lt;/strong&gt; or &lt;strong&gt;s&lt;/strong&gt; or &lt;strong&gt;init=/bin/bash&lt;/strong&gt; to kernel cmdline&lt;/td&gt;
+&lt;td&gt;append &lt;strong&gt;rd.break&lt;/strong&gt; or &lt;strong&gt;init=/bin/bash&lt;/strong&gt; to kernel cmdline&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Shut down system&lt;/td&gt;
+&lt;td&gt;shutdown&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Power off system&lt;/td&gt;
+&lt;td&gt;poweroff&lt;/td&gt;
+&lt;td&gt;poweroff  systemctl poweroff&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Halt system&lt;/td&gt;
+&lt;td&gt;halt&lt;/td&gt;
+&lt;td&gt;halt  systemctl halt&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Reboot system&lt;/td&gt;
+&lt;td&gt;reboot&lt;/td&gt;
+&lt;td&gt;reboot  systemctl reboot&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure default run level/target&lt;/td&gt;
+&lt;td&gt;/etc/inittab&lt;/td&gt;
+&lt;td&gt;systemctl set-default&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure GRUB bootloader&lt;/td&gt;
+&lt;td&gt;/boot/grub/grub.conf&lt;/td&gt;
+&lt;td&gt;/etc/default/grub  grub2-mkconfig  grub-set-default&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure kernel module&lt;/td&gt;
+&lt;td&gt;modprobe&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View hardware configured&lt;/td&gt;
+&lt;td&gt;hwbrowser&lt;/td&gt;
+&lt;td&gt;lshw (in EPEL)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure hardware device&lt;/td&gt;
+&lt;td&gt;udev&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View kernel parameters&lt;/td&gt;
+&lt;td&gt;sysctl -a  cat /proc/cmdline&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Load kernel module&lt;/td&gt;
+&lt;td&gt;modprobe&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Remove kernel module&lt;/td&gt;
+&lt;td&gt;modprobe -r&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View kernel version&lt;/td&gt;
+&lt;td&gt;rpm -q kernel  uname -r&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;software-management&#34;&gt;Software management&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Install software&lt;/td&gt;
+&lt;td&gt;yum install  yum groupinstall&lt;/td&gt;
+&lt;td&gt;yum install  yum group install&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View software info&lt;/td&gt;
+&lt;td&gt;yum info  yum groupinfo&lt;/td&gt;
+&lt;td&gt;yum info  yum group info&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Update software&lt;/td&gt;
+&lt;td&gt;yum update&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Upgrade software&lt;/td&gt;
+&lt;td&gt;yum upgrade&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure software repository&lt;/td&gt;
+&lt;td&gt;subscription-manager repos  /etc/yum.repos.d/*.repo&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Find package owning file&lt;/td&gt;
+&lt;td&gt;rpm -qf &lt;em&gt;filename&lt;/em&gt;  yum provides &lt;em&gt;filename-glob&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View software version&lt;/td&gt;
+&lt;td&gt;rpm -q &lt;em&gt;packagename&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View installed software&lt;/td&gt;
+&lt;td&gt;rpm -qa  yum list installed&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;user-management&#34;&gt;User management&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Graphical user management&lt;/td&gt;
+&lt;td&gt;system-config-users&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create user account&lt;/td&gt;
+&lt;td&gt;useradd&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Delete user account&lt;/td&gt;
+&lt;td&gt;userdel&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View/change user account details&lt;/td&gt;
+&lt;td&gt;usermod  /etc/passwd  vipw  id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create user group&lt;/td&gt;
+&lt;td&gt;groupadd&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Delete user group&lt;/td&gt;
+&lt;td&gt;groupdel&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change group details&lt;/td&gt;
+&lt;td&gt;groupmod  /etc/group&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change user password&lt;/td&gt;
+&lt;td&gt;passwd&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change user permissions&lt;/td&gt;
+&lt;td&gt;usermod  visudo&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change group permissions&lt;/td&gt;
+&lt;td&gt;groupmod  visudo&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change password policy&lt;/td&gt;
+&lt;td&gt;chage&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View user sessions&lt;/td&gt;
+&lt;td&gt;w&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;file-systems-volumes-and-disks&#34;&gt;File systems, volumes, and disks&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Default file system&lt;/td&gt;
+&lt;td&gt;ext3&lt;/td&gt;
+&lt;td&gt;ext4&lt;/td&gt;
+&lt;td&gt;xfs&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create/modify disk partitions&lt;/td&gt;
+&lt;td&gt;fdisk  parted&lt;/td&gt;
+&lt;td&gt;fdisk  gdisk  parted  ssm create&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Format disk partition&lt;/td&gt;
+&lt;td&gt;mkfs.filesystem_type (ext4, xfs)  mkswap&lt;/td&gt;
+&lt;td&gt;mkfs.filesystem_type (ext4, xfs)  mkswap  ssm create&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Defragment disk space&lt;/td&gt;
+&lt;td&gt;copy data to new file system  fsck (look for &amp;lsquo;non-contiguous inodes&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;copy data to new file system  fsck (look for &amp;lsquo;non-contiguous inodes&amp;rsquo;)  xfs_fsr&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Mount storage&lt;/td&gt;
+&lt;td&gt;mount  /etc/fstab&lt;/td&gt;
+&lt;td&gt;mount  /etc/fstab  ssm mount&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Mount and activate swap&lt;/td&gt;
+&lt;td&gt;/etc/fstab  swapon -a&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure static mounts&lt;/td&gt;
+&lt;td&gt;/etc/fstab&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View free disk space&lt;/td&gt;
+&lt;td&gt;df&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View logical volume info&lt;/td&gt;
+&lt;td&gt;lvdisplay  lvs  vgdisplay  vgs  pvdisplay  pvs&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create physical volume&lt;/td&gt;
+&lt;td&gt;pvcreate&lt;/td&gt;
+&lt;td&gt;pvcreate  ssm create (if backend is lvm)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create volume group&lt;/td&gt;
+&lt;td&gt;vgcreate&lt;/td&gt;
+&lt;td&gt;vgcreate  ssm create (if backend is lvm)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Create logical volume&lt;/td&gt;
+&lt;td&gt;lvcreate&lt;/td&gt;
+&lt;td&gt;lvcreate  ssm create (if backend is lvm)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Enlarge volumes formatted with default file system&lt;/td&gt;
+&lt;td&gt;vgextend  lvextend  resize2fs&lt;/td&gt;
+&lt;td&gt;vgextend  lvextend  xfs_growfs  ssm resize&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Shrink volumes formatted with default file system&lt;/td&gt;
+&lt;td&gt;resize2fs  lvreduce  vgreduce&lt;/td&gt;
+&lt;td&gt;XFS cannot currently be shrunk; copy desired data to a smaller file system.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Check/repair file system&lt;/td&gt;
+&lt;td&gt;fsck&lt;/td&gt;
+&lt;td&gt;fsck  ssm check&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View NFS share&lt;/td&gt;
+&lt;td&gt;showmount -e  mount&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure NFS share&lt;/td&gt;
+&lt;td&gt;/etc/exports  service nfs reload&lt;/td&gt;
+&lt;td&gt;/etc/exports  systemctl reload nfs.service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure on-demand auto-mounts&lt;/td&gt;
+&lt;td&gt;/etc/auto.master.d/&lt;em&gt;.autofs  /etc/auto.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change file permissions&lt;/td&gt;
+&lt;td&gt;chmod  chown  chgrp  umask (future file creation)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change file attributes&lt;/td&gt;
+&lt;td&gt;chattr&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change access control list&lt;/td&gt;
+&lt;td&gt;setfacl&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;networking&#34;&gt;Networking&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Configure name resolution&lt;/td&gt;
+&lt;td&gt;/etc/hosts  /etc/resolv.conf&lt;/td&gt;
+&lt;td&gt;/etc/hosts  /etc/resolv.conf  nmcli con mod&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure hostname&lt;/td&gt;
+&lt;td&gt;/etc/sysconfig/network&lt;/td&gt;
+&lt;td&gt;hostnamectl  /etc/hostname  nmtui&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View network interface info&lt;/td&gt;
+&lt;td&gt;ip addr  ifconfig  brctl&lt;/td&gt;
+&lt;td&gt;ip addr  nmcli dev show  teamdctl  brctl  bridge&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure network interface&lt;/td&gt;
+&lt;td&gt;/etc/sysconfig/network-scripts/ifcfg-*&lt;/td&gt;
+&lt;td&gt;/etc/sysconfig/network-scripts/ifcfg-*  nmcli con [add|mod|edit]  nmtui  nm-connection-editor&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View routes&lt;/td&gt;
+&lt;td&gt;ip route&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure routes&lt;/td&gt;
+&lt;td&gt;ip route add  system-config-network  /etc/sysconfig/route-&lt;em&gt;iface&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;ip route add  nmcli  nmtui  nm-connection-editor  /etc/sysconfig/route-&lt;em&gt;iface&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configure firewall&lt;/td&gt;
+&lt;td&gt;iptables and ip6tables  /etc/sysconfig/ip*tables&lt;/td&gt;
+&lt;td&gt;iptables and ip6tables  /etc/sysconfig/ip*tables  system-config-firewall&lt;/td&gt;
+&lt;td&gt;firewall-cmd  firewall-config&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View ports/sockets&lt;/td&gt;
+&lt;td&gt;ss  lsof  netstat&lt;/td&gt;
+&lt;td&gt;ss  lsof&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;security-and-identity&#34;&gt;Security and identity&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Configure system security&lt;/td&gt;
+&lt;td&gt;/etc/selinux/config  chcon  restorecon  semanage  setsebool  system-config-selinux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Report on system security&lt;/td&gt;
+&lt;td&gt;sealert&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LDAP, SSSD, Kerberos&lt;/td&gt;
+&lt;td&gt;authconfig  authconfig-tui  authconfig-gtk&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Network users&lt;/td&gt;
+&lt;td&gt;getent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;resource-management&#34;&gt;Resource management&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;RHEL5&lt;/th&gt;
+&lt;th&gt;RHEL6&lt;/th&gt;
+&lt;th&gt;RHEL7&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Trace system calls&lt;/td&gt;
+&lt;td&gt;strace&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Trace library calls&lt;/td&gt;
+&lt;td&gt;ltrace&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change process priority&lt;/td&gt;
+&lt;td&gt;nice  renice&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Change process run location&lt;/td&gt;
+&lt;td&gt;taskset&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Kill a process&lt;/td&gt;
+&lt;td&gt;kill  pkill  killall&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View system usage&lt;/td&gt;
+&lt;td&gt;top  ps  sar  iostat  netstat  vmstat  mpstat  numastat&lt;/td&gt;
+&lt;td&gt;top  ps  sar  iostat  netstat  ss  vmstat  mpstat  numastat  tuna&lt;/td&gt;
+&lt;td&gt;top  ps  sar  iostat  ss  vmstat  mpstat  numastat  tuna&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;View disk usage&lt;/td&gt;
+&lt;td&gt;df&lt;/td&gt;
+&lt;td&gt;df  iostat&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
     
     <item>
       <title>Git入门（二）- 基础（一）</title>

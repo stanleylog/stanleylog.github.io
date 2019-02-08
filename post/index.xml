@@ -6,10 +6,19 @@
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 03 Feb 2019 20:42:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 19:30:15 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RHEL各个版本的通用管理命令</title>
+      <link>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>System basics Task RHEL5 RHEL6 RHEL7 View subscription information /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid subscription-manager identity subscription-manager identity Configure subscription rhn_register subscription-manager 1 rhn_register rhnreg_ks subscription-manager subscription-manager2 rhn_register 3 View RHEL version information /etc/redhat-release View system profile sosreport dmidecode hwbrowser sosreport dmidecode lstopo lscpu Basic configuration Task RHEL5 RHEL6 RHEL7 Graphical configuration tools system-config-* gnome-control-center Text-based configuration tools system-config-*-tui Configure printer system-config-printer Configure network system-config-network nmcli nmtui nm-connection-editor Configure system language system-config-language localectl Configure time and date system-config-date date timedatectl date Synchronize time and date ntpdate /etc/ntp.conf timedatectl /etc/chrony.conf ntpdate Configure keyboard system-config-keyboard localectl Configure SSH /etc/ssh/ssh_config /etc/ssh/sshd_config ~/.ssh/config ssh-keygen Jobs and services Task RHEL5 RHEL6 RHEL7 List all services chkconfig &amp;ndash;list ls /etc/init.d/ systemctl -at service ls /etc/systemd/system/.service ls /usr/lib/systemd/system/.service List running services service &amp;ndash;status-all systemctl -t service &amp;ndash;state=active Start/stop service service name start service name stop systemctl start name.service systemctl stop name.service Enable/disable service chkconfig name on chkconfig name off systemctl enable name.service systemctl disable name.service View service status service name status systemctl status name.service Check if service is enabled chkconfig name &amp;ndash;list systemctl is-enabled name Create new service file or modify configuration chkconfig &amp;ndash;add systemctl daemon-reload /etc/systemd/system/*.service View run level/target runlevel who -r systemctl get-default who -r Change run level/target</description>
+    </item>
     
     <item>
       <title>Git入门（二）- 基础（一）</title>

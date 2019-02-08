@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           RHEL各个版本的通用管理命令 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="RHEL各个版本的通用管理命令 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://stanleylog.me/"
+    },
+    "articleSection" : "post",
+    "name" : "RHEL各个版本的通用管理命令",
+    "headline" : "RHEL各个版本的通用管理命令",
+    "description" : "System basics Task RHEL5 RHEL6 RHEL7 View subscription information /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid subscription-manager identity subscription-manager identity Configure subscription rhn_register subscription-manager 1 rhn_register rhnreg_ks subscription-manager subscription-manager2 rhn_register 3 View RHEL version information /etc/redhat-release View system profile sosreport dmidecode hwbrowser sosreport dmidecode lstopo lscpu Basic configuration Task RHEL5 RHEL6 RHEL7 Graphical configuration tools system-config-* gnome-control-center Text-based configuration tools system-config-*-tui Configure printer system-config-printer Configure network system-config-network nmcli nmtui nm-connection-editor Configure system language system-config-language localectl Configure time and date system-config-date date timedatectl date Synchronize time and date ntpdate /etc/ntp.conf timedatectl /etc/chrony.conf ntpdate Configure keyboard system-config-keyboard localectl Configure SSH /etc/ssh/ssh_config /etc/ssh/sshd_config ~/.ssh/config ssh-keygen Jobs and services Task RHEL5 RHEL6 RHEL7 List all services chkconfig &ndash;list ls /etc/init.d/ systemctl -at service ls /etc/systemd/system/.service ls /usr/lib/systemd/system/.service List running services service &ndash;status-all systemctl -t service &ndash;state=active Start/stop service service name start service name stop systemctl start name.service systemctl stop name.service Enable/disable service chkconfig name on chkconfig name off systemctl enable name.service systemctl disable name.service View service status service name status systemctl status name.service Check if service is enabled chkconfig name &ndash;list systemctl is-enabled name Create new service file or modify configuration chkconfig &ndash;add systemctl daemon-reload /etc/systemd/system/*.service View run level/target runlevel who -r systemctl get-default who -r Change run level/target",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-02-08 19:30:15 &#43;0800 CST",
+    "dateModified" : "2019-02-08 19:30:15 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/",
+    "wordCount" : "891",
+    "keywords" : [ "linux","rhel", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.me/">stanleylog.me</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.me/">stanleylog.me</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">RHEL各个版本的通用管理命令</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2019-02-08 itemprop="datePublished">2019-02-08</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/linux/"> Linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="system-basics">System basics</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>View subscription information</td>
+<td>/etc/sysconfig/rhn/systemid</td>
+<td>/etc/sysconfig/rhn/systemid  subscription-manager identity</td>
+<td>subscription-manager identity</td>
+</tr>
+
+<tr>
+<td>Configure subscription</td>
+<td>rhn_register  subscription-manager <a href="https://access.redhat.com/articles/1189123#fn:1">1</a></td>
+<td>rhn_register  rhnreg_ks  subscription-manager</td>
+<td>subscription-manager<a href="https://access.redhat.com/articles/1189123#fn:2">2</a>  rhn_register <a href="https://access.redhat.com/articles/1189123#fn:3">3</a></td>
+</tr>
+
+<tr>
+<td>View RHEL version information</td>
+<td>/etc/redhat-release</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View system profile</td>
+<td>sosreport  dmidecode  hwbrowser</td>
+<td>sosreport  dmidecode  lstopo  lscpu</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="basic-configuration">Basic configuration</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Graphical configuration tools</td>
+<td>system-config-*</td>
+<td>gnome-control-center</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Text-based configuration tools</td>
+<td>system-config-*-tui</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure printer</td>
+<td>system-config-printer</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure network</td>
+<td>system-config-network</td>
+<td>nmcli  nmtui  nm-connection-editor</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure system language</td>
+<td>system-config-language</td>
+<td>localectl</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure time and date</td>
+<td>system-config-date  date</td>
+<td>timedatectl  date</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Synchronize time and date</td>
+<td>ntpdate  /etc/ntp.conf</td>
+<td>timedatectl  /etc/chrony.conf  ntpdate</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure keyboard</td>
+<td>system-config-keyboard</td>
+<td>localectl</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure SSH</td>
+<td>/etc/ssh/ssh_config  /etc/ssh/sshd_config  ~/.ssh/config ssh-keygen</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="jobs-and-services">Jobs and services</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>List all services</td>
+<td>chkconfig &ndash;list  ls /etc/init.d/</td>
+<td>systemctl -at service  ls /etc/systemd/system/<em>.service  ls /usr/lib/systemd/system/</em>.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>List running services</td>
+<td>service &ndash;status-all</td>
+<td>systemctl -t service &ndash;state=active</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Start/stop service</td>
+<td>service <em>name</em> start  service <em>name</em> stop</td>
+<td>systemctl start <em>name</em>.service  systemctl stop <em>name</em>.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Enable/disable service</td>
+<td>chkconfig <em>name</em> on  chkconfig <em>name</em> off</td>
+<td>systemctl enable <em>name</em>.service  systemctl disable <em>name</em>.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View service status</td>
+<td>service <em>name</em> status</td>
+<td>systemctl status <em>name</em>.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Check if service is enabled</td>
+<td>chkconfig <em>name</em> &ndash;list</td>
+<td>systemctl is-enabled <em>name</em></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create new service file or modify configuration</td>
+<td>chkconfig &ndash;add</td>
+<td>systemctl daemon-reload  /etc/systemd/system/*.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View run level/target</td>
+<td>runlevel  who -r</td>
+<td>systemctl get-default  who -r</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change run level/target</td>
+<td>/etc/inittab  init <em>run_level</em></td>
+<td>systemctl isolate <em>name</em>.target systemctl set-default</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure logging</td>
+<td>/etc/syslog.conf</td>
+<td>/etc/rsyslog.conf</td>
+<td>/etc/rsyslog.conf  /etc/rsyslog.d/*.conf  /var/log/journal  systemd-journald.service</td>
+</tr>
+
+<tr>
+<td>View logs</td>
+<td>/var/log</td>
+<td>/var/log  journalctl</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure system audit</td>
+<td>add <strong>audit=1</strong> to kernel cmdline  auditctl  /etc/audit/auditd.conf  /etc/audit/audit.rules  authconfig  /etc/pam.d/system-auth  pam_tty_audit kernel module</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View audit output</td>
+<td>aureport /var/log/faillog</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Schedule/batch tasks</td>
+<td>cron  at  batch</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Find file by name</td>
+<td>locate</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Find file by characteristic</td>
+<td>find</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create archive</td>
+<td>tar  cpio  zip</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="kernel-boot-and-hardware">Kernel, boot, and hardware</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Single user/rescue mode</td>
+<td>append <strong>1</strong> or <strong>s</strong> or <strong>init=/bin/bash</strong> to kernel cmdline</td>
+<td>append <strong>rd.break</strong> or <strong>init=/bin/bash</strong> to kernel cmdline</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Shut down system</td>
+<td>shutdown</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Power off system</td>
+<td>poweroff</td>
+<td>poweroff  systemctl poweroff</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Halt system</td>
+<td>halt</td>
+<td>halt  systemctl halt</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Reboot system</td>
+<td>reboot</td>
+<td>reboot  systemctl reboot</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure default run level/target</td>
+<td>/etc/inittab</td>
+<td>systemctl set-default</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure GRUB bootloader</td>
+<td>/boot/grub/grub.conf</td>
+<td>/etc/default/grub  grub2-mkconfig  grub-set-default</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure kernel module</td>
+<td>modprobe</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View hardware configured</td>
+<td>hwbrowser</td>
+<td>lshw (in EPEL)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure hardware device</td>
+<td>udev</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View kernel parameters</td>
+<td>sysctl -a  cat /proc/cmdline</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Load kernel module</td>
+<td>modprobe</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Remove kernel module</td>
+<td>modprobe -r</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View kernel version</td>
+<td>rpm -q kernel  uname -r</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="software-management">Software management</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Install software</td>
+<td>yum install  yum groupinstall</td>
+<td>yum install  yum group install</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View software info</td>
+<td>yum info  yum groupinfo</td>
+<td>yum info  yum group info</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Update software</td>
+<td>yum update</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Upgrade software</td>
+<td>yum upgrade</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure software repository</td>
+<td>subscription-manager repos  /etc/yum.repos.d/*.repo</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Find package owning file</td>
+<td>rpm -qf <em>filename</em>  yum provides <em>filename-glob</em></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View software version</td>
+<td>rpm -q <em>packagename</em></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View installed software</td>
+<td>rpm -qa  yum list installed</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="user-management">User management</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Graphical user management</td>
+<td>system-config-users</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create user account</td>
+<td>useradd</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Delete user account</td>
+<td>userdel</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View/change user account details</td>
+<td>usermod  /etc/passwd  vipw  id</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create user group</td>
+<td>groupadd</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Delete user group</td>
+<td>groupdel</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change group details</td>
+<td>groupmod  /etc/group</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change user password</td>
+<td>passwd</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change user permissions</td>
+<td>usermod  visudo</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change group permissions</td>
+<td>groupmod  visudo</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change password policy</td>
+<td>chage</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View user sessions</td>
+<td>w</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="file-systems-volumes-and-disks">File systems, volumes, and disks</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Default file system</td>
+<td>ext3</td>
+<td>ext4</td>
+<td>xfs</td>
+</tr>
+
+<tr>
+<td>Create/modify disk partitions</td>
+<td>fdisk  parted</td>
+<td>fdisk  gdisk  parted  ssm create</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Format disk partition</td>
+<td>mkfs.filesystem_type (ext4, xfs)  mkswap</td>
+<td>mkfs.filesystem_type (ext4, xfs)  mkswap  ssm create</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Defragment disk space</td>
+<td>copy data to new file system  fsck (look for &lsquo;non-contiguous inodes&rsquo;)</td>
+<td>copy data to new file system  fsck (look for &lsquo;non-contiguous inodes&rsquo;)  xfs_fsr</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mount storage</td>
+<td>mount  /etc/fstab</td>
+<td>mount  /etc/fstab  ssm mount</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mount and activate swap</td>
+<td>/etc/fstab  swapon -a</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure static mounts</td>
+<td>/etc/fstab</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View free disk space</td>
+<td>df</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View logical volume info</td>
+<td>lvdisplay  lvs  vgdisplay  vgs  pvdisplay  pvs</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create physical volume</td>
+<td>pvcreate</td>
+<td>pvcreate  ssm create (if backend is lvm)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create volume group</td>
+<td>vgcreate</td>
+<td>vgcreate  ssm create (if backend is lvm)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Create logical volume</td>
+<td>lvcreate</td>
+<td>lvcreate  ssm create (if backend is lvm)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Enlarge volumes formatted with default file system</td>
+<td>vgextend  lvextend  resize2fs</td>
+<td>vgextend  lvextend  xfs_growfs  ssm resize</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Shrink volumes formatted with default file system</td>
+<td>resize2fs  lvreduce  vgreduce</td>
+<td>XFS cannot currently be shrunk; copy desired data to a smaller file system.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Check/repair file system</td>
+<td>fsck</td>
+<td>fsck  ssm check</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View NFS share</td>
+<td>showmount -e  mount</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure NFS share</td>
+<td>/etc/exports  service nfs reload</td>
+<td>/etc/exports  systemctl reload nfs.service</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure on-demand auto-mounts</td>
+<td>/etc/auto.master.d/<em>.autofs  /etc/auto.</em></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change file permissions</td>
+<td>chmod  chown  chgrp  umask (future file creation)</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change file attributes</td>
+<td>chattr</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change access control list</td>
+<td>setfacl</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="networking">Networking</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Configure name resolution</td>
+<td>/etc/hosts  /etc/resolv.conf</td>
+<td>/etc/hosts  /etc/resolv.conf  nmcli con mod</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure hostname</td>
+<td>/etc/sysconfig/network</td>
+<td>hostnamectl  /etc/hostname  nmtui</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View network interface info</td>
+<td>ip addr  ifconfig  brctl</td>
+<td>ip addr  nmcli dev show  teamdctl  brctl  bridge</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure network interface</td>
+<td>/etc/sysconfig/network-scripts/ifcfg-*</td>
+<td>/etc/sysconfig/network-scripts/ifcfg-*  nmcli con [add|mod|edit]  nmtui  nm-connection-editor</td>
+<td></td>
+</tr>
+
+<tr>
+<td>View routes</td>
+<td>ip route</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure routes</td>
+<td>ip route add  system-config-network  /etc/sysconfig/route-<em>iface</em></td>
+<td>ip route add  nmcli  nmtui  nm-connection-editor  /etc/sysconfig/route-<em>iface</em></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Configure firewall</td>
+<td>iptables and ip6tables  /etc/sysconfig/ip*tables</td>
+<td>iptables and ip6tables  /etc/sysconfig/ip*tables  system-config-firewall</td>
+<td>firewall-cmd  firewall-config</td>
+</tr>
+
+<tr>
+<td>View ports/sockets</td>
+<td>ss  lsof  netstat</td>
+<td>ss  lsof</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="security-and-identity">Security and identity</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Configure system security</td>
+<td>/etc/selinux/config  chcon  restorecon  semanage  setsebool  system-config-selinux</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Report on system security</td>
+<td>sealert</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>LDAP, SSSD, Kerberos</td>
+<td>authconfig  authconfig-tui  authconfig-gtk</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Network users</td>
+<td>getent</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="resource-management">Resource management</h2>
+
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>RHEL5</th>
+<th>RHEL6</th>
+<th>RHEL7</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Trace system calls</td>
+<td>strace</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Trace library calls</td>
+<td>ltrace</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change process priority</td>
+<td>nice  renice</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Change process run location</td>
+<td>taskset</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Kill a process</td>
+<td>kill  pkill  killall</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>View system usage</td>
+<td>top  ps  sar  iostat  netstat  vmstat  mpstat  numastat</td>
+<td>top  ps  sar  iostat  netstat  ss  vmstat  mpstat  numastat  tuna</td>
+<td>top  ps  sar  iostat  ss  vmstat  mpstat  numastat  tuna</td>
+</tr>
+
+<tr>
+<td>View disk usage</td>
+<td>df</td>
+<td>df  iostat</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/linux/">
+                    #linux</a></span>
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/rhel/">
+                    #rhel</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" http://www.gravatar.com/avatar/e49b252a78147069c496fc7e45e6689f?s=250&amp;amp;d=mm&amp;amp;r=x" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.me/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" class="prev" rel="prev" title="Git入门（二）- 基础（一）"><i class="iconfont icon-left"></i>&nbsp;Git入门（二）- 基础（一）</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2019</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.me/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

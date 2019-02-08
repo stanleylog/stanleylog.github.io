@@ -38,5 +38,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>linux</title>
+      <link>https://stanleylog.me/tags/linux/</link>
+      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rhel</title>
+      <link>https://stanleylog.me/tags/rhel/</link>
+      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/tags/rhel/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
