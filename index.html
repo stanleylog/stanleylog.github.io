@@ -130,6 +130,41 @@
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/">CentOS安装Docker</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+
+       			配置Yum源 由于CentOS默认的repository中没有docker软件， 在国内一般情况是使用两种方案： 使用国内的阿里云或七牛云等镜像源，但是在我测试的时候不可用。 使用docker官方的repository，缺点是速度比较慢。 阿里云镜像 由于国内某种网络原因，docker的下载速度会很慢，所以我们在这里先配置yum的数据源为国内阿里云。 # mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup # wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # yum makecache fast 经测试此数据源中无docker软件
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2019-02-11 itemprop="datePublished">2019-02-11</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/docker/"> docker </a>
+                        
+                </span>
+        </div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://stanleylog.me/tags/docker/">
+               	 #Docker</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/">RHEL各个版本的通用管理命令</a></h1>
 			</header>
 			<div class="post-content">
@@ -264,41 +299,6 @@
         		
         			<span class="tag"><a href="https://stanleylog.me/tags/git/">
                	 #git</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/hospitalization/">记儿子住院</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			2019年的元旦是在北京某医院的儿科监护病房中度过，在此之前他已经连续发高烧一周的时间，每过4个小时就要服用退烧药（有时还会无效）。看着孩子天天昏睡在床上，真是百感交集、五味杂陈！元旦的前一天孩子被检查出肺炎，我和孩子爷爷带着孩子从乡医院，儿研所到地坛医院辗转了一天一夜都没有病房可以接收住院，心中真是无比凄凉，那真是叫天天不应 叫地地不灵。 好在第二天一早到医院遇到很负责任的大夫帮忙协调病房才有幸住到
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-01-03 itemprop="datePublished">2019-01-03</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E5%85%BB%E5%84%BF%E8%82%B2%E5%A5%B3/"> 养儿育女 </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://stanleylog.me/tags//">
-               	 #</a></span>
         		
 				</div>
 				
