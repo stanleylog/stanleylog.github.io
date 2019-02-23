@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>https://stanleylog.me/categories/docker/</link>
+      <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git入门</title>
       <link>https://stanleylog.me/categories/git%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
@@ -35,15 +44,6 @@
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
       <guid>https://stanleylog.me/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://stanleylog.me/categories/docker/</link>
-      <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/categories/docker/</guid>
       <description></description>
     </item>
     

@@ -157,7 +157,7 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.me/tags/docker/</loc>
+      <loc>https://stanleylog.me/categories/docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
       
@@ -241,7 +241,21 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.me/categories/docker/</loc>
+      <loc>https://stanleylog.me/tags/cloud/</loc>
+      
+      <lastmod>2019-02-11T15:15:55+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.me/tags/docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
       
