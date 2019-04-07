@@ -15,7 +15,7 @@
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/</guid>
-      <description>
+      <description>&lt;p&gt;对于现有可落地、先进的开发工艺流程概念中最为耀眼的具体产品莫非Docker了，它强大之处在于完美的解决了复杂软件的部署及敏捷开发中的频率部署的问题，结合CI/CD与k8s形成了强大的生产力。而CentOS则是现在云环境中最为炙手可热的操作系统，它拥有这RHEL的稳定性及开源免费的优点，是很多互联网企业的最佳原则。今天我就尝试一下在CentOS上安装Docker，其中也包括国内的一些特殊原因的workaround方法。&lt;/p&gt;
 
 &lt;h2 id=&#34;配置yum源&#34;&gt;配置Yum源&lt;/h2&gt;
 
@@ -133,8 +133,7 @@ hello-world         latest              fce289e99eb9        5 weeks ago         
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://yq.aliyun.com/articles/336442&#34;&gt;阿里云linux yum源配置&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/85f38cb1de38&#34;&gt;阿里云 Centos 7.4 安装 Docker （入门篇）&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>

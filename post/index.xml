@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/</guid>
-      <description>配置Yum源 由于CentOS默认的repository中没有docker软件， 在国内一般情况是使用两种方案： 使用国内的阿里云或七牛云等镜像源，但是在我测试的时候不可用。 使用docker官方的repository，缺点是速度比较慢。 阿里云镜像 由于国内某种网络原因，docker的下载速度会很慢，所以我们在这里先配置yum的数据源为国内阿里云。 # mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup # wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # yum makecache fast 经测试此数据源中无docker软件</description>
+      <description>&lt;p&gt;对于现有可落地、先进的开发工艺流程概念中最为耀眼的具体产品莫非Docker了，它强大之处在于完美的解决了复杂软件的部署及敏捷开发中的频率部署的问题，结合CI/CD与k8s形成了强大的生产力。而CentOS则是现在云环境中最为炙手可热的操作系统，它拥有这RHEL的稳定性及开源免费的优点，是很多互联网企业的最佳原则。今天我就尝试一下在CentOS上安装Docker，其中也包括国内的一些特殊原因的workaround方法。&lt;/p&gt;</description>
     </item>
     
     <item>
