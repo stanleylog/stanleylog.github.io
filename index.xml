@@ -142,7 +142,7 @@ hello-world         latest              fce289e99eb9        5 weeks ago         
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
-      <description>
+      <description>&lt;p&gt;这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。&lt;/p&gt;
 
 &lt;h2 id=&#34;system-basics&#34;&gt;System basics&lt;/h2&gt;
 
@@ -1034,8 +1034,7 @@ hello-world         latest              fce289e99eb9        5 weeks ago         
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://access.redhat.com/articles/1189123&#34;&gt;Common administrative commands in Red Hat Enterprise Linux 5, 6, and 7&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.ibm.com/developerworks/library/l-config/index.html&#34;&gt;Understanding Linux configuration files&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>

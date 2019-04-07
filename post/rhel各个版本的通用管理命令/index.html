@@ -46,7 +46,7 @@
     "articleSection" : "post",
     "name" : "RHEL各个版本的通用管理命令",
     "headline" : "RHEL各个版本的通用管理命令",
-    "description" : "System basics Task RHEL5 RHEL6 RHEL7 View subscription information /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid subscription-manager identity subscription-manager identity Configure subscription rhn_register subscription-manager 1 rhn_register rhnreg_ks subscription-manager subscription-manager2 rhn_register 3 View RHEL version information /etc/redhat-release View system profile sosreport dmidecode hwbrowser sosreport dmidecode lstopo lscpu Basic configuration Task RHEL5 RHEL6 RHEL7 Graphical configuration tools system-config-* gnome-control-center Text-based configuration tools system-config-*-tui Configure printer system-config-printer Configure network system-config-network nmcli nmtui nm-connection-editor Configure system language system-config-language localectl Configure time and date system-config-date date timedatectl date Synchronize time and date ntpdate /etc/ntp.conf timedatectl /etc/chrony.conf ntpdate Configure keyboard system-config-keyboard localectl Configure SSH /etc/ssh/ssh_config /etc/ssh/sshd_config ~/.ssh/config ssh-keygen Jobs and services Task RHEL5 RHEL6 RHEL7 List all services chkconfig &ndash;list ls /etc/init.d/ systemctl -at service ls /etc/systemd/system/.service ls /usr/lib/systemd/system/.service List running services service &ndash;status-all systemctl -t service &ndash;state=active Start/stop service service name start service name stop systemctl start name.service systemctl stop name.service Enable/disable service chkconfig name on chkconfig name off systemctl enable name.service systemctl disable name.service View service status service name status systemctl status name.service Check if service is enabled chkconfig name &ndash;list systemctl is-enabled name Create new service file or modify configuration chkconfig &ndash;add systemctl daemon-reload /etc/systemd/system/*.service View run level/target runlevel who -r systemctl get-default who -r Change run level/target",
+    "description" : "<p>这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。</p>",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -57,7 +57,7 @@
     "datePublished": "2019-02-08 19:30:15 &#43;0800 CST",
     "dateModified" : "2019-02-08 19:30:15 &#43;0800 CST",
     "url" : "https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/",
-    "wordCount" : "914",
+    "wordCount" : "1002",
     "keywords" : [ "linux","rhel", "StanleyLog - 自留地"]
 }
 </script>
@@ -148,7 +148,7 @@
           
           
 
-          
+          <p>这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。</p>
 
 <h2 id="system-basics">System basics</h2>
 
@@ -1041,7 +1041,6 @@
 
 <li><p><a href="https://www.ibm.com/developerworks/library/l-config/index.html">Understanding Linux configuration files</a></p></li>
 </ul>
-
     </div>
 
     <div class="post-tags">
