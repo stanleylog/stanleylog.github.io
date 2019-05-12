@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           NTP安装与配置 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="NTP安装与配置 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://stanleylog.me/"
+    },
+    "articleSection" : "post",
+    "name" : "NTP安装与配置",
+    "headline" : "NTP安装与配置",
+    "description" : "<p>在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。</p>",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-05-12 10:50:25 &#43;0800 CST",
+    "dateModified" : "2019-05-12 10:50:25 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/",
+    "wordCount" : "809",
+    "keywords" : [ "ntp", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.me/">stanleylog.me</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.me/">stanleylog.me</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">NTP安装与配置</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2019-05-12 itemprop="datePublished">2019-05-12</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/linux/"> Linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。</p>
+
+<h2 id="ntp安装">NTP安装</h2>
+
+<ol>
+<li>首先通过<code>rpm -qa | grep ntp</code>检查ntp是否已经安装。</li>
+<li>如果操作系统中没有按照ntp，则按照如下步骤进行安装：</li>
+</ol>
+
+<pre><code class="language-shell">[root@bigdata2 yum.repos.d]# yum install ntp
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * c7-media:
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package ntp.x86_64 0:4.2.6p5-25.el7_3.2 will be installed
+--&gt; Processing Dependency: ntpdate = 4.2.6p5-25.el7_3.2 for package: ntp-4.2.6p5-25.el7_3.2.x86_64
+--&gt; Processing Dependency: libopts.so.25()(64bit) for package: ntp-4.2.6p5-25.el7_3.2.x86_64
+--&gt; Running transaction check
+---&gt; Package autogen-libopts.x86_64 0:5.18-5.el7 will be installed
+---&gt; Package ntpdate.x86_64 0:4.2.6p5-25.el7_3.2 will be installed
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+=============================================================================================================================
+ Package                         Arch                   Version                               Repository                Size
+=============================================================================================================================
+Installing:
+ ntp                             x86_64                 4.2.6p5-25.el7_3.2                    c7-media                 547 k
+Installing for dependencies:
+ autogen-libopts                 x86_64                 5.18-5.el7                            c7-media                  66 k
+ ntpdate                         x86_64                 4.2.6p5-25.el7_3.2                    c7-media                  86 k
+
+Transaction Summary
+=============================================================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 699 k
+Installed size: 1.6 M
+Is this ok [y/d/N]: y
+Downloading packages:
+-----------------------------------------------------------------------------------------------------------------------------
+Total                                                                                        4.7 MB/s | 699 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : ntpdate-4.2.6p5-25.el7_3.2.x86_64                                                                         1/3
+  Installing : autogen-libopts-5.18-5.el7.x86_64                                                                         2/3
+  Installing : ntp-4.2.6p5-25.el7_3.2.x86_64                                                                             3/3
+  Verifying  : autogen-libopts-5.18-5.el7.x86_64                                                                         1/3
+  Verifying  : ntp-4.2.6p5-25.el7_3.2.x86_64                                                                             2/3
+  Verifying  : ntpdate-4.2.6p5-25.el7_3.2.x86_64                                                                         3/3
+
+Installed:
+  ntp.x86_64 0:4.2.6p5-25.el7_3.2
+
+Dependency Installed:
+  autogen-libopts.x86_64 0:5.18-5.el7                           ntpdate.x86_64 0:4.2.6p5-25.el7_3.2
+
+Complete!
+</code></pre>
+
+<h2 id="ntp配置">NTP配置</h2>
+
+<h3 id="编辑-etc-ntp-conf文件">编辑/etc/ntp.conf文件</h3>
+
+<ul>
+<li>开启指定网段主机的查询权限</li>
+</ul>
+
+<pre><code class="language-shell">restrict 192.168.56.0 mask 255.255.255.0 nomodify notrap
+</code></pre>
+
+<ul>
+<li>关闭外网中的时间服务器同步</li>
+</ul>
+
+<pre><code class="language-shell">#server 0.rhel.pool.ntp.org iburst
+#server 1.rhel.pool.ntp.org iburst
+#server 2.rhel.pool.ntp.org iburst
+#server 3.rhel.pool.ntp.org iburst
+</code></pre>
+
+<ul>
+<li>备选本地主机为时间服务器</li>
+</ul>
+
+<pre><code class="language-shell">server 127.127.1.0
+fudge 127.127.1.0 stratum 10
+</code></pre>
+
+<h3 id="编辑-etc-sysconfig-ntpd文件">编辑/etc/sysconfig/ntpd文件</h3>
+
+<p>启用硬件与软件时钟同步</p>
+
+<pre><code class="language-shell">SYNC_HWCLOCK=yes
+</code></pre>
+
+<h2 id="ntpd服务管理">NTPD服务管理</h2>
+
+<h3 id="启动ntpd服务">启动ntpd服务</h3>
+
+<pre><code class="language-shell">[root@bigdata2 etc]# systemctl status ntpd
+鈼? ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+[root@bigdata2 etc]# systemctl start ntpd
+[root@bigdata2 etc]# systemctl status ntpd
+鈼? ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2019-04-30 18:10:38 EDT; 2s ago
+  Process: 6429 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 6430 (ntpd)
+   CGroup: /system.slice/ntpd.service
+           鈹斺攢6430 /usr/sbin/ntpd -u ntp:ntp -g
+
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 4 enp0s8 192.168.56.112 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 5 enp0s9 192.168.1.105 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 6 lo ::1 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 7 enp0s3 fe80::203a:18c4:d21b:2e8b UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 8 enp0s8 fe80::baba:398f:4ef6:b039 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listening on routing socket on fd #25 for interface updates
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c016 06 restart
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c012 02 freq_set kernel 0.000 PPM
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c011 01 freq_not_set
+Apr 30 18:10:39 bigdata2 ntpd[6430]: 0.0.0.0 c514 04 freq_mode
+</code></pre>
+
+<h3 id="设置开机启动ntpd服务">设置开机启动ntpd服务</h3>
+
+<pre><code class="language-shell">[root@bigdata2 etc]# chkconfig ntpd
+Note: Forwarding request to 'systemctl is-enabled ntpd.service'.
+disabled
+[root@bigdata2 etc]# chkconfig ntpd on
+Note: Forwarding request to 'systemctl enable ntpd.service'.
+Created symlink from /etc/systemd/system/multi-user.target.wants/ntpd.service to /usr/lib/systemd/system/ntpd.service.
+[root@bigdata2 etc]# chkconfig ntpd
+Note: Forwarding request to 'systemctl is-enabled ntpd.service'.
+enabled
+</code></pre>
+
+<h2 id="客户端主机配置">客户端主机配置</h2>
+
+<p>配置定时时间同步作业</p>
+
+<pre><code class="language-shell">crontab -e 
+*/10 * * * * /usr/sbin/ntpdate bigdata2
+</code></pre>
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/ntp/">
+                    #ntp</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" http://www.gravatar.com/avatar/e49b252a78147069c496fc7e45e6689f?s=250&amp;amp;d=mm&amp;amp;r=x" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.me/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/" class="prev" rel="prev" title="CentOS安装Docker"><i class="iconfont icon-left"></i>&nbsp;CentOS安装Docker</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2019</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.me/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

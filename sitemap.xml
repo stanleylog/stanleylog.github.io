@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
+      
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
@@ -187,7 +201,7 @@
     <url>
       <loc>https://stanleylog.me/categories/linux/</loc>
       
-      <lastmod>2019-02-08T19:30:15+08:00</lastmod>
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -201,7 +215,7 @@
     <url>
       <loc>https://stanleylog.me/post/</loc>
       
-      <lastmod>2019-02-11T15:15:55+08:00</lastmod>
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -215,7 +229,7 @@
     <url>
       <loc>https://stanleylog.me/</loc>
       
-      <lastmod>2019-02-11T15:15:55+08:00</lastmod>
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -300,6 +314,20 @@
       <loc>https://stanleylog.me/tags/linux/</loc>
       
       <lastmod>2019-02-08T19:30:15+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.me/tags/ntp/</loc>
+      
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>

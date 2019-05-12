@@ -6,8 +6,166 @@
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 Feb 2019 15:15:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 10:50:25 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>NTP安装与配置</title>
+      <link>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。&lt;/p&gt;
+
+&lt;h2 id=&#34;ntp安装&#34;&gt;NTP安装&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;首先通过&lt;code&gt;rpm -qa | grep ntp&lt;/code&gt;检查ntp是否已经安装。&lt;/li&gt;
+&lt;li&gt;如果操作系统中没有按照ntp，则按照如下步骤进行安装：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;[root@bigdata2 yum.repos.d]# yum install ntp
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * c7-media:
+Resolving Dependencies
+--&amp;gt; Running transaction check
+---&amp;gt; Package ntp.x86_64 0:4.2.6p5-25.el7_3.2 will be installed
+--&amp;gt; Processing Dependency: ntpdate = 4.2.6p5-25.el7_3.2 for package: ntp-4.2.6p5-25.el7_3.2.x86_64
+--&amp;gt; Processing Dependency: libopts.so.25()(64bit) for package: ntp-4.2.6p5-25.el7_3.2.x86_64
+--&amp;gt; Running transaction check
+---&amp;gt; Package autogen-libopts.x86_64 0:5.18-5.el7 will be installed
+---&amp;gt; Package ntpdate.x86_64 0:4.2.6p5-25.el7_3.2 will be installed
+--&amp;gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+=============================================================================================================================
+ Package                         Arch                   Version                               Repository                Size
+=============================================================================================================================
+Installing:
+ ntp                             x86_64                 4.2.6p5-25.el7_3.2                    c7-media                 547 k
+Installing for dependencies:
+ autogen-libopts                 x86_64                 5.18-5.el7                            c7-media                  66 k
+ ntpdate                         x86_64                 4.2.6p5-25.el7_3.2                    c7-media                  86 k
+
+Transaction Summary
+=============================================================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 699 k
+Installed size: 1.6 M
+Is this ok [y/d/N]: y
+Downloading packages:
+-----------------------------------------------------------------------------------------------------------------------------
+Total                                                                                        4.7 MB/s | 699 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : ntpdate-4.2.6p5-25.el7_3.2.x86_64                                                                         1/3
+  Installing : autogen-libopts-5.18-5.el7.x86_64                                                                         2/3
+  Installing : ntp-4.2.6p5-25.el7_3.2.x86_64                                                                             3/3
+  Verifying  : autogen-libopts-5.18-5.el7.x86_64                                                                         1/3
+  Verifying  : ntp-4.2.6p5-25.el7_3.2.x86_64                                                                             2/3
+  Verifying  : ntpdate-4.2.6p5-25.el7_3.2.x86_64                                                                         3/3
+
+Installed:
+  ntp.x86_64 0:4.2.6p5-25.el7_3.2
+
+Dependency Installed:
+  autogen-libopts.x86_64 0:5.18-5.el7                           ntpdate.x86_64 0:4.2.6p5-25.el7_3.2
+
+Complete!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ntp配置&#34;&gt;NTP配置&lt;/h2&gt;
+
+&lt;h3 id=&#34;编辑-etc-ntp-conf文件&#34;&gt;编辑/etc/ntp.conf文件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;开启指定网段主机的查询权限&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;restrict 192.168.56.0 mask 255.255.255.0 nomodify notrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;关闭外网中的时间服务器同步&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#server 0.rhel.pool.ntp.org iburst
+#server 1.rhel.pool.ntp.org iburst
+#server 2.rhel.pool.ntp.org iburst
+#server 3.rhel.pool.ntp.org iburst
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;备选本地主机为时间服务器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;server 127.127.1.0
+fudge 127.127.1.0 stratum 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;编辑-etc-sysconfig-ntpd文件&#34;&gt;编辑/etc/sysconfig/ntpd文件&lt;/h3&gt;
+
+&lt;p&gt;启用硬件与软件时钟同步&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;SYNC_HWCLOCK=yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ntpd服务管理&#34;&gt;NTPD服务管理&lt;/h2&gt;
+
+&lt;h3 id=&#34;启动ntpd服务&#34;&gt;启动ntpd服务&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;[root@bigdata2 etc]# systemctl status ntpd
+鈼? ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+[root@bigdata2 etc]# systemctl start ntpd
+[root@bigdata2 etc]# systemctl status ntpd
+鈼? ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2019-04-30 18:10:38 EDT; 2s ago
+  Process: 6429 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 6430 (ntpd)
+   CGroup: /system.slice/ntpd.service
+           鈹斺攢6430 /usr/sbin/ntpd -u ntp:ntp -g
+
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 4 enp0s8 192.168.56.112 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 5 enp0s9 192.168.1.105 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 6 lo ::1 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 7 enp0s3 fe80::203a:18c4:d21b:2e8b UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listen normally on 8 enp0s8 fe80::baba:398f:4ef6:b039 UDP 123
+Apr 30 18:10:38 bigdata2 ntpd[6430]: Listening on routing socket on fd #25 for interface updates
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c016 06 restart
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c012 02 freq_set kernel 0.000 PPM
+Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c011 01 freq_not_set
+Apr 30 18:10:39 bigdata2 ntpd[6430]: 0.0.0.0 c514 04 freq_mode
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;设置开机启动ntpd服务&#34;&gt;设置开机启动ntpd服务&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;[root@bigdata2 etc]# chkconfig ntpd
+Note: Forwarding request to &#39;systemctl is-enabled ntpd.service&#39;.
+disabled
+[root@bigdata2 etc]# chkconfig ntpd on
+Note: Forwarding request to &#39;systemctl enable ntpd.service&#39;.
+Created symlink from /etc/systemd/system/multi-user.target.wants/ntpd.service to /usr/lib/systemd/system/ntpd.service.
+[root@bigdata2 etc]# chkconfig ntpd
+Note: Forwarding request to &#39;systemctl is-enabled ntpd.service&#39;.
+enabled
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;客户端主机配置&#34;&gt;客户端主机配置&lt;/h2&gt;
+
+&lt;p&gt;配置定时时间同步作业&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;crontab -e 
+*/10 * * * * /usr/sbin/ntpdate bigdata2
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     
     <item>
       <title>CentOS安装Docker</title>
