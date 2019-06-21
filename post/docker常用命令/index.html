@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" />
-  <link rel="next" href="https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
-  <link rel="canonical" href="https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/" />
+  <link rel="prev" href="https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           人生意义 | StanleyLog - 自留地
+           Docker常用命令 | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="人生意义 | StanleyLog - 自留地">
+  <meta name="title" content="Docker常用命令 | StanleyLog - 自留地">
     
   
   
@@ -44,9 +44,9 @@
          "@id": "https://stanleylog.me/"
     },
     "articleSection" : "post",
-    "name" : "人生意义",
-    "headline" : "人生意义",
-    "description" : "<p>人生意义一直想写， 但是这个标题太宽阔、太深奥，我坚信它涵盖着生存意义、价值追究、处世原则等一系列的无数圣贤及智者都无法全面阐述清楚的智慧。以现在我现在极为浅薄的人生阅历来写这么大的话题，实在是太过造次了。但是这些年迷茫的经历，让我多少次欲言又止。这次终于鼓起勇气来写这一篇，就算为了证明在信息的维度上我曾经存在过，才敢以敬畏之心犯着大不韪名头来说说我的一点点想法。只要有新的感悟就会更新到这篇文章里，就不单独开篇再论了。</p>",
+    "name" : "Docker常用命令",
+    "headline" : "Docker常用命令",
+    "description" : "<p>本篇文章为干货，罗列出Docker使用过程中最为常用的命令集合。 其中包括：镜像、容器、制作镜像的相关内容。</p>",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-06-05 22:40:51 &#43;0800 CST",
-    "dateModified" : "2019-06-05 22:40:51 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/",
-    "wordCount" : "561",
-    "keywords" : [ "人生意义", "StanleyLog - 自留地"]
+    "datePublished": "2019-06-21 22:34:08 &#43;0800 CST",
+    "dateModified" : "2019-06-21 22:34:08 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/",
+    "wordCount" : "977",
+    "keywords" : [ "devops", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">人生意义</h1>
+        <h1 class="post-title" itemprop="name headline">Docker常用命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
-                on <time datetime=2019-06-05 itemprop="datePublished">2019-06-05</time>
+                on <time datetime=2019-06-21 itemprop="datePublished">2019-06-21</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/"> 胡言乱语 </a>
+                        <a href="https://stanleylog.me/categories/docker/"> docker </a>
                         
                 </span>
         </div>
@@ -148,13 +148,222 @@
           
           
 
-          <p>人生意义一直想写， 但是这个标题太宽阔、太深奥，我坚信它涵盖着生存意义、价值追究、处世原则等一系列的无数圣贤及智者都无法全面阐述清楚的智慧。以现在我现在极为浅薄的人生阅历来写这么大的话题，实在是太过造次了。但是这些年迷茫的经历，让我多少次欲言又止。这次终于鼓起勇气来写这一篇，就算为了证明在信息的维度上我曾经存在过，才敢以敬畏之心犯着大不韪名头来说说我的一点点想法。只要有新的感悟就会更新到这篇文章里，就不单独开篇再论了。</p>
+          <p>本篇文章为干货，罗列出Docker使用过程中最为常用的命令集合。 其中包括：镜像、容器、制作镜像的相关内容。</p>
 
-<p>— 2019年06月05日 开篇</p>
+<h2 id="镜像-image">镜像(Image)：</h2>
 
-<p>人生的意义与其社会身份息息相关，它不是单纯的单一视角的评判，而是全方位立体的展现。 而作为一个自然人我们身上又有着许许多多的身份， 比如：一个父亲的意义就是给子女提供温馨的家庭、充足的物质及精神环境， 一个职业人的意义是展示自己的才能并可以持续发展的平台等等。当我们的社会身份越多，我们需要肩负的责任和义务就越多，然而我们可以获取人生意义的途径也就越多。 一个父亲可能是一个职场的失败者或者是被别人认为是一个无能之辈，而在他的孩子看来他却是一个无比强大而坚强的父亲。 这就是作为一个父亲的自然人的人生意义所在。 他在这个维度上获取了极大的信心及幸福，使得他认为与孩子相关的事情无比重要而有意义！所以意义如何是掌握在每个人自己的心中，在于自己想成为什么样的人！</p>
+<p>​</p>
 
-<p>— 2019年06月17日 更新</p>
+<ul>
+<li>获取镜像：</li>
+</ul>
+
+<pre><code class="language-shell">docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签] 
+</code></pre>
+
+<ul>
+<li>列出镜像:</li>
+</ul>
+
+<pre><code class="language-shell">docker image ls 
+</code></pre>
+
+<ul>
+<li>查看镜像的实际尺寸（dockerhub中的大小为压缩后的大小）</li>
+</ul>
+
+<pre><code class="language-shell">docker system df 
+</code></pre>
+
+<ul>
+<li>启动容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker run -it --rm ubuntu:18.04 bash 
+</code></pre>
+
+<ul>
+<li>列出虚悬镜像：</li>
+</ul>
+
+<pre><code class="language-shell">docker image ls -f dangling=true 
+</code></pre>
+
+<ul>
+<li>删除虚悬镜像：</li>
+</ul>
+
+<pre><code class="language-shell">docker image prune 
+</code></pre>
+
+<ul>
+<li>列出所有镜像（包含中间层镜像）：</li>
+</ul>
+
+<pre><code class="language-shell">docker image ls -a 
+</code></pre>
+
+<ul>
+<li>删除镜像（&lt;镜像&gt;可以是镜像短 ID、镜像长 ID、镜像名或者镜像摘要）：</li>
+</ul>
+
+<pre><code class="language-shell">docker image rm [选项] &lt;镜像1&gt; [&lt;镜像2&gt; …]   
+</code></pre>
+
+<p>虚悬镜像：为被更新后无用的镜像，比如一个latest的镜像使用docker commit后这个镜像就会变成tag为<none>的镜像。这些镜像成为虚悬镜像，可以任意删除。</p>
+
+<p>中间层镜像：被其它镜像或容器依赖的镜像，默认情况下是不显示出来的， 不可任意删除，因为会导致被依赖的镜像工作不正常。</p>
+
+<p>Untagged 和 Deleted， 当被删除的镜像还有其它的tag的话，使用docker rm进行的操作执行将对应的tag取消。 只有当删除非多个tag的情况下进行docker rm才会进行实际的delete操作。</p>
+
+<p>​</p>
+
+<h2 id="容器">容器：</h2>
+
+<p>​</p>
+
+<ul>
+<li>新建并启动容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker run -it ubuntu:18.04 bash 
+</code></pre>
+
+<p>容器启动步骤：</p>
+
+<ul>
+<li><p>检查本地是否存在指定的镜像，不存在就从公有仓库下载</p></li>
+
+<li><p>利用镜像创建并启动一个容器</p></li>
+
+<li><p>分配一个文件系统，并在只读的镜像层外面挂载一层可读写层</p></li>
+
+<li><p>从宿主主机配置的网桥接口中桥接一个虚拟接口到容器中去</p></li>
+
+<li><p>从地址池配置一个 ip 地址给容器</p></li>
+
+<li><p>执行用户指定的应用程序</p></li>
+
+<li><p>执行完毕后容器被终止</p></li>
+</ul>
+
+<p>​</p>
+
+<ul>
+<li>启动已终止的容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker container start 
+</code></pre>
+
+<ul>
+<li>后台运行容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker run -d ubuntu:18.04 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot; 
+</code></pre>
+
+<ul>
+<li>列出容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker container ls 
+</code></pre>
+
+<ul>
+<li>查看容器输出内容：</li>
+</ul>
+
+<pre><code class="language-shell">docker container logs 
+</code></pre>
+
+<ul>
+<li>终止容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker container stop 
+</code></pre>
+
+<ul>
+<li>查看所有容器（包含已终止容器）：</li>
+</ul>
+
+<pre><code class="language-shell">docker container ls -a 
+</code></pre>
+
+<ul>
+<li>进入容器（存在两种方法）：</li>
+</ul>
+
+<pre><code class="language-shell">1.推荐方式 
+docker exec -it 容器名 bash 
+2.不推荐方式，在执行exit时容器会退出。 
+docker attach 容器名 
+</code></pre>
+
+<p>导出容器（此种方式在导入快照是会丢失容器标签及元数据信息）</p>
+
+<pre><code class="language-shell">docker export 容器名 &gt; ubuntu.tar 
+</code></pre>
+
+<ul>
+<li>导入容器</li>
+</ul>
+
+<pre><code class="language-shell">cat ubuntu.tar | docker import - test/ubuntu:v1.0 
+</code></pre>
+
+<ul>
+<li>删除容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker container rm 容器名 
+</code></pre>
+
+<ul>
+<li>清理所有终止状态的容器：</li>
+</ul>
+
+<pre><code class="language-shell">docker container prune 
+</code></pre>
+
+<p>​</p>
+
+<h1 id="制作镜像">制作镜像</h1>
+
+<p>​</p>
+
+<ul>
+<li>查看容器存储层的内容（容器与镜像变更的文件）：</li>
+</ul>
+
+<pre><code class="language-shell">docker diff 容器名 
+</code></pre>
+
+<ul>
+<li>保存容器为镜像（不推荐的方法）：</li>
+</ul>
+
+<pre><code class="language-shell">docker commit \ 
+--author &quot;Tao Wang &lt;[twang2218@gmail.com](mailto:twang2218@gmail.com)&gt;&quot; \ 
+--message &quot;修改了默认网页&quot; \ 
+webserver \ 
+nginx:v2 
+</code></pre>
+
+<ul>
+<li>查看镜像的提交历史记录:</li>
+</ul>
+
+<pre><code class="language-shell">docker history 镜像名 
+</code></pre>
+
+<ul>
+<li>使用Dockerfile进行镜像构建:</li>
+</ul>
+
+<pre><code class="language-shell">docker build -t nginx:v3 . 
+</code></pre>
     </div>
 
     <div class="post-tags">
@@ -162,8 +371,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/">
-                    #人生意义</a></span>
+            <span class="tag"><a href="https://stanleylog.me/tags/devops/">
+                    #devops</a></span>
             
             </section>
         
@@ -204,10 +413,8 @@
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="prev" rel="prev" title="NTP安装与配置"><i class="iconfont icon-left"></i>&nbsp;NTP安装与配置</a>
+        <a href="https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/" class="prev" rel="prev" title="人生意义"><i class="iconfont icon-left"></i>&nbsp;人生意义</a>
          
-        
-        <a href="https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="Docker常用命令">Docker常用命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

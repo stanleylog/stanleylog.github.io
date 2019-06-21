@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+      
+      <lastmod>2019-06-21T22:34:08+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</loc>
       
       <lastmod>2019-06-05T22:40:51+08:00</lastmod>
@@ -229,7 +243,7 @@
     <url>
       <loc>https://stanleylog.me/post/</loc>
       
-      <lastmod>2019-06-05T22:40:51+08:00</lastmod>
+      <lastmod>2019-06-21T22:34:08+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -243,7 +257,7 @@
     <url>
       <loc>https://stanleylog.me/</loc>
       
-      <lastmod>2019-06-05T22:40:51+08:00</lastmod>
+      <lastmod>2019-06-21T22:34:08+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -283,7 +297,35 @@
     </url>
   
     <url>
+      <loc>https://stanleylog.me/tags/devops/</loc>
+      
+      <lastmod>2019-06-21T22:34:08+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.me/tags/docker/</loc>
+      
+      <lastmod>2019-02-11T15:15:55+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.me/categories/docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
       
