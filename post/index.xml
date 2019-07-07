@@ -6,10 +6,19 @@
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Jun 2019 22:34:08 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jul 2019 22:03:33 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>领导力</title>
+      <link>https://stanleylog.me/post/leadership/</link>
+      <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/leadership/</guid>
+      <description>极客时间是我每天都是使用的技术播客，填补了国内没有这个细分领域播客的空白，定位准确、内容丰富。希望之后越来越好。今天要说的是极客时间里陈浩的专栏《左耳听风》上的一片文章，看的时候一下感觉被触动到了。由此有了这篇博文。 以下是摘抄《左耳听风》的104期《高效沟通：好老板要善于提问》文章中的内容： 作为 Leader，你要记住，永远不要给员工答案，要让员工给你答案，而且不要只给一个答案，一定 要给多个答案。然</description>
+    </item>
     
     <item>
       <title>Docker常用命令</title>
