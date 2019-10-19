@@ -45,6 +45,257 @@
     </item>
     
     <item>
+      <title>Oracle安全审计配置</title>
+      <link>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。&lt;/p&gt;
+
+&lt;h2 id=&#34;查看数据库审计功能状态&#34;&gt;查看数据库审计功能状态&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;//使用sqlplus通过sysdba角色登陆Oracle
+$ sqlplus &amp;quot;/ as sysdba&amp;quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:32:00 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&amp;gt; startup
+ORACLE instance started.
+
+Total System Global Area  835104768 bytes
+Fixed Size		    2232960 bytes
+Variable Size		  654314880 bytes
+Database Buffers	  171966464 bytes
+Redo Buffers		    6590464 bytes
+Database mounted.
+Database opened.
+SQL&amp;gt;
+//查看审计参数是否开启
+SQL&amp;gt; show parameter audit
+
+NAME				     TYPE	 VALUE
+------------------------------------ ----------- ------------------------------
+audit_file_dest 		     string	 /u01/app/oracle/admin/fs11g/adump
+audit_sys_operations		     boolean	 FALSE
+audit_syslog_level		     string
+audit_trail			     string	 DB
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中&lt;code&gt;audit_trail&lt;/code&gt;代表数据库审计功能的状态，需设置&lt;code&gt;db,extended&lt;/code&gt;，各项值含义如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;none&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Disables database auditing.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;os&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enables database auditing and directs all audit records to the operating system&amp;rsquo;s audit trail.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;db&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enables database auditing and directs all audit records to the database audit trail (the &lt;code&gt;SYS.AUD$&lt;/code&gt; table).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;db,extended&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enables database auditing and directs all audit records to the database audit trail (the SYS.AUD\$ table). In addition, populates the  SQLBIND and SQLTEXT CLOB columns of the SYS.AUD$ table.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;xml&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enables database auditing and writes all audit records to XML format OS files.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;xm,extended&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enables database auditing and prints all columns of the audit trail, including SqlText and SqlBind values.&lt;/p&gt;
+
+&lt;h2 id=&#34;开启审计&#34;&gt;开启审计&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;//开启审计功能
+SQL&amp;gt; alter system set AUDIT_TRAIL=db, extended scope=spfile;
+
+System altered.
+//关闭数据库实例
+SQL&amp;gt; shutdown immediate
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+//启动数据实例
+SQL&amp;gt; startup
+ORACLE instance started.
+
+Total System Global Area  835104768 bytes
+Fixed Size		    2232960 bytes
+Variable Size		  654314880 bytes
+Database Buffers	  171966464 bytes
+Redo Buffers		    6590464 bytes
+Database mounted.
+Database opened.
+//查看审计参数是否开启
+SQL&amp;gt; show parameter audit
+
+
+NAME				     TYPE	 VALUE
+------------------------------------ ----------- ------------------------------
+audit_file_dest 		     string	 /u01/app/oracle/admin/fs11g/adump
+audit_sys_operations		     boolean	 FALSE
+audit_syslog_level		     string
+audit_trail			     string	 DB, EXTENDED
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;查看审计日志表&#34;&gt;查看审计日志表&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL&amp;gt; set line 120
+SQL&amp;gt; col obj_name format a5
+SQL&amp;gt; col obj_name for a10
+SQL&amp;gt; col SQL_TEXT format a30
+SQL&amp;gt; select username, to_char(timestamp,&#39;MM/DD/YY HH24:MI&#39;) Timestamp, obj_name, action_name, sql_text from dba_audit_trail where obj_name is not null;
+
+
+USERN TIMESTAMP      OBJ_NAME	ACTION_NAME		     SQL_TEXT
+----- -------------- ---------- ---------------------------- ---------------------------
+
+0 rows selected.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;验证准备&#34;&gt;验证准备&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;$ sqlplus stl/sun
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&amp;gt; create table test (c1 varchar2(20));
+
+Table created.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;开启指定对象审计&#34;&gt;开启指定对象审计&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;[ora11g@db ~]$ sqlplus &amp;quot;/ as sysdba&amp;quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:52:49 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL&amp;gt; audit insert, select, update, delete on stl.test by access whenever successful;
+
+Audit succeeded.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;验证审计&#34;&gt;验证审计&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;$ sqlplus stl/sun
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&amp;gt; create table test (c1 varchar2(20));
+
+Table created.
+
+SQL&amp;gt; select * from test;
+
+no rows selected
+
+SQL&amp;gt; insert into test values(1);
+
+1 row created.
+
+SQL&amp;gt; update test set c1 = 2;
+
+1 row updated.
+
+SQL&amp;gt; select * from test;
+
+C1
+--------------------
+2
+
+SQL&amp;gt; delete from test;
+
+1 row deleted.
+
+SQL&amp;gt; exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+$ sqlplus &amp;quot;/ as sysdba&amp;quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:52:49 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL&amp;gt; select username, to_char(timestamp,&#39;MM/DD/YY HH24:MI&#39;) Timestamp, obj_name, action_name, sql_text from dba_audit_trail where obj_name =&#39;TEST&#39;;
+
+USERN TIMESTAMP      OBJ_NAME	ACTION_NAME		     SQL_TEXT
+----- -------------- ---------- -------------------------- -----------------------------
+STL   10/16/19 16:55 TEST	INSERT			     insert into test values(1)
+STL   10/16/19 16:55 TEST	SELECT			     select * from test
+STL   10/16/19 16:54 TEST	SELECT			     select * from test
+STL   10/16/19 16:55 TEST	UPDATE			     update test set c1 = 2
+STL   10/16/19 16:55 TEST	DELETE			     delete from test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;其他常用命令&#34;&gt;其他常用命令&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;--取消指定对象审计
+SQL&amp;gt; noaudit all on test;
+--删除审计日志
+SQL&amp;gt; DELETE FROM SYS.AUD$ WHERE obj$name=&#39;TEST&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考链接:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/ivory_town1/article/details/49760637&#34;&gt;Oracle 11g 审计&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Touatou/article/details/80476855&#34;&gt;Oracle审计详解&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/jyzhao/p/4995205.html&#34;&gt;Oracle 10g安全加固(审计、监听密码)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>领导力</title>
       <link>https://stanleylog.me/post/leadership/</link>
       <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.me/post/leadership/" />
+  <link rel="next" href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" />
+  <link rel="canonical" href="https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Oracle安全审计配置 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="Oracle安全审计配置 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://stanleylog.me/"
+    },
+    "articleSection" : "post",
+    "name" : "Oracle安全审计配置",
+    "headline" : "Oracle安全审计配置",
+    "description" : "<p>随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。</p>",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-10-16 16:10:32 &#43;0800 CST",
+    "dateModified" : "2019-10-16 16:10:32 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/",
+    "wordCount" : "1009",
+    "keywords" : [ "Oracle","安全审计", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.me/">stanleylog.me</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.me/">stanleylog.me</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Oracle安全审计配置</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2019-10-16 itemprop="datePublished">2019-10-16</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/database/"> Database </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。</p>
+
+<h2 id="查看数据库审计功能状态">查看数据库审计功能状态</h2>
+
+<pre><code class="language-sql">//使用sqlplus通过sysdba角色登陆Oracle
+$ sqlplus &quot;/ as sysdba&quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:32:00 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&gt; startup
+ORACLE instance started.
+
+Total System Global Area  835104768 bytes
+Fixed Size		    2232960 bytes
+Variable Size		  654314880 bytes
+Database Buffers	  171966464 bytes
+Redo Buffers		    6590464 bytes
+Database mounted.
+Database opened.
+SQL&gt;
+//查看审计参数是否开启
+SQL&gt; show parameter audit
+
+NAME				     TYPE	 VALUE
+------------------------------------ ----------- ------------------------------
+audit_file_dest 		     string	 /u01/app/oracle/admin/fs11g/adump
+audit_sys_operations		     boolean	 FALSE
+audit_syslog_level		     string
+audit_trail			     string	 DB
+</code></pre>
+
+<p>其中<code>audit_trail</code>代表数据库审计功能的状态，需设置<code>db,extended</code>，各项值含义如下：</p>
+
+<ul>
+<li>none</li>
+</ul>
+
+<p>Disables database auditing.</p>
+
+<ul>
+<li>os</li>
+</ul>
+
+<p>Enables database auditing and directs all audit records to the operating system&rsquo;s audit trail.</p>
+
+<ul>
+<li>db</li>
+</ul>
+
+<p>Enables database auditing and directs all audit records to the database audit trail (the <code>SYS.AUD$</code> table).</p>
+
+<ul>
+<li>db,extended</li>
+</ul>
+
+<p>Enables database auditing and directs all audit records to the database audit trail (the SYS.AUD\$ table). In addition, populates the  SQLBIND and SQLTEXT CLOB columns of the SYS.AUD$ table.</p>
+
+<ul>
+<li>xml</li>
+</ul>
+
+<p>Enables database auditing and writes all audit records to XML format OS files.</p>
+
+<ul>
+<li>xm,extended</li>
+</ul>
+
+<p>Enables database auditing and prints all columns of the audit trail, including SqlText and SqlBind values.</p>
+
+<h2 id="开启审计">开启审计</h2>
+
+<pre><code class="language-sql">//开启审计功能
+SQL&gt; alter system set AUDIT_TRAIL=db, extended scope=spfile;
+
+System altered.
+//关闭数据库实例
+SQL&gt; shutdown immediate
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+//启动数据实例
+SQL&gt; startup
+ORACLE instance started.
+
+Total System Global Area  835104768 bytes
+Fixed Size		    2232960 bytes
+Variable Size		  654314880 bytes
+Database Buffers	  171966464 bytes
+Redo Buffers		    6590464 bytes
+Database mounted.
+Database opened.
+//查看审计参数是否开启
+SQL&gt; show parameter audit
+
+
+NAME				     TYPE	 VALUE
+------------------------------------ ----------- ------------------------------
+audit_file_dest 		     string	 /u01/app/oracle/admin/fs11g/adump
+audit_sys_operations		     boolean	 FALSE
+audit_syslog_level		     string
+audit_trail			     string	 DB, EXTENDED
+</code></pre>
+
+<h2 id="查看审计日志表">查看审计日志表</h2>
+
+<pre><code class="language-sql">SQL&gt; set line 120
+SQL&gt; col obj_name format a5
+SQL&gt; col obj_name for a10
+SQL&gt; col SQL_TEXT format a30
+SQL&gt; select username, to_char(timestamp,'MM/DD/YY HH24:MI') Timestamp, obj_name, action_name, sql_text from dba_audit_trail where obj_name is not null;
+
+
+USERN TIMESTAMP      OBJ_NAME	ACTION_NAME		     SQL_TEXT
+----- -------------- ---------- ---------------------------- ---------------------------
+
+0 rows selected.
+
+</code></pre>
+
+<h2 id="验证准备">验证准备</h2>
+
+<pre><code class="language-sql">$ sqlplus stl/sun
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&gt; create table test (c1 varchar2(20));
+
+Table created.
+</code></pre>
+
+<h2 id="开启指定对象审计">开启指定对象审计</h2>
+
+<pre><code class="language-sql">[ora11g@db ~]$ sqlplus &quot;/ as sysdba&quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:52:49 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL&gt; audit insert, select, update, delete on stl.test by access whenever successful;
+
+Audit succeeded.
+
+</code></pre>
+
+<h2 id="验证审计">验证审计</h2>
+
+<pre><code class="language-sql">$ sqlplus stl/sun
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+SQL&gt; create table test (c1 varchar2(20));
+
+Table created.
+
+SQL&gt; select * from test;
+
+no rows selected
+
+SQL&gt; insert into test values(1);
+
+1 row created.
+
+SQL&gt; update test set c1 = 2;
+
+1 row updated.
+
+SQL&gt; select * from test;
+
+C1
+--------------------
+2
+
+SQL&gt; delete from test;
+
+1 row deleted.
+
+SQL&gt; exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+$ sqlplus &quot;/ as sysdba&quot;
+
+SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:52:49 2019
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL&gt; select username, to_char(timestamp,'MM/DD/YY HH24:MI') Timestamp, obj_name, action_name, sql_text from dba_audit_trail where obj_name ='TEST';
+
+USERN TIMESTAMP      OBJ_NAME	ACTION_NAME		     SQL_TEXT
+----- -------------- ---------- -------------------------- -----------------------------
+STL   10/16/19 16:55 TEST	INSERT			     insert into test values(1)
+STL   10/16/19 16:55 TEST	SELECT			     select * from test
+STL   10/16/19 16:54 TEST	SELECT			     select * from test
+STL   10/16/19 16:55 TEST	UPDATE			     update test set c1 = 2
+STL   10/16/19 16:55 TEST	DELETE			     delete from test
+</code></pre>
+
+<h2 id="其他常用命令">其他常用命令</h2>
+
+<pre><code class="language-sql">--取消指定对象审计
+SQL&gt; noaudit all on test;
+--删除审计日志
+SQL&gt; DELETE FROM SYS.AUD$ WHERE obj$name='TEST';
+</code></pre>
+
+<p>​</p>
+
+<hr />
+
+<p>参考链接:</p>
+
+<p><a href="https://blog.csdn.net/ivory_town1/article/details/49760637">Oracle 11g 审计</a></p>
+
+<p><a href="https://blog.csdn.net/Touatou/article/details/80476855">Oracle审计详解</a></p>
+
+<p><a href="https://www.cnblogs.com/jyzhao/p/4995205.html">Oracle 10g安全加固(审计、监听密码)</a></p>
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/oracle/">
+                    #Oracle</a></span>
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/">
+                    #安全审计</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" http://www.gravatar.com/avatar/e49b252a78147069c496fc7e45e6689f?s=250&amp;amp;d=mm&amp;amp;r=x" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.me/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.me/post/leadership/" class="prev" rel="prev" title="领导力"><i class="iconfont icon-left"></i>&nbsp;领导力</a>
+         
+        
+        <a href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" class="next" rel="next" title="格局">格局&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2019</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.me/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>
