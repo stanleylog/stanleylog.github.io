@@ -6,8 +6,26 @@
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Oct 2019 22:26:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 20:48:26 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>初心</title>
+      <link>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</link>
+      <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://stanleylog.me/IMG_4715.JPG&#34; alt=&#34;C程序设计语言&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。&lt;/p&gt;
+
+&lt;p&gt;这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着跑着丢掉了什么？让我们再也跑不动也不想跑了呢？&lt;/p&gt;
+
+&lt;p&gt;当我重新翻出入行时的启蒙书，当初那种无比激动的心情像一股电流一样在脑中闪过。我好像找到了答案！当年那种对编程狂热的痴迷，逻辑推演的快感，掌控一切的成就感，使我立志创造一系列改变世界的软件。 起初的那股取之不尽，用之不竭的热情好像没有了，那股最初的原动力没有了。这么多年囫囵吞枣式的应用各种技术、通宵达旦的处理各种问题、交付为第一要务其它靠边站式的工作原则造就了得过且过的处世态度，我们还会美其名曰：“人生智慧”。&lt;/p&gt;
+
+&lt;p&gt;我们丢失掉的就是那种对未知领域强烈的好奇心，对现有工作精益求精的荣誉心，对未来会更好的自信心！&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>格局</title>
@@ -2106,45 +2124,6 @@ git config --global xxx xxx
 &lt;p&gt;以上的优点，使我感觉已经回不到WP去了。&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;PS.本网站已更换为Hugo.&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://stanleylog.me/post/welcome/</link>
-      <pubDate>Sat, 15 Dec 2018 15:14:30 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/welcome/</guid>
-      <description>&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。
-那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为了以上的目的，这个网站就被创建出来了。由于原有的域名已经被别人抢注做起了不正当生意，很是遗憾，所以只能注册了不同后缀的域名。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;PS.千万不要敲错域名，否则会有大大的惊喜。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update: 2018-12-15&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;本站起初草草上线，从开始有想法到搭建出来不过2个小时。最近发现动态博客的霸主WordPress由于过于臃肿已经落寞了，今天开始尝试使用Ghost博客系统。给自己也是找一些新鲜感。在此期间被Ghost的简洁风格所吸引，相比Wordpress简直就不是一个时代的产物。&lt;/p&gt;
-
-&lt;p&gt;PS.在使用的Ghost的时候还得知了Ghost的创始人原来是就职于Wordpress的趣闻。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update: 2018-12-22&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;由于这个网站是建设在本人的VPS（资源有限）上的，在进行Ghost优化的过程中发现了静态博客Hugo。静态博客的优点就是Server端的资源占用非常的低，因为是已经生成好的静态页面。而Hugo拥有的极速的生成效率及灵活的定制化的能力，所以简直就是一看到介绍就已经非它莫属了。&lt;/p&gt;
-
-&lt;p&gt;PS.由于一些个人原因一直没有将博客更换到Hugo，今天算忙里抽闲把这作业做了。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update: 2019-01-02&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;这段时间一直在忙个人的一些其他事情，博客的优化和改造也都是使用见缝插针的时间去做。所以持续的时间比较长，现在感觉这个网站已经搞的七七八八了，今天终于可以说Happly Birthday 了。现在作为本站的正式上线时间点应该是更为合适一些。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update: 2019-01-06&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
