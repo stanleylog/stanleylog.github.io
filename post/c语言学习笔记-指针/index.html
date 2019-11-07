@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" />
-  <link rel="next" href="https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/" />
-  <link rel="canonical" href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" />
+  <link rel="prev" href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           初心 | StanleyLog - 自留地
+           C语言学习笔记-指针 | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="初心 | StanleyLog - 自留地">
+  <meta name="title" content="C语言学习笔记-指针 | StanleyLog - 自留地">
     
   
   
@@ -44,9 +44,9 @@
          "@id": "https://stanleylog.me/"
     },
     "articleSection" : "post",
-    "name" : "初心",
-    "headline" : "初心",
-    "description" : "人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。 这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着",
+    "name" : "C语言学习笔记-指针",
+    "headline" : "C语言学习笔记-指针",
+    "description" : "<p>C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。</p>",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-10-25 20:48:26 &#43;0800 CST",
-    "dateModified" : "2019-10-25 20:48:26 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/%E5%88%9D%E5%BF%83/",
-    "wordCount" : "475",
-    "keywords" : [ "人生感悟", "StanleyLog - 自留地"]
+    "datePublished": "2019-11-07 21:51:17 &#43;0800 CST",
+    "dateModified" : "2019-11-07 21:51:17 &#43;0800 CST",
+    "url" : "https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/",
+    "wordCount" : "693",
+    "keywords" : [ "c", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">初心</h1>
+        <h1 class="post-title" itemprop="name headline">C语言学习笔记-指针</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
-                on <time datetime=2019-10-25 itemprop="datePublished">2019-10-25</time>
+                on <time datetime=2019-11-07 itemprop="datePublished">2019-11-07</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/"> 胡言乱语 </a>
+                        <a href="https://stanleylog.me/categories/software-development/"> Software Development </a>
                         
                 </span>
         </div>
@@ -135,8 +135,6 @@
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -150,16 +148,78 @@
           
           
 
-          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/IMG_4715.JPG" alt="C程序设计语言" class="lazyload"><figcaption class="image-caption">C程序设计语言</figcaption></figure></p>
+          <p>C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。</p>
 
-<p>人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。</p>
+<p>下面的内容为关于指针使用的一些内容：</p>
 
-<p>这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着跑着丢掉了什么？让我们再也跑不动也不想跑了呢？</p>
+<h2 id="指针定义">指针定义</h2>
 
-<p>当我重新翻出入行时的启蒙书，当初那种无比激动的心情像一股电流一样在脑中闪过。我好像找到了答案！当年那种对编程狂热的痴迷，逻辑推演的快感，掌控一切的成就感，使我立志创造一系列改变世界的软件。 起初的那股取之不尽，用之不竭的热情好像没有了，那股最初的原动力没有了。这么多年囫囵吞枣式的应用各种技术、通宵达旦的处理各种问题、交付为第一要务其它靠边站式的工作原则造就了得过且过的处世态度，我们还会美其名曰：“人生智慧”。</p>
+<p>指针与其所指向的内容息息相关，我们是通过指针符号与变量类型的组合方式定义指针的。 如下：</p>
 
-<p>我们丢失掉的就是那种对未知领域强烈的好奇心，对现有工作精益求精的荣誉心，对未来会更好的自信心！</p>
+<pre><code class="language-c">//指针定义
+int *x; 
+char *y;
 
+//指针初始化
+int a = 10;
+x = &amp;a;
+</code></pre>
+
+<p>定义指针类型变量与普通变量定义不同之处在于在变量名之前的<code>*</code>， 这样表名定义的为指向某个具体类型的指针变量。</p>
+
+<p>初始化指针需要通过取值符号<code>&amp;</code>参与获取某个普通变量的地址进行，将某个变量的内存地址赋予指针变量。</p>
+
+<h2 id="指针的使用">指针的使用</h2>
+
+<p>下面我们通过一个变量交换的函数说明一下指针的常见的使用。</p>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void swap(int *x, int *y);
+
+int main() {
+
+    //定义指针a,b
+    int *a, *b, x=10, y=20;
+    a = &amp;x; //将指针a指向变量x
+    b = &amp;y; //将指针b指向变量y
+    //打印指针a,b所指向变量的值
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+		
+    //交换变量a,b的值
+    swap(a, b);
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+
+    //将指针a所指向的变量的值修改为10，其实就是变量x的值修改为10。
+    *a = 10;
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+    printf(&quot;%d\t%d\n&quot;, x, y);
+   
+    return 0;
+}
+
+//形参为指针的交换变量函数
+void swap(int *x, int *y){
+    //定义交换过程中的临时变量
+    int tmp; 
+    //将指针x指向的变量的值赋值给tmp
+    tmp = *x; 
+    //将指针y指向的变量的值赋值给指针x指向的变量
+    *x = *y; 
+    //将tmp变量中的值赋值给指针y所指向的变量
+    *y = tmp;
+}
+</code></pre>
+
+<p>以上的例子我们可以观察出如下的内容：</p>
+
+<ul>
+<li><code>*a</code>代表指针a所指向的变量，而非指针a的值</li>
+<li>指针初始化后是可以对其直接赋值的，如：<code>*a = 10;</code>。不过其含义仍然为指针a所指向变量的值修改为10，其实就是示例中的变量x。</li>
+<li>在初始化指针时，我们需要借助<code>&amp;</code>取值符将变量与指针建立关系。</li>
+</ul>
+
+<p><em>&mdash;ADD 2019-11-07</em></p>
     </div>
 
     <div class="post-tags">
@@ -167,8 +227,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/">
-                    #人生感悟</a></span>
+            <span class="tag"><a href="https://stanleylog.me/tags/c/">
+                    #c</a></span>
             
             </section>
         
@@ -209,10 +269,8 @@
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" class="prev" rel="prev" title="格局"><i class="iconfont icon-left"></i>&nbsp;格局</a>
+        <a href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" class="prev" rel="prev" title="初心"><i class="iconfont icon-left"></i>&nbsp;初心</a>
          
-        
-        <a href="https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/" class="next" rel="next" title="C语言学习笔记-指针">C语言学习笔记-指针&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -266,9 +324,8 @@
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

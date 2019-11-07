@@ -6,8 +6,88 @@
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Oct 2019 20:48:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 21:51:17 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C语言学习笔记-指针</title>
+      <link>https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/</link>
+      <pubDate>Thu, 07 Nov 2019 21:51:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/</guid>
+      <description>&lt;p&gt;C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。&lt;/p&gt;
+
+&lt;p&gt;下面的内容为关于指针使用的一些内容：&lt;/p&gt;
+
+&lt;h2 id=&#34;指针定义&#34;&gt;指针定义&lt;/h2&gt;
+
+&lt;p&gt;指针与其所指向的内容息息相关，我们是通过指针符号与变量类型的组合方式定义指针的。 如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;//指针定义
+int *x; 
+char *y;
+
+//指针初始化
+int a = 10;
+x = &amp;amp;a;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义指针类型变量与普通变量定义不同之处在于在变量名之前的&lt;code&gt;*&lt;/code&gt;， 这样表名定义的为指向某个具体类型的指针变量。&lt;/p&gt;
+
+&lt;p&gt;初始化指针需要通过取值符号&lt;code&gt;&amp;amp;&lt;/code&gt;参与获取某个普通变量的地址进行，将某个变量的内存地址赋予指针变量。&lt;/p&gt;
+
+&lt;h2 id=&#34;指针的使用&#34;&gt;指针的使用&lt;/h2&gt;
+
+&lt;p&gt;下面我们通过一个变量交换的函数说明一下指针的常见的使用。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;stdio.h&amp;gt;
+
+void swap(int *x, int *y);
+
+int main() {
+
+    //定义指针a,b
+    int *a, *b, x=10, y=20;
+    a = &amp;amp;x; //将指针a指向变量x
+    b = &amp;amp;y; //将指针b指向变量y
+    //打印指针a,b所指向变量的值
+    printf(&amp;quot;%d\t%d\n&amp;quot;, *a, *b);
+		
+    //交换变量a,b的值
+    swap(a, b);
+    printf(&amp;quot;%d\t%d\n&amp;quot;, *a, *b);
+
+    //将指针a所指向的变量的值修改为10，其实就是变量x的值修改为10。
+    *a = 10;
+    printf(&amp;quot;%d\t%d\n&amp;quot;, *a, *b);
+    printf(&amp;quot;%d\t%d\n&amp;quot;, x, y);
+   
+    return 0;
+}
+
+//形参为指针的交换变量函数
+void swap(int *x, int *y){
+    //定义交换过程中的临时变量
+    int tmp; 
+    //将指针x指向的变量的值赋值给tmp
+    tmp = *x; 
+    //将指针y指向的变量的值赋值给指针x指向的变量
+    *x = *y; 
+    //将tmp变量中的值赋值给指针y所指向的变量
+    *y = tmp;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上的例子我们可以观察出如下的内容：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*a&lt;/code&gt;代表指针a所指向的变量，而非指针a的值&lt;/li&gt;
+&lt;li&gt;指针初始化后是可以对其直接赋值的，如：&lt;code&gt;*a = 10;&lt;/code&gt;。不过其含义仍然为指针a所指向变量的值修改为10，其实就是示例中的变量x。&lt;/li&gt;
+&lt;li&gt;在初始化指针时，我们需要借助&lt;code&gt;&amp;amp;&lt;/code&gt;取值符将变量与指针建立关系。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;mdash;ADD 2019-11-07&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>初心</title>
@@ -2084,46 +2164,6 @@ git config --global xxx xxx
 &lt;li&gt;住院的过程中没有质疑医生的用药方法（有一种600+RMB的球蛋白，一天就要打7瓶，总共用了35瓶），否则不可能短期效果这么好。&lt;/li&gt;
 &lt;li&gt;家人不能只有医保，严重的病是需要一定的财力的，普通老百姓最好的方法就是一定要买大病保险。&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ghost使用感受</title>
-      <link>https://stanleylog.me/post/ghost/</link>
-      <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/ghost/</guid>
-      <description>&lt;p&gt;在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Nginx&lt;/li&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;MySQL&lt;/li&gt;
-&lt;li&gt;WordPress&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Nginx&lt;/li&gt;
-&lt;li&gt;NodeJS&lt;/li&gt;
-&lt;li&gt;MySQL&lt;/li&gt;
-&lt;li&gt;Ghost&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;下面谈谈Ghost的使用感受：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;简约的设计风格（感觉超赞）&lt;/li&gt;
-&lt;li&gt;没有累赘的功能堆砌，可能是由于现在还没有成长起来&lt;/li&gt;
-&lt;li&gt;Web端的书写感受非常好，基本可以与C/S端的媲美&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以上的优点，使我感觉已经回不到WP去了。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;PS.本网站已更换为Hugo.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
