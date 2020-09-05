@@ -2,48 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>胡言乱语 on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/</link>
+    <link>http://localhost:1313/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/</link>
     <description>Recent content in 胡言乱语 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Oct 2019 20:48:26 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>初心</title>
-      <link>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</link>
+      <link>http://localhost:1313/post/%E5%88%9D%E5%BF%83/</link>
       <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</guid>
+      <guid>http://localhost:1313/post/%E5%88%9D%E5%BF%83/</guid>
       <description>人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。 这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着</description>
     </item>
     
     <item>
       <title>格局</title>
-      <link>https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/</link>
+      <link>http://localhost:1313/post/%E6%A0%BC%E5%B1%80/</link>
       <pubDate>Fri, 18 Oct 2019 22:26:04 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/</guid>
+      <guid>http://localhost:1313/post/%E6%A0%BC%E5%B1%80/</guid>
       <description>&lt;p&gt;事件起初是这样的，今天早上做地铁，在通过安检前我看前面有一个20出头的女孩（有点小太妹的感觉）慢慢悠悠的走路，在她的前面有一个很大的空当。就直接两步并一步超了过去，结果那女孩一个健步就把自己的包扔在我包的前面，透过我的降噪耳机隐隐约约的听到嘴里嘟囔着什么，而我也没计较什么，拿起包直接过去了。但当我通过地铁闸机前，这个小姑娘故意的从我身旁抢到我的前面，好像在朝我示威一样。我不想纠缠，换另一个闸机过去了。事情的过程就是这样结束了，要是说不生气，我承认我做不到。要是说这么件事生气吧，不值当的。反正就是那种让憋火但有不至于动怒的事情。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>人生意义</title>
-      <link>https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
+      <link>http://localhost:1313/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
       <pubDate>Wed, 05 Jun 2019 22:40:51 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
+      <guid>http://localhost:1313/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
       <description>&lt;p&gt;人生意义一直想写， 但是这个标题太宽阔、太深奥，我坚信它涵盖着生存意义、价值追究、处世原则等一系列的无数圣贤及智者都无法全面阐述清楚的智慧。以现在我现在极为浅薄的人生阅历来写这么大的话题，实在是太过造次了。但是这些年迷茫的经历，让我多少次欲言又止。这次终于鼓起勇气来写这一篇，就算为了证明在信息的维度上我曾经存在过，才敢以敬畏之心犯着大不韪名头来说说我的一点点想法。只要有新的感悟就会更新到这篇文章里，就不单独开篇再论了。&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>2020年-春</title>
+      <link>http://localhost:1313/post/2020%E5%B9%B4-%E6%98%A5/</link>
+      <pubDate>Sun, 14 Apr 2019 10:29:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/2020%E5%B9%B4-%E6%98%A5/</guid>
+      <description>2020年-春, 所有的人基本都是在家中隔离中度过。尽可能的减少一切与人密切接触的机会，就连春节前的棉服还未来得及去洗，就已然穿上了单衣，进入了夏季。我们错过了最美的这春暖花开的季节，而是在家中几十平米的空间中，周而复始的过着生活工作两不误的日子。</description>
+    </item>
+    
+    <item>
       <title>传染性典型中年精神病</title>
-      <link>https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</link>
+      <link>http://localhost:1313/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</link>
       <pubDate>Sun, 13 Jan 2019 22:38:51 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</guid>
+      <guid>http://localhost:1313/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</guid>
       <description>夜晚当儿子和老婆在睡前闲聊，我回到卧室，带上耳机，放上白噪音，开始写这篇文章。 回想自从2017年开始自己开始得上了一种病，这种病一直折磨我到现在。是种什么病呢？这是一种唯心的、追求内心宁静的、烦躁易怒的病， 我也不知道这是种什么样的病，也许是中年危机？或者是看书看多了（看的也不多）导致脑子坏掉了？在这里我就先叫它胡思乱想病吧。 得了这种病后，自己就开始和以前不一样了。首先本人是个理工生，做事有些许完美</description>
     </item>
     

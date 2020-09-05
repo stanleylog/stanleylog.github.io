@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/tags/git/</link>
+    <link>http://localhost:1313/tags/git/</link>
     <description>Recent content in git on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 03 Feb 2019 20:42:11 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git入门（二）- 基础（一）</title>
-      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
+      <link>http://localhost:1313/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
+      <guid>http://localhost:1313/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
       <description>获取Git仓库 获取Git仓库存在两种方法： 使用git init在本地初始化仓库 $ git init Initialized empty Git repository in /Users/stanley/git_demo/.git/ 使用git clone克隆远程服务器中仓库 $ git clone https://github.com/libgit2/libgit2 Cloning into &#39;libgit2&#39;... remote: Enumerating objects: 88874, done. remote: Counting objects: 100% (88874/88874), done. remote: Compressing objects: 100% (24728/24728), done. remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0 Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done. Resolving deltas: 100% (62425/62425), done. Checking out files: 100% (10168/10168), done. 查看文件状态 git中的文件存在四种状态, 我们可以使用git status命令查看文件的状态： Untracked UnModified Modified Staged | | | | |---Add the file --------------------------------------------&amp;gt;| | | | | | |---Edit the file---&amp;gt;| | | | | | | | |--Stage the file-&amp;gt;| | |</description>
     </item>
     
     <item>
       <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <link>http://localhost:1313/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>http://localhost:1313/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
       <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
     </item>
     
