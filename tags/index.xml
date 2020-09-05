@@ -2,219 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on StanleyLog - 自留地</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://stanleylog.me/tags/</link>
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 13 Feb 2020 16:09:28 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stanleylog.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>en</title>
-      <link>http://localhost:1313/tags/en/</link>
+      <link>http://stanleylog.me/tags/en/</link>
       <pubDate>Thu, 13 Feb 2020 16:09:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/en/</guid>
+      <guid>http://stanleylog.me/tags/en/</guid>
       <description></description>
     </item>
     
     <item>
       <title>english</title>
-      <link>http://localhost:1313/tags/english/</link>
+      <link>http://stanleylog.me/tags/english/</link>
       <pubDate>Thu, 13 Feb 2020 16:09:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>work</title>
-      <link>http://localhost:1313/tags/work/</link>
-      <pubDate>Mon, 20 Jan 2020 23:25:43 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/work/</guid>
+      <guid>http://stanleylog.me/tags/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>c</title>
-      <link>http://localhost:1313/tags/c/</link>
+      <link>http://stanleylog.me/tags/c/</link>
       <pubDate>Thu, 07 Nov 2019 21:51:17 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/c/</guid>
+      <guid>http://stanleylog.me/tags/c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>人生感悟</title>
-      <link>http://localhost:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</link>
+      <link>http://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</link>
       <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</guid>
+      <guid>http://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>格局</title>
-      <link>http://localhost:1313/tags/%E6%A0%BC%E5%B1%80/</link>
+      <link>http://stanleylog.me/tags/%E6%A0%BC%E5%B1%80/</link>
       <pubDate>Fri, 18 Oct 2019 22:26:04 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E6%A0%BC%E5%B1%80/</guid>
+      <guid>http://stanleylog.me/tags/%E6%A0%BC%E5%B1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>oracle</title>
-      <link>http://localhost:1313/tags/oracle/</link>
+      <link>http://stanleylog.me/tags/oracle/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/oracle/</guid>
+      <guid>http://stanleylog.me/tags/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>安全审计</title>
-      <link>http://localhost:1313/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</link>
+      <link>http://stanleylog.me/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</guid>
+      <guid>http://stanleylog.me/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>癌症</title>
-      <link>http://localhost:1313/tags/%E7%99%8C%E7%97%87/</link>
+      <link>http://stanleylog.me/tags/%E7%99%8C%E7%97%87/</link>
       <pubDate>Tue, 15 Oct 2019 00:25:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E7%99%8C%E7%97%87/</guid>
+      <guid>http://stanleylog.me/tags/%E7%99%8C%E7%97%87/</guid>
       <description></description>
     </item>
     
     <item>
       <title>管理</title>
-      <link>http://localhost:1313/tags/%E7%AE%A1%E7%90%86/</link>
+      <link>http://stanleylog.me/tags/%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E7%AE%A1%E7%90%86/</guid>
+      <guid>http://stanleylog.me/tags/%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devops</title>
-      <link>http://localhost:1313/tags/devops/</link>
+      <link>http://stanleylog.me/tags/devops/</link>
       <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/devops/</guid>
+      <guid>http://stanleylog.me/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>人生意义</title>
-      <link>http://localhost:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
+      <link>http://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
       <pubDate>Wed, 05 Jun 2019 22:40:51 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
+      <guid>http://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ntp</title>
-      <link>http://localhost:1313/tags/ntp/</link>
+      <link>http://stanleylog.me/tags/ntp/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/ntp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>都挺好</title>
-      <link>http://localhost:1313/tags/%E9%83%BD%E6%8C%BA%E5%A5%BD/</link>
-      <pubDate>Sun, 14 Apr 2019 10:29:43 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/%E9%83%BD%E6%8C%BA%E5%A5%BD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadoop</title>
-      <link>http://localhost:1313/tags/hadoop/</link>
-      <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/hadoop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hdfs</title>
-      <link>http://localhost:1313/tags/hdfs/</link>
-      <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/hdfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>yarn</title>
-      <link>http://localhost:1313/tags/yarn/</link>
-      <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/yarn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>谢孟媛</title>
-      <link>http://localhost:1313/tags/%E8%B0%A2%E5%AD%9F%E5%AA%9B/</link>
-      <pubDate>Sat, 23 Feb 2019 16:04:31 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/%E8%B0%A2%E5%AD%9F%E5%AA%9B/</guid>
+      <guid>http://stanleylog.me/tags/ntp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud</title>
-      <link>http://localhost:1313/tags/cloud/</link>
+      <link>http://stanleylog.me/tags/cloud/</link>
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/cloud/</guid>
+      <guid>http://stanleylog.me/tags/cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>http://stanleylog.me/tags/linux/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://stanleylog.me/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rhel</title>
-      <link>http://localhost:1313/tags/rhel/</link>
+      <link>http://stanleylog.me/tags/rhel/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/rhel/</guid>
+      <guid>http://stanleylog.me/tags/rhel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>http://stanleylog.me/tags/git/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>http://stanleylog.me/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ghost</title>
-      <link>http://localhost:1313/tags/ghost/</link>
+      <link>http://stanleylog.me/tags/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/ghost/</guid>
+      <guid>http://stanleylog.me/tags/ghost/</guid>
       <description></description>
     </item>
     

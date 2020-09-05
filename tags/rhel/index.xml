@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rhel on StanleyLog - 自留地</title>
-    <link>http://localhost:1313/tags/rhel/</link>
+    <link>http://stanleylog.me/tags/rhel/</link>
     <description>Recent content in rhel on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 08 Feb 2019 19:30:15 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/rhel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stanleylog.me/tags/rhel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RHEL各个版本的通用管理命令</title>
-      <link>http://localhost:1313/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <link>http://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <guid>http://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。&lt;/p&gt;</description>
     </item>
     

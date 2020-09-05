@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>生活点滴 on StanleyLog - 自留地</title>
-    <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/</link>
+    <link>http://stanleylog.me/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/</link>
     <description>Recent content in 生活点滴 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 15 Oct 2019 00:25:33 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stanleylog.me/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>癌症常识</title>
-      <link>http://localhost:1313/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</link>
+      <link>http://stanleylog.me/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</link>
       <pubDate>Tue, 15 Oct 2019 00:25:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</guid>
+      <guid>http://stanleylog.me/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</guid>
       <description>癌症分期 ​ ​ 0期：称为原位癌，意思是肿瘤局限在原发局部位置，未侵及周围组织，也无肺外转移。 I期：肿瘤比较小，且无淋巴结转移，手术可以完全切除。根据肿瘤的大小，又分为IA期和IB期，肿瘤较小的为IA期，较大的为IB期。 II期：也可以分为IIA期和IIB期两个亚型。IIA期包括两种情况：一是肿瘤稍大但无邻近淋巴结转移，二是较小的肿瘤，有周围淋巴结转移。IIB期的是指较大的肿瘤且有淋巴结转移，或大肿瘤，</description>
     </item>
     
