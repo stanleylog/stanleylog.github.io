@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://stanleylog.me/"
+         "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
     "name" : "NTP安装与配置",
     "headline" : "NTP安装与配置",
-    "description" : "<p>在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。</p>",
+    "description" : "\x3cp\x3e在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。\x3c\/p\x3e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-05-12 10:50:25 &#43;0800 CST",
-    "dateModified" : "2019-05-12 10:50:25 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/",
+    "datePublished": "2019-05-12 10:50:25 \x2b0800 CST",
+    "dateModified" : "2019-05-12 10:50:25 \x2b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE\/",
     "wordCount" : "809",
     "keywords" : [ "ntp", "StanleyLog - 自留地"]
 }
@@ -149,14 +149,11 @@
           
 
           <p>在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。</p>
-
 <h2 id="ntp安装">NTP安装</h2>
-
 <ol>
 <li>首先通过<code>rpm -qa | grep ntp</code>检查ntp是否已经安装。</li>
 <li>如果操作系统中没有按照ntp，则按照如下步骤进行安装：</li>
 </ol>
-
 <pre><code class="language-shell">[root@bigdata2 yum.repos.d]# yum install ntp
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
@@ -211,47 +208,33 @@ Dependency Installed:
 
 Complete!
 </code></pre>
-
 <h2 id="ntp配置">NTP配置</h2>
-
-<h3 id="编辑-etc-ntp-conf文件">编辑/etc/ntp.conf文件</h3>
-
+<h3 id="编辑etcntpconf文件">编辑/etc/ntp.conf文件</h3>
 <ul>
 <li>开启指定网段主机的查询权限</li>
 </ul>
-
 <pre><code class="language-shell">restrict 192.168.56.0 mask 255.255.255.0 nomodify notrap
 </code></pre>
-
 <ul>
 <li>关闭外网中的时间服务器同步</li>
 </ul>
-
 <pre><code class="language-shell">#server 0.rhel.pool.ntp.org iburst
 #server 1.rhel.pool.ntp.org iburst
 #server 2.rhel.pool.ntp.org iburst
 #server 3.rhel.pool.ntp.org iburst
 </code></pre>
-
 <ul>
 <li>备选本地主机为时间服务器</li>
 </ul>
-
 <pre><code class="language-shell">server 127.127.1.0
 fudge 127.127.1.0 stratum 10
 </code></pre>
-
-<h3 id="编辑-etc-sysconfig-ntpd文件">编辑/etc/sysconfig/ntpd文件</h3>
-
+<h3 id="编辑etcsysconfigntpd文件">编辑/etc/sysconfig/ntpd文件</h3>
 <p>启用硬件与软件时钟同步</p>
-
 <pre><code class="language-shell">SYNC_HWCLOCK=yes
 </code></pre>
-
 <h2 id="ntpd服务管理">NTPD服务管理</h2>
-
 <h3 id="启动ntpd服务">启动ntpd服务</h3>
-
 <pre><code class="language-shell">[root@bigdata2 etc]# systemctl status ntpd
 鈼? ntpd.service - Network Time Service
    Loaded: loaded (/usr/lib/systemd/system/ntpd.service; disabled; vendor preset: disabled)
@@ -277,9 +260,7 @@ Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c012 02 freq_set kernel 0.000 PPM
 Apr 30 18:10:38 bigdata2 ntpd[6430]: 0.0.0.0 c011 01 freq_not_set
 Apr 30 18:10:39 bigdata2 ntpd[6430]: 0.0.0.0 c514 04 freq_mode
 </code></pre>
-
 <h3 id="设置开机启动ntpd服务">设置开机启动ntpd服务</h3>
-
 <pre><code class="language-shell">[root@bigdata2 etc]# chkconfig ntpd
 Note: Forwarding request to 'systemctl is-enabled ntpd.service'.
 disabled
@@ -290,11 +271,8 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/ntpd.service to
 Note: Forwarding request to 'systemctl is-enabled ntpd.service'.
 enabled
 </code></pre>
-
 <h2 id="客户端主机配置">客户端主机配置</h2>
-
 <p>配置定时时间同步作业</p>
-
 <pre><code class="language-shell">crontab -e 
 */10 * * * * /usr/sbin/ntpdate bigdata2
 </code></pre>

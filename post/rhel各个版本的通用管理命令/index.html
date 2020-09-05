@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://stanleylog.me/"
+         "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
     "name" : "RHEL各个版本的通用管理命令",
     "headline" : "RHEL各个版本的通用管理命令",
-    "description" : "<p>这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。</p>",
+    "description" : "\x3cp\x3e这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。\x3c\/p\x3e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-02-08 19:30:15 &#43;0800 CST",
-    "dateModified" : "2019-02-08 19:30:15 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/",
+    "datePublished": "2019-02-08 19:30:15 \x2b0800 CST",
+    "dateModified" : "2019-02-08 19:30:15 \x2b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4\/",
     "wordCount" : "1002",
     "keywords" : [ "linux","rhel", "StanleyLog - 自留地"]
 }
@@ -149,9 +149,7 @@
           
 
           <p>这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。</p>
-
 <h2 id="system-basics">System basics</h2>
-
 <table>
 <thead>
 <tr>
@@ -161,7 +159,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>View subscription information</td>
@@ -169,21 +166,18 @@
 <td>/etc/sysconfig/rhn/systemid  subscription-manager identity</td>
 <td>subscription-manager identity</td>
 </tr>
-
 <tr>
 <td>Configure subscription</td>
 <td>rhn_register  subscription-manager <a href="https://access.redhat.com/articles/1189123#fn:1">1</a></td>
 <td>rhn_register  rhnreg_ks  subscription-manager</td>
 <td>subscription-manager<a href="https://access.redhat.com/articles/1189123#fn:2">2</a>  rhn_register <a href="https://access.redhat.com/articles/1189123#fn:3">3</a></td>
 </tr>
-
 <tr>
 <td>View RHEL version information</td>
 <td>/etc/redhat-release</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View system profile</td>
 <td>sosreport  dmidecode  hwbrowser</td>
@@ -192,9 +186,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="basic-configuration">Basic configuration</h2>
-
 <table>
 <thead>
 <tr>
@@ -204,7 +196,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Graphical configuration tools</td>
@@ -212,56 +203,48 @@
 <td>gnome-control-center</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Text-based configuration tools</td>
 <td>system-config-*-tui</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure printer</td>
 <td>system-config-printer</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure network</td>
 <td>system-config-network</td>
 <td>nmcli  nmtui  nm-connection-editor</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure system language</td>
 <td>system-config-language</td>
 <td>localectl</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure time and date</td>
 <td>system-config-date  date</td>
 <td>timedatectl  date</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Synchronize time and date</td>
 <td>ntpdate  /etc/ntp.conf</td>
 <td>timedatectl  /etc/chrony.conf  ntpdate</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure keyboard</td>
 <td>system-config-keyboard</td>
 <td>localectl</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure SSH</td>
 <td>/etc/ssh/ssh_config  /etc/ssh/sshd_config  ~/.ssh/config ssh-keygen</td>
@@ -270,9 +253,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="jobs-and-services">Jobs and services</h2>
-
 <table>
 <thead>
 <tr>
@@ -282,7 +263,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>List all services</td>
@@ -290,112 +270,96 @@
 <td>systemctl -at service  ls /etc/systemd/system/<em>.service  ls /usr/lib/systemd/system/</em>.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>List running services</td>
 <td>service &ndash;status-all</td>
 <td>systemctl -t service &ndash;state=active</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Start/stop service</td>
 <td>service <em>name</em> start  service <em>name</em> stop</td>
 <td>systemctl start <em>name</em>.service  systemctl stop <em>name</em>.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Enable/disable service</td>
 <td>chkconfig <em>name</em> on  chkconfig <em>name</em> off</td>
 <td>systemctl enable <em>name</em>.service  systemctl disable <em>name</em>.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View service status</td>
 <td>service <em>name</em> status</td>
 <td>systemctl status <em>name</em>.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Check if service is enabled</td>
 <td>chkconfig <em>name</em> &ndash;list</td>
 <td>systemctl is-enabled <em>name</em></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create new service file or modify configuration</td>
 <td>chkconfig &ndash;add</td>
 <td>systemctl daemon-reload  /etc/systemd/system/*.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View run level/target</td>
 <td>runlevel  who -r</td>
 <td>systemctl get-default  who -r</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change run level/target</td>
 <td>/etc/inittab  init <em>run_level</em></td>
 <td>systemctl isolate <em>name</em>.target systemctl set-default</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure logging</td>
 <td>/etc/syslog.conf</td>
 <td>/etc/rsyslog.conf</td>
 <td>/etc/rsyslog.conf  /etc/rsyslog.d/*.conf  /var/log/journal  systemd-journald.service</td>
 </tr>
-
 <tr>
 <td>View logs</td>
 <td>/var/log</td>
 <td>/var/log  journalctl</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure system audit</td>
 <td>add <strong>audit=1</strong> to kernel cmdline  auditctl  /etc/audit/auditd.conf  /etc/audit/audit.rules  authconfig  /etc/pam.d/system-auth  pam_tty_audit kernel module</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View audit output</td>
 <td>aureport /var/log/faillog</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Schedule/batch tasks</td>
 <td>cron  at  batch</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Find file by name</td>
 <td>locate</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Find file by characteristic</td>
 <td>find</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create archive</td>
 <td>tar  cpio  zip</td>
@@ -404,9 +368,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="kernel-boot-and-hardware">Kernel, boot, and hardware</h2>
-
 <table>
 <thead>
 <tr>
@@ -416,7 +378,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Single user/rescue mode</td>
@@ -424,91 +385,78 @@
 <td>append <strong>rd.break</strong> or <strong>init=/bin/bash</strong> to kernel cmdline</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Shut down system</td>
 <td>shutdown</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Power off system</td>
 <td>poweroff</td>
 <td>poweroff  systemctl poweroff</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Halt system</td>
 <td>halt</td>
 <td>halt  systemctl halt</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Reboot system</td>
 <td>reboot</td>
 <td>reboot  systemctl reboot</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure default run level/target</td>
 <td>/etc/inittab</td>
 <td>systemctl set-default</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure GRUB bootloader</td>
 <td>/boot/grub/grub.conf</td>
 <td>/etc/default/grub  grub2-mkconfig  grub-set-default</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure kernel module</td>
 <td>modprobe</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View hardware configured</td>
 <td>hwbrowser</td>
 <td>lshw (in EPEL)</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure hardware device</td>
 <td>udev</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View kernel parameters</td>
 <td>sysctl -a  cat /proc/cmdline</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Load kernel module</td>
 <td>modprobe</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Remove kernel module</td>
 <td>modprobe -r</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View kernel version</td>
 <td>rpm -q kernel  uname -r</td>
@@ -517,9 +465,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="software-management">Software management</h2>
-
 <table>
 <thead>
 <tr>
@@ -529,7 +475,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Install software</td>
@@ -537,49 +482,42 @@
 <td>yum install  yum group install</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View software info</td>
 <td>yum info  yum groupinfo</td>
 <td>yum info  yum group info</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Update software</td>
 <td>yum update</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Upgrade software</td>
 <td>yum upgrade</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure software repository</td>
 <td>subscription-manager repos  /etc/yum.repos.d/*.repo</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Find package owning file</td>
 <td>rpm -qf <em>filename</em>  yum provides <em>filename-glob</em></td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View software version</td>
 <td>rpm -q <em>packagename</em></td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View installed software</td>
 <td>rpm -qa  yum list installed</td>
@@ -588,9 +526,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="user-management">User management</h2>
-
 <table>
 <thead>
 <tr>
@@ -600,7 +536,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Graphical user management</td>
@@ -608,77 +543,66 @@
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create user account</td>
 <td>useradd</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Delete user account</td>
 <td>userdel</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View/change user account details</td>
 <td>usermod  /etc/passwd  vipw  id</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create user group</td>
 <td>groupadd</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Delete user group</td>
 <td>groupdel</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change group details</td>
 <td>groupmod  /etc/group</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change user password</td>
 <td>passwd</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change user permissions</td>
 <td>usermod  visudo</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change group permissions</td>
 <td>groupmod  visudo</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change password policy</td>
 <td>chage</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View user sessions</td>
 <td>w</td>
@@ -687,9 +611,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="file-systems-volumes-and-disks">File systems, volumes, and disks</h2>
-
 <table>
 <thead>
 <tr>
@@ -699,7 +621,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Default file system</td>
@@ -707,140 +628,120 @@
 <td>ext4</td>
 <td>xfs</td>
 </tr>
-
 <tr>
 <td>Create/modify disk partitions</td>
 <td>fdisk  parted</td>
 <td>fdisk  gdisk  parted  ssm create</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Format disk partition</td>
 <td>mkfs.filesystem_type (ext4, xfs)  mkswap</td>
 <td>mkfs.filesystem_type (ext4, xfs)  mkswap  ssm create</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Defragment disk space</td>
 <td>copy data to new file system  fsck (look for &lsquo;non-contiguous inodes&rsquo;)</td>
 <td>copy data to new file system  fsck (look for &lsquo;non-contiguous inodes&rsquo;)  xfs_fsr</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Mount storage</td>
 <td>mount  /etc/fstab</td>
 <td>mount  /etc/fstab  ssm mount</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Mount and activate swap</td>
 <td>/etc/fstab  swapon -a</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure static mounts</td>
 <td>/etc/fstab</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View free disk space</td>
 <td>df</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View logical volume info</td>
 <td>lvdisplay  lvs  vgdisplay  vgs  pvdisplay  pvs</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create physical volume</td>
 <td>pvcreate</td>
 <td>pvcreate  ssm create (if backend is lvm)</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create volume group</td>
 <td>vgcreate</td>
 <td>vgcreate  ssm create (if backend is lvm)</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Create logical volume</td>
 <td>lvcreate</td>
 <td>lvcreate  ssm create (if backend is lvm)</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Enlarge volumes formatted with default file system</td>
 <td>vgextend  lvextend  resize2fs</td>
 <td>vgextend  lvextend  xfs_growfs  ssm resize</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Shrink volumes formatted with default file system</td>
 <td>resize2fs  lvreduce  vgreduce</td>
 <td>XFS cannot currently be shrunk; copy desired data to a smaller file system.</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Check/repair file system</td>
 <td>fsck</td>
 <td>fsck  ssm check</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View NFS share</td>
 <td>showmount -e  mount</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure NFS share</td>
 <td>/etc/exports  service nfs reload</td>
 <td>/etc/exports  systemctl reload nfs.service</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure on-demand auto-mounts</td>
 <td>/etc/auto.master.d/<em>.autofs  /etc/auto.</em></td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change file permissions</td>
 <td>chmod  chown  chgrp  umask (future file creation)</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change file attributes</td>
 <td>chattr</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change access control list</td>
 <td>setfacl</td>
@@ -849,9 +750,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="networking">Networking</h2>
-
 <table>
 <thead>
 <tr>
@@ -861,7 +760,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Configure name resolution</td>
@@ -869,49 +767,42 @@
 <td>/etc/hosts  /etc/resolv.conf  nmcli con mod</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure hostname</td>
 <td>/etc/sysconfig/network</td>
 <td>hostnamectl  /etc/hostname  nmtui</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View network interface info</td>
 <td>ip addr  ifconfig  brctl</td>
 <td>ip addr  nmcli dev show  teamdctl  brctl  bridge</td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure network interface</td>
 <td>/etc/sysconfig/network-scripts/ifcfg-*</td>
 <td>/etc/sysconfig/network-scripts/ifcfg-*  nmcli con [add|mod|edit]  nmtui  nm-connection-editor</td>
 <td></td>
 </tr>
-
 <tr>
 <td>View routes</td>
 <td>ip route</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure routes</td>
 <td>ip route add  system-config-network  /etc/sysconfig/route-<em>iface</em></td>
 <td>ip route add  nmcli  nmtui  nm-connection-editor  /etc/sysconfig/route-<em>iface</em></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Configure firewall</td>
 <td>iptables and ip6tables  /etc/sysconfig/ip*tables</td>
 <td>iptables and ip6tables  /etc/sysconfig/ip*tables  system-config-firewall</td>
 <td>firewall-cmd  firewall-config</td>
 </tr>
-
 <tr>
 <td>View ports/sockets</td>
 <td>ss  lsof  netstat</td>
@@ -920,9 +811,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="security-and-identity">Security and identity</h2>
-
 <table>
 <thead>
 <tr>
@@ -932,7 +821,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Configure system security</td>
@@ -940,21 +828,18 @@
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Report on system security</td>
 <td>sealert</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>LDAP, SSSD, Kerberos</td>
 <td>authconfig  authconfig-tui  authconfig-gtk</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Network users</td>
 <td>getent</td>
@@ -963,9 +848,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="resource-management">Resource management</h2>
-
 <table>
 <thead>
 <tr>
@@ -975,7 +858,6 @@
 <th>RHEL7</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Trace system calls</td>
@@ -983,42 +865,36 @@
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Trace library calls</td>
 <td>ltrace</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change process priority</td>
 <td>nice  renice</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Change process run location</td>
 <td>taskset</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>Kill a process</td>
 <td>kill  pkill  killall</td>
 <td></td>
 <td></td>
 </tr>
-
 <tr>
 <td>View system usage</td>
 <td>top  ps  sar  iostat  netstat  vmstat  mpstat  numastat</td>
 <td>top  ps  sar  iostat  netstat  ss  vmstat  mpstat  numastat  tuna</td>
 <td>top  ps  sar  iostat  ss  vmstat  mpstat  numastat  tuna</td>
 </tr>
-
 <tr>
 <td>View disk usage</td>
 <td>df</td>
@@ -1027,19 +903,17 @@
 </tr>
 </tbody>
 </table>
-
 <p>​</p>
-
-<hr />
-
+<hr>
 <p>​</p>
-
 <p>参考链接：</p>
-
 <ul>
-<li><p><a href="https://access.redhat.com/articles/1189123">Common administrative commands in Red Hat Enterprise Linux 5, 6, and 7</a></p></li>
-
-<li><p><a href="https://www.ibm.com/developerworks/library/l-config/index.html">Understanding Linux configuration files</a></p></li>
+<li>
+<p><a href="https://access.redhat.com/articles/1189123">Common administrative commands in Red Hat Enterprise Linux 5, 6, and 7</a></p>
+</li>
+<li>
+<p><a href="https://www.ibm.com/developerworks/library/l-config/index.html">Understanding Linux configuration files</a></p>
+</li>
 </ul>
     </div>
 

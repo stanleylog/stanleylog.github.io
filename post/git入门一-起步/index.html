@@ -41,7 +41,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://stanleylog.me/"
+         "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
     "name" : "Git入门（一）- 起步",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-01-08 20:07:55 &#43;0800 CST",
-    "dateModified" : "2019-01-08 20:07:55 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/",
-    "wordCount" : "833",
+    "datePublished": "2019-01-08 20:07:55 \x2b0800 CST",
+    "dateModified" : "2019-01-08 20:07:55 \x2b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5\/",
+    "wordCount" : "849",
     "keywords" : [ "git", "StanleyLog - 自留地"]
 }
 </script>
@@ -148,74 +148,58 @@
           
           
 
-          
-
-<h2 id="与众不同的git">与众不同的Git</h2>
-
+          <h2 id="与众不同的git">与众不同的Git</h2>
 <ul>
-<li><p>Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。</p></li>
-
-<li><p>Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。</p></li>
-
-<li><p>Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的好处就是很多的操作都不需要连接中央库，而且可以使用任一客户端的版本恢复损坏的中央库。</p></li>
-
-<li><p>Git所有的数据都会进行哈希校验，从而防止了随意篡改文件内容的情况。甚至Git内部都不是使用文件名进行索引的，而是使用哈希值。</p></li>
-
-<li><p>Git中存在与其他VCS系统不同的三种状态：</p>
-
-<p><strong>已提交（committed）</strong>: 数据已经安全的 保存在本地数据库中。</p>
-
-<p><strong>已修改（modified）</strong>: 修改了文件，但还没保存到数据库中。</p>
-
-<p><strong>已暂存（staged）</strong>: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。</p></li>
-
-<li><p>Git中存在三个工作区域：</p>
-
-<p><strong>Git 仓库目录</strong>: Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆 仓库时，拷贝的就是这里的数据。</p>
-
-<p><strong>工作目录</strong>: 对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘 上供你使用或修改。</p>
-
-<p><strong>暂存区域</strong>: 一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作`‘索 引’&rsquo;，不过一般说法还是叫暂存区域。</p></li>
-</ul>
-
+<li>
+<p>Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。</p>
+</li>
+<li>
+<p>Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。</p>
+</li>
+<li>
+<p>Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的好处就是很多的操作都不需要连接中央库，而且可以使用任一客户端的版本恢复损坏的中央库。</p>
+</li>
+<li>
+<p>Git所有的数据都会进行哈希校验，从而防止了随意篡改文件内容的情况。甚至Git内部都不是使用文件名进行索引的，而是使用哈希值。</p>
+</li>
+<li>
+<p>Git中存在与其他VCS系统不同的三种状态：</p>
+<pre><code>**已提交（committed）**: 数据已经安全的 保存在本地数据库中。 
+    
+**已修改（modified）**: 修改了文件，但还没保存到数据库中。 
+    
+**已暂存（staged）**: 对一个已修改文件的当前 版本做了标记，使之包含在下次提交的快照中。
+</code></pre>
+</li>
+<li>
+<p>Git中存在三个工作区域：</p>
+<pre><code>**Git 仓库目录**: Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆 仓库时，拷贝的就是这里的数据。
+    
+**工作目录**: 对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘 上供你使用或修改。
+    
+**暂存区域**: 一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作`‘索 引’'，不过一般说法还是叫暂存区域。
+</code></pre>
 <p>​</p>
-
+</li>
+</ul>
 <h2 id="git的配置">Git的配置</h2>
-
 <p>我们可以通过git config进行配置， 配置信息分别保存在三个地方：</p>
-
 <ul>
 <li>/etc/gitconfig（&ndash;system作用域的配置）</li>
 <li>~/.gitconfig（&ndash;global作用域的配置）</li>
 <li>git仓库的.git/config（&ndash;local作用域的配置）</li>
 </ul>
-
 <p>​</p>
-
 <h3 id="查看所有git配置项">查看所有git配置项</h3>
-
 <p><code>git config --list</code></p>
-
 <h3 id="查看指定xxx配置项">查看指定xxx配置项</h3>
-
-<p><code>
-git config xxx      
-</code></p>
-
+<p><code>git config xxx	 	</code></p>
 <h3 id="更改git的配置项">更改git的配置项</h3>
-
-<p><code>
-git config --global xxx xxx 
-</code></p>
-
+<p><code>git config --global xxx xxx	</code></p>
 <p>​</p>
-
 <p>The End.</p>
-
-<hr />
-
+<hr>
 <h2 id="参考资料">参考资料：</h2>
-
 <ul>
 <li><a href="https://git-scm.com/book/zh/v2">Pro Git Book</a></li>
 </ul>

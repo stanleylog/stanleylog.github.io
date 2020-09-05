@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://stanleylog.me/"
+         "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
     "name" : "C语言学习笔记-指针",
     "headline" : "C语言学习笔记-指针",
-    "description" : "<p>C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。</p>",
+    "description" : "\x3cp\x3eC语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。\x3c\/p\x3e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-11-07 21:51:17 &#43;0800 CST",
-    "dateModified" : "2019-11-07 21:51:17 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/",
+    "datePublished": "2019-11-07 21:51:17 \x2b0800 CST",
+    "dateModified" : "2019-11-07 21:51:17 \x2b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88\/",
     "wordCount" : "693",
     "keywords" : [ "c", "StanleyLog - 自留地"]
 }
@@ -149,13 +149,9 @@
           
 
           <p>C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。</p>
-
 <p>下面的内容为关于指针使用的一些内容：</p>
-
 <h2 id="指针定义">指针定义</h2>
-
 <p>指针与其所指向的内容息息相关，我们是通过指针符号与变量类型的组合方式定义指针的。 如下：</p>
-
 <pre><code class="language-c">//指针定义
 int *x; 
 char *y;
@@ -164,15 +160,10 @@ char *y;
 int a = 10;
 x = &amp;a;
 </code></pre>
-
 <p>定义指针类型变量与普通变量定义不同之处在于在变量名之前的<code>*</code>， 这样表名定义的为指向某个具体类型的指针变量。</p>
-
 <p>初始化指针需要通过取值符号<code>&amp;</code>参与获取某个普通变量的地址进行，将某个变量的内存地址赋予指针变量。</p>
-
 <h2 id="指针的使用">指针的使用</h2>
-
 <p>下面我们通过一个变量交换的函数说明一下指针的常见的使用。</p>
-
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 void swap(int *x, int *y);
@@ -210,15 +201,12 @@ void swap(int *x, int *y){
     *y = tmp;
 }
 </code></pre>
-
 <p>以上的例子我们可以观察出如下的内容：</p>
-
 <ul>
 <li><code>*a</code>代表指针a所指向的变量，而非指针a的值</li>
 <li>指针初始化后是可以对其直接赋值的，如：<code>*a = 10;</code>。不过其含义仍然为指针a所指向变量的值修改为10，其实就是示例中的变量x。</li>
 <li>在初始化指针时，我们需要借助<code>&amp;</code>取值符将变量与指针建立关系。</li>
 </ul>
-
 <p><em>&mdash;ADD 2019-11-07</em></p>
     </div>
 

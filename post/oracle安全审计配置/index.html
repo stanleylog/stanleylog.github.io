@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://stanleylog.me/"
+         "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
     "name" : "Oracle安全审计配置",
     "headline" : "Oracle安全审计配置",
-    "description" : "<p>随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。</p>",
+    "description" : "\x3cp\x3e随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。\x3c\/p\x3e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2019",
-    "datePublished": "2019-10-16 16:10:32 &#43;0800 CST",
-    "dateModified" : "2019-10-16 16:10:32 &#43;0800 CST",
-    "url" : "https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/",
+    "datePublished": "2019-10-16 16:10:32 \x2b0800 CST",
+    "dateModified" : "2019-10-16 16:10:32 \x2b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE\/",
     "wordCount" : "1009",
     "keywords" : [ "oracle","安全审计", "StanleyLog - 自留地"]
 }
@@ -149,9 +149,7 @@
           
 
           <p>随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。</p>
-
 <h2 id="查看数据库审计功能状态">查看数据库审计功能状态</h2>
-
 <pre><code class="language-sql">//使用sqlplus通过sysdba角色登陆Oracle
 $ sqlplus &quot;/ as sysdba&quot;
 
@@ -184,47 +182,34 @@ audit_sys_operations		     boolean	 FALSE
 audit_syslog_level		     string
 audit_trail			     string	 DB
 </code></pre>
-
 <p>其中<code>audit_trail</code>代表数据库审计功能的状态，需设置<code>db,extended</code>，各项值含义如下：</p>
-
 <ul>
-<li>none</li>
-</ul>
-
+<li>
+<p>none</p>
 <p>Disables database auditing.</p>
-
-<ul>
-<li>os</li>
-</ul>
-
+</li>
+<li>
+<p>os</p>
 <p>Enables database auditing and directs all audit records to the operating system&rsquo;s audit trail.</p>
-
-<ul>
-<li>db</li>
-</ul>
-
+</li>
+<li>
+<p>db</p>
 <p>Enables database auditing and directs all audit records to the database audit trail (the <code>SYS.AUD$</code> table).</p>
-
-<ul>
-<li>db,extended</li>
-</ul>
-
-<p>Enables database auditing and directs all audit records to the database audit trail (the SYS.AUD\$ table). In addition, populates the  SQLBIND and SQLTEXT CLOB columns of the SYS.AUD$ table.</p>
-
-<ul>
-<li>xml</li>
-</ul>
-
+</li>
+<li>
+<p>db,extended</p>
+<p>Enables database auditing and directs all audit records to the database audit trail (the SYS.AUD$ table). In addition, populates the  SQLBIND and SQLTEXT CLOB columns of the SYS.AUD$ table.</p>
+</li>
+<li>
+<p>xml</p>
 <p>Enables database auditing and writes all audit records to XML format OS files.</p>
-
-<ul>
-<li>xm,extended</li>
-</ul>
-
+</li>
+<li>
+<p>xm,extended</p>
 <p>Enables database auditing and prints all columns of the audit trail, including SqlText and SqlBind values.</p>
-
+</li>
+</ul>
 <h2 id="开启审计">开启审计</h2>
-
 <pre><code class="language-sql">//开启审计功能
 SQL&gt; alter system set AUDIT_TRAIL=db, extended scope=spfile;
 
@@ -256,9 +241,7 @@ audit_sys_operations		     boolean	 FALSE
 audit_syslog_level		     string
 audit_trail			     string	 DB, EXTENDED
 </code></pre>
-
 <h2 id="查看审计日志表">查看审计日志表</h2>
-
 <pre><code class="language-sql">SQL&gt; set line 120
 SQL&gt; col obj_name format a5
 SQL&gt; col obj_name for a10
@@ -272,9 +255,7 @@ USERN TIMESTAMP      OBJ_NAME	ACTION_NAME		     SQL_TEXT
 0 rows selected.
 
 </code></pre>
-
 <h2 id="验证准备">验证准备</h2>
-
 <pre><code class="language-sql">$ sqlplus stl/sun
 
 SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
@@ -289,9 +270,7 @@ SQL&gt; create table test (c1 varchar2(20));
 
 Table created.
 </code></pre>
-
 <h2 id="开启指定对象审计">开启指定对象审计</h2>
-
 <pre><code class="language-sql">[ora11g@db ~]$ sqlplus &quot;/ as sysdba&quot;
 
 SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:52:49 2019
@@ -308,9 +287,7 @@ SQL&gt; audit insert, select, update, delete on stl.test by access whenever succ
 Audit succeeded.
 
 </code></pre>
-
 <h2 id="验证审计">验证审计</h2>
-
 <pre><code class="language-sql">$ sqlplus stl/sun
 
 SQL*Plus: Release 11.2.0.3.0 Production on Wed Oct 16 16:51:01 2019
@@ -371,25 +348,17 @@ STL   10/16/19 16:54 TEST	SELECT			     select * from test
 STL   10/16/19 16:55 TEST	UPDATE			     update test set c1 = 2
 STL   10/16/19 16:55 TEST	DELETE			     delete from test
 </code></pre>
-
 <h2 id="其他常用命令">其他常用命令</h2>
-
 <pre><code class="language-sql">--取消指定对象审计
 SQL&gt; noaudit all on test;
 --删除审计日志
 SQL&gt; DELETE FROM SYS.AUD$ WHERE obj$name='TEST';
 </code></pre>
-
 <p>​</p>
-
-<hr />
-
+<hr>
 <p>参考链接:</p>
-
 <p><a href="https://blog.csdn.net/ivory_town1/article/details/49760637">Oracle 11g 审计</a></p>
-
 <p><a href="https://blog.csdn.net/Touatou/article/details/80476855">Oracle审计详解</a></p>
-
 <p><a href="https://www.cnblogs.com/jyzhao/p/4995205.html">Oracle 10g安全加固(审计、监听密码)</a></p>
     </div>
 
