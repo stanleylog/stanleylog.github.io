@@ -2,9 +2,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://stanleylog.me/categories/</loc>
+      
+      <lastmod>2019-10-25T20:48:26+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.me/post/</loc>
       
-      <lastmod>2020-10-18T20:37:44+08:00</lastmod>
+      <lastmod>2019-10-25T20:48:26+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -17,34 +31,6 @@
   
     <url>
       <loc>https://stanleylog.me/</loc>
-      
-      <lastmod>2020-10-18T20:37:44+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.me/post/%E6%B5%8B%E8%AF%95/</loc>
-      
-      <lastmod>2020-10-18T20:37:44+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.me/categories/</loc>
       
       <lastmod>2019-10-25T20:48:26+08:00</lastmod>
       
