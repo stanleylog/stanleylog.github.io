@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>oracle on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me:1313/tags/oracle/</link>
+    <link>https://stanleylog.me/tags/oracle/</link>
     <description>Recent content in oracle on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Oct 2019 16:10:32 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me:1313/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.me/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Oracle安全审计配置</title>
-      <link>https://stanleylog.me:1313/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
+      <link>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me:1313/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。&lt;/p&gt;</description>
     </item>
     
