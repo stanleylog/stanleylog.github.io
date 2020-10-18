@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>StanleyLog - 自留地 on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/</link>
+    <link>https://stanleylog.me:1313/</link>
     <description>Recent content in StanleyLog - 自留地 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Posts</title>
-      <link>https://stanleylog.me/post/</link>
+      <link>https://stanleylog.me:1313/post/</link>
       <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/</guid>
+      <guid>https://stanleylog.me:1313/post/</guid>
       <description></description>
     </item>
     

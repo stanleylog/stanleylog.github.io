@@ -2,138 +2,138 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/tags/</link>
+    <link>https://stanleylog.me:1313/tags/</link>
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Oct 2019 20:48:26 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.me:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>人生感悟</title>
-      <link>https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</link>
+      <link>https://stanleylog.me:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</link>
       <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>格局</title>
-      <link>https://stanleylog.me/tags/%E6%A0%BC%E5%B1%80/</link>
+      <link>https://stanleylog.me:1313/tags/%E6%A0%BC%E5%B1%80/</link>
       <pubDate>Fri, 18 Oct 2019 22:26:04 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E6%A0%BC%E5%B1%80/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E6%A0%BC%E5%B1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>oracle</title>
-      <link>https://stanleylog.me/tags/oracle/</link>
+      <link>https://stanleylog.me:1313/tags/oracle/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/oracle/</guid>
+      <guid>https://stanleylog.me:1313/tags/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>安全审计</title>
-      <link>https://stanleylog.me/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</link>
+      <link>https://stanleylog.me:1313/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>癌症</title>
-      <link>https://stanleylog.me/tags/%E7%99%8C%E7%97%87/</link>
+      <link>https://stanleylog.me:1313/tags/%E7%99%8C%E7%97%87/</link>
       <pubDate>Tue, 15 Oct 2019 00:25:33 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E7%99%8C%E7%97%87/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E7%99%8C%E7%97%87/</guid>
       <description></description>
     </item>
     
     <item>
       <title>管理</title>
-      <link>https://stanleylog.me/tags/%E7%AE%A1%E7%90%86/</link>
+      <link>https://stanleylog.me:1313/tags/%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devops</title>
-      <link>https://stanleylog.me/tags/devops/</link>
+      <link>https://stanleylog.me:1313/tags/devops/</link>
       <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/devops/</guid>
+      <guid>https://stanleylog.me:1313/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>人生意义</title>
-      <link>https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
+      <link>https://stanleylog.me:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
       <pubDate>Wed, 05 Jun 2019 22:40:51 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
+      <guid>https://stanleylog.me:1313/tags/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ntp</title>
-      <link>https://stanleylog.me/tags/ntp/</link>
+      <link>https://stanleylog.me:1313/tags/ntp/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/ntp/</guid>
+      <guid>https://stanleylog.me:1313/tags/ntp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud</title>
-      <link>https://stanleylog.me/tags/cloud/</link>
+      <link>https://stanleylog.me:1313/tags/cloud/</link>
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/cloud/</guid>
+      <guid>https://stanleylog.me:1313/tags/cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://stanleylog.me/tags/linux/</link>
+      <link>https://stanleylog.me:1313/tags/linux/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/linux/</guid>
+      <guid>https://stanleylog.me:1313/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rhel</title>
-      <link>https://stanleylog.me/tags/rhel/</link>
+      <link>https://stanleylog.me:1313/tags/rhel/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/rhel/</guid>
+      <guid>https://stanleylog.me:1313/tags/rhel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://stanleylog.me/tags/git/</link>
+      <link>https://stanleylog.me:1313/tags/git/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/git/</guid>
+      <guid>https://stanleylog.me:1313/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ghost</title>
-      <link>https://stanleylog.me/tags/ghost/</link>
+      <link>https://stanleylog.me:1313/tags/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/tags/ghost/</guid>
+      <guid>https://stanleylog.me:1313/tags/ghost/</guid>
       <description></description>
     </item>
     

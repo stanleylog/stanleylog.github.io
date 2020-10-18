@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ntp on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/tags/ntp/</link>
+    <link>https://stanleylog.me:1313/tags/ntp/</link>
     <description>Recent content in ntp on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 12 May 2019 10:50:25 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.me:1313/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NTP安装与配置</title>
-      <link>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <link>https://stanleylog.me:1313/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://stanleylog.me:1313/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。&lt;/p&gt;</description>
     </item>
     
