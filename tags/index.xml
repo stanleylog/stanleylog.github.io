@@ -6,10 +6,19 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Oct 2019 20:48:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 19:53:29 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>prometheus</title>
+      <link>https://stanleylog.me/tags/prometheus/</link>
+      <pubDate>Mon, 07 Sep 2020 19:53:29 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/tags/prometheus/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>人生感悟</title>

@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" />
-  <link rel="next" href="https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/" />
-  <link rel="canonical" href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" />
+  <link rel="prev" href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           初心 | StanleyLog - 自留地
+           Prometheus介绍 | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="初心 | StanleyLog - 自留地">
+  <meta name="title" content="Prometheus介绍 | StanleyLog - 自留地">
     
   
   
@@ -44,21 +44,21 @@
          "@id": "https:\/\/stanleylog.me\/"
     },
     "articleSection" : "post",
-    "name" : "初心",
-    "headline" : "初心",
-    "description" : "人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。 这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着",
+    "name" : "Prometheus介绍",
+    "headline" : "Prometheus介绍",
+    "description" : "\u003cp\u003ePrometheus是一套开源的监控\u0026amp;报警\u0026amp;时间序列数据库的组合,起始是由SoundCloud公司开发的。成立于2012年，之后许多公司和组织接受和采用prometheus,他们便将它独立成开源项目，并且有公司来运作.该项目有非常活跃的社区和开发人员，目前是独立的开源项目，任何公司都可以使用它，2016年，Prometheus加入了云计算基金会，成为kubernetes之后的第二个托管项目。Google SRE的书内也曾提到跟他们BorgMon监控系统相似的实现是Prometheus。现在最常见的Kubernetes容器管理系统中，通常会搭配Prometheus进行监控。\u003c\/p\u003e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
     "publisher": "Stanley Sun",
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-10-25 20:48:26 \u002b0800 CST",
-    "dateModified" : "2019-10-25 20:48:26 \u002b0800 CST",
-    "url" : "https:\/\/stanleylog.me\/post\/%E5%88%9D%E5%BF%83\/",
-    "wordCount" : "475",
-    "keywords" : [ "人生感悟", "StanleyLog - 自留地"]
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-07 19:53:29 \u002b0800 CST",
+    "dateModified" : "2020-09-07 19:53:29 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/prometheus%E4%BB%8B%E7%BB%8D\/",
+    "wordCount" : "656",
+    "keywords" : [ "prometheus", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">初心</h1>
+        <h1 class="post-title" itemprop="name headline">Prometheus介绍</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
-                on <time datetime=2019-10-25 itemprop="datePublished">2019-10-25</time>
+                on <time datetime=2020-09-07 itemprop="datePublished">2020-09-07</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/"> 胡言乱语 </a>
+                        <a href="https://stanleylog.me/categories/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/"> 监控系统 </a>
                         
                 </span>
         </div>
@@ -150,12 +150,33 @@
           
           
 
-          <p><img src="/IMG_4715.JPG" alt="C程序设计语言"></p>
-<p>人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。</p>
-<p>这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着跑着丢掉了什么？让我们再也跑不动也不想跑了呢？</p>
-<p>当我重新翻出入行时的启蒙书，当初那种无比激动的心情像一股电流一样在脑中闪过。我好像找到了答案！当年那种对编程狂热的痴迷，逻辑推演的快感，掌控一切的成就感，使我立志创造一系列改变世界的软件。 起初的那股取之不尽，用之不竭的热情好像没有了，那股最初的原动力没有了。这么多年囫囵吞枣式的应用各种技术、通宵达旦的处理各种问题、交付为第一要务其它靠边站式的工作原则造就了得过且过的处世态度，我们还会美其名曰：“人生智慧”。</p>
-<p>我们丢失掉的就是那种对未知领域强烈的好奇心，对现有工作精益求精的荣誉心，对未来会更好的自信心！</p>
-
+          <p>Prometheus是一套开源的监控&amp;报警&amp;时间序列数据库的组合,起始是由SoundCloud公司开发的。成立于2012年，之后许多公司和组织接受和采用prometheus,他们便将它独立成开源项目，并且有公司来运作.该项目有非常活跃的社区和开发人员，目前是独立的开源项目，任何公司都可以使用它，2016年，Prometheus加入了云计算基金会，成为kubernetes之后的第二个托管项目。Google SRE的书内也曾提到跟他们BorgMon监控系统相似的实现是Prometheus。现在最常见的Kubernetes容器管理系统中，通常会搭配Prometheus进行监控。</p>
+<p>Prometheus作为新一代监控产品被广泛使用，主要组件分为三部分：</p>
+<ul>
+<li>
+<p>Exporter：类似于传统监控产品中的Agent，部署于被监控设备上。</p>
+</li>
+<li>
+<p>Prometheus Server：负责主动收集Exporter中的性能数据。</p>
+</li>
+<li>
+<p>AlertManager：专门用于处理告警信息的组件，可以发送Email，微信告警等。</p>
+</li>
+</ul>
+<p>可选组件中包括：</p>
+<ul>
+<li>
+<p>Pushgateway：监控数据中转组件，可实现Push的方式采集。</p>
+</li>
+<li>
+<p>Grafana：通用可视化组件（非Prometheus项目内组件）。</p>
+<p>​</p>
+</li>
+</ul>
+<p><img src="https://prometheus.io/assets/architecture.png" alt=""></p>
+<p>Prometheus与传统监控产品不同的特别之处是在于全面使用了时序数据库作为数据存储模型，它可以使用内置的TSDB数据库也可是通过HTTP API的方式使用像InfluxDB等其他时序数据库。</p>
+<p>​</p>
+<p><em>注：Prometheus由于使用Go作为开发语言，所以现还不支持AIX等Unix系统。</em></p>
     </div>
 
     <div class="post-tags">
@@ -163,8 +184,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.me/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/">
-                    #人生感悟</a></span>
+            <span class="tag"><a href="https://stanleylog.me/tags/prometheus/">
+                    #prometheus</a></span>
             
             </section>
         
@@ -205,10 +226,8 @@
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/" class="prev" rel="prev" title="格局"><i class="iconfont icon-left"></i>&nbsp;格局</a>
+        <a href="https://stanleylog.me/post/%E5%88%9D%E5%BF%83/" class="prev" rel="prev" title="初心"><i class="iconfont icon-left"></i>&nbsp;初心</a>
          
-        
-        <a href="https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/" class="next" rel="next" title="Prometheus介绍">Prometheus介绍&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
