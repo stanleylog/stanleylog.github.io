@@ -21,24 +21,6 @@
     </item>
     
     <item>
-      <title>初心</title>
-      <link>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</link>
-      <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/%E5%88%9D%E5%BF%83/</guid>
-      <description>人到中年不进则退，多年被碾压的经历、紧追其后的年轻人、日常生活的种种角色都让步入中年的人们倍感压力。种种无奈、疲惫不堪让我们眼中不再充满年轻时的神采。但我们还需要忍辱负重，用我们过往的那点微薄的人生感悟、处世哲学继续支撑着，期待人生璀璨的光明到来。 这就是中年危机，无法超越自己阻碍着自己的发展，后面又有着一批批穷追不舍、经历充沛的年轻人。想当初我们也是不知疲惫，求知若渴，激流勇进的，这么多年我们跑着</description>
-    </item>
-    
-    <item>
-      <title>格局</title>
-      <link>https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/</link>
-      <pubDate>Fri, 18 Oct 2019 22:26:04 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/%E6%A0%BC%E5%B1%80/</guid>
-      <description>&lt;p&gt;事件起初是这样的，今天早上做地铁，在通过安检前我看前面有一个20出头的女孩（有点小太妹的感觉）慢慢悠悠的走路，在她的前面有一个很大的空当。就直接两步并一步超了过去，结果那女孩一个健步就把自己的包扔在我包的前面，透过我的降噪耳机隐隐约约的听到嘴里嘟囔着什么，而我也没计较什么，拿起包直接过去了。但当我通过地铁闸机前，这个小姑娘故意的从我身旁抢到我的前面，好像在朝我示威一样。我不想纠缠，换另一个闸机过去了。事情的过程就是这样结束了，要是说不生气，我承认我做不到。要是说这么件事生气吧，不值当的。反正就是那种让憋火但有不至于动怒的事情。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Oracle安全审计配置</title>
       <link>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
@@ -57,30 +39,12 @@
     </item>
     
     <item>
-      <title>领导力</title>
-      <link>https://stanleylog.me/post/leadership/</link>
-      <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/leadership/</guid>
-      <description>&lt;p&gt;极客时间是我每天都是使用的技术播客，填补了国内没有这个细分领域播客的空白，定位准确、内容丰富。希望之后越来越好。今天要说的是极客时间里陈浩的专栏《左耳听风》上的一片文章，看的时候一下感觉被触动到了。由此有了这篇博文。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Docker常用命令</title>
       <link>https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;本篇文章为干货，罗列出Docker使用过程中最为常用的命令集合。 其中包括：镜像、容器、制作镜像的相关内容。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>人生意义</title>
-      <link>https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</link>
-      <pubDate>Wed, 05 Jun 2019 22:40:51 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89/</guid>
-      <description>&lt;p&gt;人生意义一直想写， 但是这个标题太宽阔、太深奥，我坚信它涵盖着生存意义、价值追究、处世原则等一系列的无数圣贤及智者都无法全面阐述清楚的智慧。以现在我现在极为浅薄的人生阅历来写这么大的话题，实在是太过造次了。但是这些年迷茫的经历，让我多少次欲言又止。这次终于鼓起勇气来写这一篇，就算为了证明在信息的维度上我曾经存在过，才敢以敬畏之心犯着大不韪名头来说说我的一点点想法。只要有新的感悟就会更新到这篇文章里，就不单独开篇再论了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -117,15 +81,6 @@
       
       <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
       <description>获取Git仓库 获取Git仓库存在两种方法： 使用git init在本地初始化仓库 $ git init Initialized empty Git repository in /Users/stanley/git_demo/.git/ 使用git clone克隆远程服务器中仓库 $ git clone https://github.com/libgit2/libgit2 Cloning into &#39;libgit2&#39;... remote: Enumerating objects: 88874, done. remote: Counting objects: 100% (88874/88874), done. remote: Compressing objects: 100% (24728/24728), done. remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0 Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done. Resolving deltas: 100% (62425/62425), done. Checking out files: 100% (10168/10168), done. 查看文件状态 git中的文件存在四种状态, 我们可以使用git status命令查看文件的状态： Untracked UnModified Modified Staged | | | | |---Add the file --------------------------------------------&amp;gt;| | | | | | |---Edit the file---&amp;gt;| | | | | | | | |--Stage the file-&amp;gt;| | |</description>
-    </item>
-    
-    <item>
-      <title>传染性典型中年精神病</title>
-      <link>https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</link>
-      <pubDate>Sun, 13 Jan 2019 22:38:51 +0800</pubDate>
-      
-      <guid>https://stanleylog.me/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/</guid>
-      <description>夜晚当儿子和老婆在睡前闲聊，我回到卧室，带上耳机，放上白噪音，开始写这篇文章。 回想自从2017年开始自己开始得上了一种病，这种病一直折磨我到现在。是种什么病呢？这是一种唯心的、追求内心宁静的、烦躁易怒的病， 我也不知道这是种什么样的病，也许是中年危机？或者是看书看多了（看的也不多）导致脑子坏掉了？在这里我就先叫它胡思乱想病吧。 得了这种病后，自己就开始和以前不一样了。首先本人是个理工生，做事有些许完美</description>
     </item>
     
     <item>
