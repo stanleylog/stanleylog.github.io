@@ -17,7 +17,7 @@
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
-      <description>上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。 获取Git仓库 获取Git仓库存在两种方法： 使用git init在本地初始化仓库 $ git init Initialized empty Git repository in /Users/stanley/git_demo/.git/ 使用git clone克隆远程服务器中仓库 $ git clone https://github.com/libgit2/libgit2 Cloning into &#39;libgit2&#39;... remote: Enumerating objects: 88874, done. remote: Counting objects: 100% (88874/88874), done. remote: Compressing objects: 100% (24728/24728), done. remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0 Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done. Resolving deltas: 100% (62425/62425), done. Checking out files: 100% (10168/10168), done. 查看文件状态 git中的文件存在四种状态, 我们可以使用git st</description>
+      <description>&lt;p&gt;上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。&lt;/p&gt;</description>
     </item>
     
     <item>
