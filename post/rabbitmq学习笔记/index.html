@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/" />
+  
+  <link rel="canonical" href="https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           RabbitMQ学习笔记 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="RabbitMQ学习笔记 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/stanleylog.me\/"
+    },
+    "articleSection" : "post",
+    "name" : "RabbitMQ学习笔记",
+    "headline" : "RabbitMQ学习笔记",
+    "description" : "RabbitMQ安装 安装rabbitmq # yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make gcc gcc-c\u002b\u002b kernel-devel m4 ncurses-devel tk tc xz # yum install epel-release # yum install unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl # rpm -ivh esl-erlang_18.3-1_centos_7_amd64.rpm # rpm -ivh socat-1.7.3.2-2.el7.x86_64.rpm # 默认安装位置 \/lib\/rabbitmq\/bin 启动rabbitmq # systemctl status rabbitmq-server # systemctl start rabbitmq-server # 启动管理控制台 # rabbitmq-plugins enable rabbitmq_management 添加管理员 # rabbitmqctl add_user admin 123456 # rabbitmqctl set_user_tags admin administrator # rabbitmqctl set_permissions -p \u0026quot;\/\u0026quot; admin \u0026quot;.*\u0026quot; \u0026quot;.*\u0026quot; \u0026quot;.*\u0026quot; # rabbitmqctl list_permissions -p \/ # rabbitmqctl list_users 配置文件 # 默认配置文件 \/etc\/rabbitmq\/rabbitmq.config # 默认配置文件模板 \/usr\/share\/doc\/rabbitmq-server-3.6.13\/rabbitmq.config.example RabbitMQ使用 Hello World工作模式 Queue - Consuming: send and receive messages from a named queue.\u0022 Producer ConnectionFactory factory = new ConnectionFactory(); factory.setHost(\u0026quot;192.168.56.199\u0026quot;); factory.setPort(5672); factory.setVirtualHost(\u0026quot;\/\u0026quot;); factory.setUsername(\u0026quot;admin\u0026quot;); factory.setPassword(\u0026quot;123456\u0026quot;); Connection connection = factory.newConnection(); Channel channel = connection.createChannel();",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-12-06 18:00:56 \u002b0800 CST",
+    "dateModified" : "2022-12-06 18:00:56 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.me\/post\/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/",
+    "wordCount" : "2425",
+    "keywords" : [ "dev","mq", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.me/">stanleylog.me</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.me/">stanleylog.me</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">RabbitMQ学习笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2022-12-06 itemprop="datePublished">2022-12-06</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"> 软件开发 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="rabbitmq安装">RabbitMQ安装</h2>
+<h3 id="安装rabbitmq">安装rabbitmq</h3>
+<pre><code class="language-shell"># yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz
+# yum install epel-release
+# yum install unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl
+# rpm -ivh esl-erlang_18.3-1_centos_7_amd64.rpm
+# rpm -ivh socat-1.7.3.2-2.el7.x86_64.rpm
+
+# 默认安装位置
+/lib/rabbitmq/bin
+
+</code></pre>
+<h3 id="启动rabbitmq">启动rabbitmq</h3>
+<pre><code class="language-shell"># systemctl status  rabbitmq-server
+# systemctl start rabbitmq-server
+# 启动管理控制台
+# rabbitmq-plugins enable rabbitmq_management
+</code></pre>
+<h3 id="添加管理员">添加管理员</h3>
+<pre><code class="language-shell"># rabbitmqctl add_user admin 123456
+# rabbitmqctl set_user_tags admin administrator
+# rabbitmqctl set_permissions -p &quot;/&quot; admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;
+# rabbitmqctl list_permissions -p /
+# rabbitmqctl list_users
+</code></pre>
+<h3 id="配置文件">配置文件</h3>
+<pre><code class="language-shell"># 默认配置文件
+/etc/rabbitmq/rabbitmq.config
+
+# 默认配置文件模板
+/usr/share/doc/rabbitmq-server-3.6.13/rabbitmq.config.example
+</code></pre>
+<h2 id="rabbitmq使用">RabbitMQ使用</h2>
+<h3 id="hello-world工作模式">Hello World工作模式</h3>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-one.png" alt="Producer -> Queue -> Consuming: send and receive messages from a named queue."></p>
+<h4 id="producer">Producer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+*  1. queue: 队列名称
+*  2. durable: 是否持久化
+*  3. exclusive: 是否独占
+*  4. autoDelete: 是否自动删除
+*  5. arguments: 参数
+*/
+channel.queueDeclare(&quot;hello&quot;, true, false, false, null);
+
+
+/*
+*  1. exchange: 交换机名称, 默认交换机是&quot;&quot;
+*  2. routingKey: 路由名称, 默认路由名称为队列名称
+*  3. props: 配置信息
+*  4. body: 发送的消息数据
+*
+*/
+String body = &quot;hello rabbitmq&quot;;
+channel.basicPublish(&quot;&quot;, &quot;hello&quot;, null, body.getBytes());
+
+channel.close();
+connection.close();
+</code></pre>
+<h4 id="consumer">Consumer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+*  1. queue: 队列名称
+*  2. durable: 是否持久化
+*  3. exclusive: 是否独占
+*  4. autoDelete: 是否自动删除
+*  5. arguments: 参数
+*/
+channel.queueDeclare(&quot;hello&quot;, true, false, false, null);
+
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*/
+channel.basicConsume(&quot;hello&quot;, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  */
+public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;consumerTag: &quot; + consumerTag);
+    System.out.println(&quot;Exchange: &quot; + envelope.getExchange());
+    System.out.println(&quot;RoutingKey: &quot; + envelope.getRoutingKey());
+    System.out.println(&quot;Properties: &quot; + properties);
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消息
+</code></pre>
+<h3 id="work-queues-工作模式">Work Queues 工作模式</h3>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-two.png" alt="Producer -> Queue -> Consuming: Work Queue used to distribute time-consuming tasks among multiple workers."></p>
+<p><em>C1, C2是竞争关系， 只有一个消费者能接收到消息。</em></p>
+<h4 id="producer-1">Producer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+*  1. queue: 队列名称
+*  2. durable: 是否持久化
+*  3. exclusive: 是否独占
+*  4. autoDelete: 是否自动删除
+*  5. arguments: 参数
+*/
+channel.queueDeclare(&quot;workqueues&quot;, true, false, false, null);
+
+
+/*
+*  1. exchange: 交换机名称, 默认交换机是&quot;&quot;
+*  2. routingKey: 路由名称, 默认路由名称为队列名称
+*  3. props: 配置信息
+*  4. body: 发送的消息数据
+*
+*/
+for (int i = 0; i &lt; 10; i++) {
+  String body = &quot;hello rabbitmq&quot; + i;
+  channel.basicPublish(&quot;&quot;, &quot;workqueues&quot;, null, body.getBytes());
+}
+
+channel.close();
+connection.close();
+</code></pre>
+<h4 id="consumer1--consumer2">Consumer1 &amp; Consumer2</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+*  1. queue: 队列名称
+*  2. durable: 是否持久化
+*  3. exclusive: 是否独占
+*  4. autoDelete: 是否自动删除
+*  5. arguments: 参数
+*/
+channel.queueDeclare(&quot;workqueues&quot;, true, false, false, null);
+
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(&quot;workqueues&quot;, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消息
+}
+</code></pre>
+<h3 id="pubsub工作模式">PubSub工作模式</h3>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-three.png" alt="Producer -> Queue -> Consuming: deliver a message to multiple consumers. This pattern is known as publish/subscribe"></p>
+<p>![image-20221129110636705](/Users/stanley/Library/Application Support/typora-user-images/image-20221129110636705.png)</p>
+<h4 id="producer-2">Producer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+exchangeDeclare(String exchange, BuiltinExchangeType type, boolean durable, boolean autoDelete, boolean internal, Map&lt;String, Object&gt; arguments)
+1. exchange: 交换机名称
+2. type: 交换机类型,  DIRECT(&quot;direct&quot;) 定向, FANOUT(&quot;fanout&quot;) 广播, TOPIC(&quot;topic&quot;) 通配符方式, HEADERS(&quot;headers&quot;) 参数匹配;
+3. durable: 是否持久化
+4. autoDelete: 是否删除
+5. internal: 内部使用
+6. arguments: 参数列表
+*/
+String exchangeName = &quot;test_fanout&quot;;
+channel.exchangeDeclare(exchangeName, BuiltinExchangeType.FANOUT, true, false, false, null);
+
+String queue1Name = &quot;test_fanout_queue1&quot;;
+String queue2Name = &quot;test_fanout_queue2&quot;;
+channel.queueDeclare(queue1Name, true, false, false, null);
+channel.queueDeclare(queue2Name, true, false, false, null);
+
+/*
+queueBind(String queue, String exchange, String routingKey)
+1. queue: 队列名称
+2. exchange: 交换机名称
+3. routingKey: 路由键，绑定规则, 如果交换机类型为fanout则routingKey为&quot;&quot;
+*/
+channel.queueBind(queue1Name, exchangeName, &quot;&quot;);
+channel.queueBind(queue2Name, exchangeName, &quot;&quot;);
+
+
+channel.basicPublish(exchangeName, &quot;&quot;, null, &quot;hello rabbit&quot;.getBytes());
+
+
+channel.close();
+connection.close();
+
+</code></pre>
+<h4 id="consumer1">Consumer1</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_fanout_queue1&quot;;
+String queue2Name = &quot;test_fanout_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue1Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消息
+</code></pre>
+<h4 id="consumer2">Consumer2</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_fanout_queue1&quot;;
+String queue2Name = &quot;test_fanout_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消息
+</code></pre>
+<h3 id="routing工作模式">Routing工作模式</h3>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-four.png" alt="Producer -> Queue -> Consuming: subscribe to a subset of the messages only."></p>
+<p><em>绑定交换机时需要指定routing key， 消息会转发到符合routing key的queue中。</em></p>
+<h4 id="producer-3">Producer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+exchangeDeclare(String exchange, BuiltinExchangeType type, boolean durable, boolean autoDelete, boolean internal, Map&lt;String, Object&gt; arguments)
+1. exchange: 交换机名称
+2. type: 交换机类型,  DIRECT(&quot;direct&quot;) 定向, FANOUT(&quot;fanout&quot;) 广播, TOPIC(&quot;topic&quot;) 通配符方式, HEADERS(&quot;headers&quot;) 参数匹配;
+3. durable: 是否持久化
+4. autoDelete: 是否删除
+5. internal: 内部使用
+6. arguments: 参数列表
+
+*/
+String exchangeName = &quot;test_direct&quot;;
+channel.exchangeDeclare(exchangeName, BuiltinExchangeType.DIRECT, true, false, false, null);
+
+String queue1Name = &quot;test_direct_queue1&quot;;
+String queue2Name = &quot;test_direct_queue2&quot;;
+channel.queueDeclare(queue1Name, true, false, false, null);
+channel.queueDeclare(queue2Name, true, false, false, null);
+
+/*
+queueBind(String queue, String exchange, String routingKey)
+1. queue: 队列名称
+2. exchange: 交换机名称
+3. routingKey: 路由键，绑定规则, 如果交换机类型为fanout则routingKey为&quot;&quot;
+*/
+channel.queueBind(queue1Name, exchangeName, &quot;error&quot;);
+channel.queueBind(queue2Name, exchangeName, &quot;info&quot;);
+channel.queueBind(queue2Name, exchangeName, &quot;error&quot;);
+channel.queueBind(queue2Name, exchangeName, &quot;warning&quot;);
+
+
+channel.basicPublish(exchangeName, &quot;info&quot;, null, &quot;hello rabbit&quot;.getBytes());
+
+
+channel.close();
+connection.close();
+</code></pre>
+<h4 id="consumer1-1">Consumer1</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_direct_queue1&quot;;
+String queue2Name = &quot;test_direct_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue1Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消
+</code></pre>
+<h4 id="consumer2-1">Consumer2</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_direct_queue1&quot;;
+String queue2Name = &quot;test_direct_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消
+</code></pre>
+<h3 id="topics-工作模式">Topics 工作模式</h3>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-five.png" alt="Producer -> Queue -> Consuming: receiving messages based on a pattern (topics)."></p>
+<p>使用通配符的方式配置路由</p>
+<h4 id="producer-4">Producer</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+/*
+exchangeDeclare(String exchange, BuiltinExchangeType type, boolean durable, boolean autoDelete, boolean internal, Map&lt;String, Object&gt; arguments)
+1. exchange: 交换机名称
+2. type: 交换机类型,  DIRECT(&quot;direct&quot;) 定向, FANOUT(&quot;fanout&quot;) 广播, TOPIC(&quot;topic&quot;) 通配符方式, HEADERS(&quot;headers&quot;) 参数匹配;
+3. durable: 是否持久化
+4. autoDelete: 是否删除
+5. internal: 内部使用
+6. arguments: 参数列表
+
+*/
+String exchangeName = &quot;test_topic&quot;;
+channel.exchangeDeclare(exchangeName, BuiltinExchangeType.TOPIC, true, false, false, null);
+
+String queue1Name = &quot;test_topic_queue1&quot;;
+String queue2Name = &quot;test_topic_queue2&quot;;
+channel.queueDeclare(queue1Name, true, false, false, null);
+channel.queueDeclare(queue2Name, true, false, false, null);
+
+/*
+queueBind(String queue, String exchange, String routingKey)
+1. queue: 队列名称
+2. exchange: 交换机名称
+3. routingKey: 路由键，绑定规则, 如果交换机类型为fanout则routingKey为&quot;&quot;
+*/
+channel.queueBind(queue1Name, exchangeName, &quot;#.error&quot;);
+channel.queueBind(queue1Name, exchangeName, &quot;order.*&quot;);
+channel.queueBind(queue2Name, exchangeName, &quot;*.*&quot;);
+
+
+channel.basicPublish(exchangeName, &quot;order.info&quot;, null, &quot;hello rabbit&quot;.getBytes());
+channel.basicPublish(exchangeName, &quot;order1.info&quot;, null, &quot;hello rabbit&quot;.getBytes());
+
+
+channel.close();
+connection.close()
+</code></pre>
+<h4 id="consumer1-2">Consumer1</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_topic_queue1&quot;;
+String queue2Name = &quot;test_topic_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue1Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消息
+</code></pre>
+<h4 id="consumer2-2">Consumer2</h4>
+<pre><code class="language-java">ConnectionFactory factory = new ConnectionFactory();
+factory.setHost(&quot;192.168.56.199&quot;);
+factory.setPort(5672);
+factory.setVirtualHost(&quot;/&quot;);
+factory.setUsername(&quot;admin&quot;);
+factory.setPassword(&quot;123456&quot;);
+
+Connection connection = factory.newConnection();
+Channel channel = connection.createChannel();
+
+String queue1Name = &quot;test_topic_queue1&quot;;
+String queue2Name = &quot;test_topic_queue2&quot;;
+
+/*
+*  1. queue: 队列名称
+*  2. autoAck: 是否自动确认
+*  3. callback: 回调对象
+*
+*/
+channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
+  @Override
+  /*
+  *  1. consumerTag: 标识
+  *  2. envelope: 获取一些信息， 交换机， 路由
+  *  3. properties: 配置信息
+  *  4. body: 数据
+  *
+  */
+  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+    System.out.println(&quot;body: &quot; + new String(body));
+  }
+});
+
+//不需要关闭资源， 因为需要一直等待消
+</code></pre>
+
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/dev/">
+                    #dev</a></span>
+            
+            <span class="tag"><a href="https://stanleylog.me/tags/mq/">
+                    #mq</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" http://www.gravatar.com/avatar/e49b252a78147069c496fc7e45e6689f?s=250&amp;amp;d=mm&amp;amp;r=x" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.me/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/" class="prev" rel="prev" title="PMP-项目范围管理"><i class="iconfont icon-left"></i>&nbsp;PMP-项目范围管理</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2022</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.me/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

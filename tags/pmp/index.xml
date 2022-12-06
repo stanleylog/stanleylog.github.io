@@ -6,10 +6,19 @@
     <description>Recent content in pmp on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Mar 2022 18:40:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Apr 2022 18:40:56 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/tags/pmp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PMP-项目范围管理</title>
+      <link>https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 01 Apr 2022 18:40:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/</guid>
+      <description>项目范围管理包括确保项目做且只做所需的全部工作，以成功完成项目的各个过程。 ​ 项目整合管理过程包括： 【规划过程组】 5.1 规划范围管理：为记录如何定义、确认和控制项目范围及产品范围， 而创建范围管理计划 的过程。 5.2 收集需求：为实现项目目标而确定、记录并管理相关方的需要和需求的过程。 5.3 定义范围：制定项目和产品详细描述的过程。 5.4 创建 WBS ：将项目可交付成果和项目工作分解为较小的、更易于管理的组件的过程。 【监控过程组】</description>
+    </item>
     
     <item>
       <title>PMP-项目整合管理</title>

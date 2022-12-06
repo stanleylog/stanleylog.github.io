@@ -6,15 +6,33 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Mar 2022 18:40:56 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>dev</title>
+      <link>https://stanleylog.me/tags/dev/</link>
+      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/tags/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mq</title>
+      <link>https://stanleylog.me/tags/mq/</link>
+      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/tags/mq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pmp</title>
       <link>https://stanleylog.me/tags/pmp/</link>
-      <pubDate>Mon, 21 Mar 2022 18:40:56 +0800</pubDate>
+      <pubDate>Fri, 01 Apr 2022 18:40:56 +0800</pubDate>
       
       <guid>https://stanleylog.me/tags/pmp/</guid>
       <description></description>
@@ -23,7 +41,7 @@
     <item>
       <title>十大知识领域</title>
       <link>https://stanleylog.me/tags/%E5%8D%81%E5%A4%A7%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F/</link>
-      <pubDate>Mon, 21 Mar 2022 18:40:56 +0800</pubDate>
+      <pubDate>Fri, 01 Apr 2022 18:40:56 +0800</pubDate>
       
       <guid>https://stanleylog.me/tags/%E5%8D%81%E5%A4%A7%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F/</guid>
       <description></description>

@@ -130,6 +130,80 @@
     <article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">RabbitMQ学习笔记</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+
+       			RabbitMQ安装 安装rabbitmq # yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz # yum install epel-release # yum install unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl # rpm -ivh esl-erlang_18.3-1_centos_7_amd64.rpm # rpm -ivh socat-1.7.3.2-2.el7.x86_64.rpm # 默认安装位置 /lib/rabbitmq/bin 启动rabbitmq # systemctl status rabbitmq-server # systemctl start rabbitmq-server # 启动管理控制台 # rabbitmq-plugins enable rabbitmq_management 添加管理员 # rabbitmqctl add_user admin 123456 # rabbitmqctl set_user_tags admin administrator # rabbitmqctl set_permissions -p &quot;/&quot; admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot; # rabbitmqctl list_permissions -p / # rabbitmqctl list_users 配置文件 # 默认配置文件 /etc/rabbitmq/rabbitmq.config # 默认配置文件模板 /usr/share/doc/rabbitmq-server-3.6.13/rabbitmq.config.example RabbitMQ使用 Hello World工作模式 Queue - Consuming: send and receive messages from a named queue." Producer ConnectionFactory factory = new ConnectionFactory(); factory.setHost(&quot;192.168.56.199&quot;); factory.setPort(5672); factory.setVirtualHost(&quot;/&quot;); factory.setUsername(&quot;admin&quot;); factory.setPassword(&quot;123456&quot;); Connection connection = factory.newConnection(); Channel channel = connection.createChannel();
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-12-06 itemprop="datePublished">2022-12-06</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"> 软件开发 </a>
+                        
+                </span>
+        </div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://stanleylog.me/tags/dev/">
+               	 #dev</a></span>
+        		
+        			<span class="tag"><a href="https://stanleylog.me/tags/mq/">
+               	 #mq</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/">PMP-项目范围管理</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+
+       			项目范围管理包括确保项目做且只做所需的全部工作，以成功完成项目的各个过程。 ​ 项目整合管理过程包括： 【规划过程组】 5.1 规划范围管理：为记录如何定义、确认和控制项目范围及产品范围， 而创建范围管理计划 的过程。 5.2 收集需求：为实现项目目标而确定、记录并管理相关方的需要和需求的过程。 5.3 定义范围：制定项目和产品详细描述的过程。 5.4 创建 WBS ：将项目可交付成果和项目工作分解为较小的、更易于管理的组件的过程。 【监控过程组】
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-01 itemprop="datePublished">2022-04-01</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.me/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"> 项目管理 </a>
+                        
+                </span>
+        </div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://stanleylog.me/tags/pmp/">
+               	 #pmp</a></span>
+        		
+        			<span class="tag"><a href="https://stanleylog.me/tags/%E5%8D%81%E5%A4%A7%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F/">
+               	 #十大知识领域</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88%E7%AE%A1%E7%90%86/">PMP-项目整合管理</a></h1>
 			</header>
 			<div class="post-content">
@@ -332,80 +406,6 @@
         		
         			<span class="tag"><a href="https://stanleylog.me/tags/ntp/">
                	 #ntp</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/">CentOS安装Docker</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			<p>对于现有可落地、先进的开发工艺流程概念中最为耀眼的具体产品莫非Docker了，它强大之处在于完美的解决了复杂软件的部署及敏捷开发中的频率部署的问题，结合CI/CD与k8s形成了强大的生产力。而CentOS则是现在云环境中最为炙手可热的操作系统，它拥有这RHEL的稳定性及开源免费的优点，是很多互联网企业的最佳原则。今天我就尝试一下在CentOS上安装Docker，其中也包括国内的一些特殊原因的workaround方法。</p>
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-02-11 itemprop="datePublished">2019-02-11</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://stanleylog.me/categories/docker/"> Docker </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://stanleylog.me/tags/devops/">
-               	 #devops</a></span>
-        		
-        			<span class="tag"><a href="https://stanleylog.me/tags/cloud/">
-               	 #cloud</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/">RHEL各个版本的通用管理命令</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			<p>这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。</p>
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-02-08 itemprop="datePublished">2019-02-08</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://stanleylog.me/categories/linux/"> Linux </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://stanleylog.me/tags/linux/">
-               	 #linux</a></span>
-        		
-        			<span class="tag"><a href="https://stanleylog.me/tags/rhel/">
-               	 #rhel</a></span>
         		
 				</div>
 				

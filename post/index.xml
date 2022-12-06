@@ -6,10 +6,28 @@
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Mar 2022 18:40:56 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RabbitMQ学习笔记</title>
+      <link>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>RabbitMQ安装 安装rabbitmq # yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz # yum install epel-release # yum install unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl # rpm -ivh esl-erlang_18.3-1_centos_7_amd64.rpm # rpm -ivh socat-1.7.3.2-2.el7.x86_64.rpm # 默认安装位置 /lib/rabbitmq/bin 启动rabbitmq # systemctl status rabbitmq-server # systemctl start rabbitmq-server # 启动管理控制台 # rabbitmq-plugins enable rabbitmq_management 添加管理员 # rabbitmqctl add_user admin 123456 # rabbitmqctl set_user_tags admin administrator # rabbitmqctl set_permissions -p &amp;quot;/&amp;quot; admin &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot; # rabbitmqctl list_permissions -p / # rabbitmqctl list_users 配置文件 # 默认配置文件 /etc/rabbitmq/rabbitmq.config # 默认配置文件模板 /usr/share/doc/rabbitmq-server-3.6.13/rabbitmq.config.example RabbitMQ使用 Hello World工作模式 Queue - Consuming: send and receive messages from a named queue.&#34; Producer ConnectionFactory factory = new ConnectionFactory(); factory.setHost(&amp;quot;192.168.56.199&amp;quot;); factory.setPort(5672); factory.setVirtualHost(&amp;quot;/&amp;quot;); factory.setUsername(&amp;quot;admin&amp;quot;); factory.setPassword(&amp;quot;123456&amp;quot;); Connection connection = factory.newConnection(); Channel channel = connection.createChannel();</description>
+    </item>
+    
+    <item>
+      <title>PMP-项目范围管理</title>
+      <link>https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 01 Apr 2022 18:40:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/pmp-%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86/</guid>
+      <description>项目范围管理包括确保项目做且只做所需的全部工作，以成功完成项目的各个过程。 ​ 项目整合管理过程包括： 【规划过程组】 5.1 规划范围管理：为记录如何定义、确认和控制项目范围及产品范围， 而创建范围管理计划 的过程。 5.2 收集需求：为实现项目目标而确定、记录并管理相关方的需要和需求的过程。 5.3 定义范围：制定项目和产品详细描述的过程。 5.4 创建 WBS ：将项目可交付成果和项目工作分解为较小的、更易于管理的组件的过程。 【监控过程组】</description>
+    </item>
     
     <item>
       <title>PMP-项目整合管理</title>

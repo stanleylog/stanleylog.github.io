@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mq on StanleyLog - 自留地</title>
+    <link>https://stanleylog.me/tags/mq/</link>
+    <description>Recent content in mq on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.me/tags/mq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RabbitMQ学习笔记</title>
+      <link>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
+      
+      <guid>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>RabbitMQ安装 安装rabbitmq # yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz # yum install epel-release # yum install unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl # rpm -ivh esl-erlang_18.3-1_centos_7_amd64.rpm # rpm -ivh socat-1.7.3.2-2.el7.x86_64.rpm # 默认安装位置 /lib/rabbitmq/bin 启动rabbitmq # systemctl status rabbitmq-server # systemctl start rabbitmq-server # 启动管理控制台 # rabbitmq-plugins enable rabbitmq_management 添加管理员 # rabbitmqctl add_user admin 123456 # rabbitmqctl set_user_tags admin administrator # rabbitmqctl set_permissions -p &amp;quot;/&amp;quot; admin &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot; # rabbitmqctl list_permissions -p / # rabbitmqctl list_users 配置文件 # 默认配置文件 /etc/rabbitmq/rabbitmq.config # 默认配置文件模板 /usr/share/doc/rabbitmq-server-3.6.13/rabbitmq.config.example RabbitMQ使用 Hello World工作模式 Queue - Consuming: send and receive messages from a named queue.&#34; Producer ConnectionFactory factory = new ConnectionFactory(); factory.setHost(&amp;quot;192.168.56.199&amp;quot;); factory.setPort(5672); factory.setVirtualHost(&amp;quot;/&amp;quot;); factory.setUsername(&amp;quot;admin&amp;quot;); factory.setPassword(&amp;quot;123456&amp;quot;); Connection connection = factory.newConnection(); Channel channel = connection.createChannel();</description>
+    </item>
+    
+  </channel>
+</rss>
