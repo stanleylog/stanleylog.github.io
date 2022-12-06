@@ -17,25 +17,7 @@
       <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
       
       <guid>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;p&gt;在开发的过程中，MQ组件算是在当下的开发模式下必不可少的组件。今天我们就介绍一下MQ领域中的一款优秀的产品-RabbitMQ，其与大名鼎鼎的Spring框架同属VMWare公司。&lt;/p&gt;
-&lt;h3 id=&#34;mq的好处&#34;&gt;MQ的好处&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;应用解耦&lt;/li&gt;
-&lt;li&gt;异步提速&lt;/li&gt;
-&lt;li&gt;削峰填谷&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;mq的劣势&#34;&gt;MQ的劣势&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;系统可用性降低&lt;/li&gt;
-&lt;li&gt;系统复杂度提高&lt;/li&gt;
-&lt;li&gt;一致性问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;使用场景&#34;&gt;使用场景&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;生产者不需要从消费者处获取反馈&lt;/li&gt;
-&lt;li&gt;容许短暂的不一致性&lt;/li&gt;
-&lt;li&gt;确实需要MQ的好处&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;在开发的过程中，MQ组件算是在当下的开发模式下必不可少的组件。今天我们就介绍一下MQ领域中的一款优秀的产品-RabbitMQ，其与大名鼎鼎的Spring框架同属VMWare公司。&lt;/p&gt;</description>
     </item>
     
   </channel>
