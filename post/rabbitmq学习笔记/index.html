@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/" />
-  
-  <link rel="canonical" href="https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+  <link rel="prev" href="https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/" />
+  <link rel="next" href="https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/" />
+  <link rel="canonical" href="https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -41,7 +41,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/stanleylog.me\/"
+         "@id": "https:\/\/stanleylog.com\/"
     },
     "articleSection" : "post",
     "name" : "RabbitMQ学习笔记",
@@ -56,7 +56,7 @@
     "copyrightYear" : "2022",
     "datePublished": "2022-12-06 18:00:56 \u002b0800 CST",
     "dateModified" : "2022-12-06 18:00:56 \u002b0800 CST",
-    "url" : "https:\/\/stanleylog.me\/post\/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/",
+    "url" : "https:\/\/stanleylog.com\/post\/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/",
     "wordCount" : "2596",
     "keywords" : [ "dev","mq","rabbitmq", "StanleyLog - 自留地"]
 }
@@ -73,7 +73,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	&nbsp;<a href="https://stanleylog.me/">stanleylog.me</a>
+        	&nbsp;<a href="https://stanleylog.com/">stanleylog.com</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -92,7 +92,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div> &nbsp;<a href="https://stanleylog.me/">stanleylog.me</a></div>
+            <div> &nbsp;<a href="https://stanleylog.com/">stanleylog.com</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -120,14 +120,14 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">RabbitMQ学习笔记</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://stanleylog.me/" rel="author">Stanley Sun</a> 
+                Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
                 on <time datetime=2022-12-06 itemprop="datePublished">2022-12-06</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.me/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"> 软件开发 </a>
+                        <a href="https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"> 软件开发 </a>
                         
                 </span>
         </div>
@@ -738,13 +738,13 @@ channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.me/tags/dev/">
+            <span class="tag"><a href="https://stanleylog.com/tags/dev/">
                     #dev</a></span>
             
-            <span class="tag"><a href="https://stanleylog.me/tags/mq/">
+            <span class="tag"><a href="https://stanleylog.com/tags/mq/">
                     #mq</a></span>
             
-            <span class="tag"><a href="https://stanleylog.me/tags/rabbitmq/">
+            <span class="tag"><a href="https://stanleylog.com/tags/rabbitmq/">
                     #rabbitmq</a></span>
             
             </section>
@@ -763,7 +763,7 @@ channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
                   <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
                     <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
                     <div class="post-social">
-                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.me/">Website</a></i></span>
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.com/">Website</a></i></span>
                       <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
                       <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
                       <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
@@ -786,8 +786,10 @@ channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/" class="prev" rel="prev" title="Prometheus介绍"><i class="iconfont icon-left"></i>&nbsp;Prometheus介绍</a>
+        <a href="https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/" class="prev" rel="prev" title="Prometheus介绍"><i class="iconfont icon-left"></i>&nbsp;Prometheus介绍</a>
          
+        
+        <a href="https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/" class="next" rel="next" title="域名抢夺战">域名抢夺战&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -811,7 +813,7 @@ channel.basicConsume(queue2Name, true, new DefaultConsumer(channel){
         <span class="with-love">
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.me/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.com/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
          
 
          

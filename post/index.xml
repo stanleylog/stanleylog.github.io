@@ -2,129 +2,138 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/post/</link>
+    <link>https://stanleylog.com/post/</link>
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Dec 2022 14:08:30 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>域名抢夺战</title>
+      <link>https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/</link>
+      <pubDate>Wed, 14 Dec 2022 14:08:30 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/</guid>
+      <description>&lt;p&gt;之前曾经网站开张第一篇&lt;a href=&#34;https://stanleylog.com/post/welcome/&#34;&gt;《wecome》&lt;/a&gt;中提过，本人写博客的时间也算不短了，其中经历过几次大的迁移。其中一次就是在.com的自建网站上，但是由于个人疏忽域名被别人抢注了。经过4年多的时间终于把这个stanleylog.com的域名抢回来了，此处应有掌声&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>RabbitMQ学习笔记</title>
-      <link>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;在开发的过程中，MQ组件算是在当下的开发模式下必不可少的组件。今天我们就介绍一下MQ领域中的一款优秀的产品-RabbitMQ，其与大名鼎鼎的Spring框架同属VMWare公司。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Prometheus介绍</title>
-      <link>https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/</link>
+      <link>https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Mon, 07 Sep 2020 19:53:29 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/prometheus%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/</guid>
       <description>&lt;p&gt;Prometheus是一套开源的监控&amp;amp;报警&amp;amp;时间序列数据库的组合,起始是由SoundCloud公司开发的。成立于2012年，之后许多公司和组织接受和采用prometheus,他们便将它独立成开源项目，并且有公司来运作.该项目有非常活跃的社区和开发人员，目前是独立的开源项目，任何公司都可以使用它，2016年，Prometheus加入了云计算基金会，成为kubernetes之后的第二个托管项目。Google SRE的书内也曾提到跟他们BorgMon监控系统相似的实现是Prometheus。现在最常见的Kubernetes容器管理系统中，通常会搭配Prometheus进行监控。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Oracle安全审计配置</title>
-      <link>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
+      <link>https://stanleylog.com/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Wed, 16 Oct 2019 16:10:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://stanleylog.com/post/oracle%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;随着数据的安全意识的不断加深，现在很多的企业已经开始逐步深化对数据安全的管控措施。作为数据库龙头老大的O记自当在其自身产品中充分的考虑到数据安全的问题，本篇文章将简单介绍一下基于Oracle数据库的数据审计入门配置。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>癌症常识</title>
-      <link>https://stanleylog.me/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</link>
+      <link>https://stanleylog.com/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</link>
       <pubDate>Tue, 15 Oct 2019 00:25:33 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</guid>
+      <guid>https://stanleylog.com/post/%E7%99%8C%E7%97%87%E5%B8%B8%E8%AF%86/</guid>
       <description>癌症分期 ​ ​ 0期：称为原位癌，意思是肿瘤局限在原发局部位置，未侵及周围组织，也无肺外转移。 I期：肿瘤比较小，且无淋巴结转移，手术可以完全切除。根据肿瘤的大小，又分为IA期和IB期，肿瘤较小的为IA期，较大的为IB期。 II期：也可以分为IIA期和IIB期两个亚型。IIA期包括两种情况：一是肿瘤稍大但无邻近淋巴结转移，二是较小的肿瘤，有周围淋巴结转移。IIB期的是指较大的肿瘤且有淋巴结转移，或大肿瘤，</description>
     </item>
     
     <item>
       <title>Docker常用命令</title>
-      <link>https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://stanleylog.com/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://stanleylog.com/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;本篇文章为干货，罗列出Docker使用过程中最为常用的命令集合。 其中包括：镜像、容器、制作镜像的相关内容。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>NTP安装与配置</title>
-      <link>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <link>https://stanleylog.com/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://stanleylog.com/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS安装Docker</title>
-      <link>https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/</link>
+      <link>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/centos%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</guid>
       <description>&lt;p&gt;对于现有可落地、先进的开发工艺流程概念中最为耀眼的具体产品莫非Docker了，它强大之处在于完美的解决了复杂软件的部署及敏捷开发中的频率部署的问题，结合CI/CD与k8s形成了强大的生产力。而CentOS则是现在云环境中最为炙手可热的操作系统，它拥有这RHEL的稳定性及开源免费的优点，是很多互联网企业的最佳原则。今天我就尝试一下在CentOS上安装Docker，其中也包括国内的一些特殊原因的workaround方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>RHEL各个版本的通用管理命令</title>
-      <link>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <link>https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git入门（二）- 基础（一）</title>
-      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
       <description>&lt;p&gt;上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
       <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
     </item>
     
     <item>
       <title>记儿子住院</title>
-      <link>https://stanleylog.me/post/hospitalization/</link>
+      <link>https://stanleylog.com/post/hospitalization/</link>
       <pubDate>Thu, 03 Jan 2019 10:41:02 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/hospitalization/</guid>
+      <guid>https://stanleylog.com/post/hospitalization/</guid>
       <description>2019年的元旦是在北京某医院的儿科监护病房中度过，在此之前他已经连续发高烧一周的时间，每过4个小时就要服用退烧药（有时还会无效）。看着孩子天天昏睡在床上，真是百感交集、五味杂陈！元旦的前一天孩子被检查出肺炎，我和孩子爷爷带着孩子从乡医院，儿研所到地坛医院辗转了一天一夜都没有病房可以接收住院，心中真是无比凄凉，那真是叫天天不应 叫地地不灵。 好在第二天一早到医院遇到很负责任的大夫帮忙协调病房才有幸住到</description>
     </item>
     
     <item>
       <title>Ghost使用感受</title>
-      <link>https://stanleylog.me/post/ghost/</link>
+      <link>https://stanleylog.com/post/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/ghost/</guid>
+      <guid>https://stanleylog.com/post/ghost/</guid>
       <description>在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件： Nginx PHP MySQL WordPress Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件： Nginx NodeJS MySQL Ghost Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间</description>
     </item>
     
     <item>
       <title>Welcome</title>
-      <link>https://stanleylog.me/post/welcome/</link>
+      <link>https://stanleylog.com/post/welcome/</link>
       <pubDate>Sat, 15 Dec 2018 15:14:30 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/welcome/</guid>
+      <guid>https://stanleylog.com/post/welcome/</guid>
       <description>​ 2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。 那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为</description>
     </item>
     

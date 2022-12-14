@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on StanleyLog - 自留地</title>
-    <link>https://stanleylog.me/categories/blog/</link>
+    <link>https://stanleylog.com/categories/blog/</link>
     <description>Recent content in Blog on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Dec 2018 16:00:32 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.me/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ghost使用感受</title>
-      <link>https://stanleylog.me/post/ghost/</link>
+      <link>https://stanleylog.com/post/ghost/</link>
       <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
       
-      <guid>https://stanleylog.me/post/ghost/</guid>
+      <guid>https://stanleylog.com/post/ghost/</guid>
       <description>在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件： Nginx PHP MySQL WordPress Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件： Nginx NodeJS MySQL Ghost Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间</description>
     </item>
     

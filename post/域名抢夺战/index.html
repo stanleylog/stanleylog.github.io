@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/" />
-  <link rel="next" href="https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" />
-  <link rel="canonical" href="https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/" />
+  <link rel="prev" href="https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+  
+  <link rel="canonical" href="https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           Git入门（二）- 基础（一） | StanleyLog - 自留地
+           域名抢夺战 | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="Git入门（二）- 基础（一） | StanleyLog - 自留地">
+  <meta name="title" content="域名抢夺战 | StanleyLog - 自留地">
     
   
   
@@ -44,21 +44,21 @@
          "@id": "https:\/\/stanleylog.com\/"
     },
     "articleSection" : "post",
-    "name" : "Git入门（二）- 基础（一）",
-    "headline" : "Git入门（二）- 基础（一）",
-    "description" : "As every page in Hugo can be output to multiple formats, it is easy to create Netlify\u0027s _redirects and _headers files on the fly.\n",
+    "name" : "域名抢夺战",
+    "headline" : "域名抢夺战",
+    "description" : "\u003cp\u003e之前曾经网站开张第一篇\u003ca href=\u0022\/post\/welcome\/\u0022\u003e《wecome》\u003c\/a\u003e中提过，本人写博客的时间也算不短了，其中经历过几次大的迁移。其中一次就是在.com的自建网站上，但是由于个人疏忽域名被别人抢注了。经过4年多的时间终于把这个stanleylog.com的域名抢回来了，此处应有掌声\u0026hellip;\u003c\/p\u003e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
     "publisher": "Stanley Sun",
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-02-03 20:42:11 \u002b0800 CST",
-    "dateModified" : "2019-02-03 20:42:11 \u002b0800 CST",
-    "url" : "https:\/\/stanleylog.com\/post\/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801\/",
-    "wordCount" : "532",
-    "keywords" : [ "git", "StanleyLog - 自留地"]
+    "copyrightYear" : "2022",
+    "datePublished": "2022-12-14 14:08:30 \u002b0800 CST",
+    "dateModified" : "2022-12-14 14:08:30 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98\/",
+    "wordCount" : "206",
+    "keywords" : [ "", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Git入门（二）- 基础（一）</h1>
+        <h1 class="post-title" itemprop="name headline">域名抢夺战</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
-                on <time datetime=2019-02-03 itemprop="datePublished">2019-02-03</time>
+                on <time datetime=2022-12-14 itemprop="datePublished">2022-12-14</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://stanleylog.com/categories/git%E5%85%A5%E9%97%A8/"> Git入门 </a>
+                        <a href="https://stanleylog.com/categories/%E7%AB%99%E5%8A%A1/"> 站务 </a>
                         
                 </span>
         </div>
@@ -148,96 +148,8 @@
           
           
 
-          <p>上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。</p>
-<h2 id="获取git仓库">获取Git仓库</h2>
-<p>获取Git仓库存在两种方法：</p>
-<ul>
-<li>
-<p>使用<code>git init</code>在本地初始化仓库</p>
-<pre><code class="language-shell">$ git init
-Initialized empty Git repository in /Users/stanley/git_demo/.git/
-</code></pre>
-</li>
-<li>
-<p>使用<code>git clone</code>克隆远程服务器中仓库</p>
-<pre><code class="language-shell">$ git clone https://github.com/libgit2/libgit2
-Cloning into 'libgit2'...
-remote: Enumerating objects: 88874, done.
-remote: Counting objects: 100% (88874/88874), done.
-remote: Compressing objects: 100% (24728/24728), done.
-remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0
-Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done.
-Resolving deltas: 100% (62425/62425), done.
-Checking out files: 100% (10168/10168), done.
-</code></pre>
-</li>
-</ul>
-<h2 id="查看文件状态">查看文件状态</h2>
-<p>git中的文件存在四种状态, 我们可以使用<code>git status</code>命令查看文件的状态：</p>
-<pre><code class="language-x">Untracked            UnModified            Modified            Staged
-     |                     |                    |                  |   
-     |---Add the file --------------------------------------------&gt;|  
-     |                     |                    |                  |      
-     |                     |---Edit the file---&gt;|                  |      
-     |                     |                    |                  |      
-     |                     |                    |--Stage the file-&gt;|      
-     |                     |                    |                  |      
-     |&lt;--Remove the file---|                    |                  |      
-     |                     |                    |                  |      
-     |                     |&lt;-----------------------------Commit---|      
-     |                     |                    |                  |  
-</code></pre>
-<h3 id="文件状态">文件状态</h3>
-<ul>
-<li>
-<p>Untracked：未跟踪的文件， 还未使用<code>git add</code>添加到暂存区的文件。</p>
-</li>
-<li>
-<p>Unmodified： 已经<code>git commit</code>的文件</p>
-</li>
-<li>
-<p>Modified：已经使用<code>git commit</code>提交， 之后又被修改了的文件。</p>
-</li>
-<li>
-<p>Staged：使用<code>git add</code>提交到暂存区的文件。</p>
-<p>​</p>
-</li>
-</ul>
-<h3 id="状态转换">状态转换:</h3>
-<ul>
-<li>
-<p>Untracked -&gt; Staged: 通过<code>git add</code> 来完成</p>
-</li>
-<li>
-<p>UnModified -&gt; Modified: 修改文件内容来完成，比如<code>vi</code>命令</p>
-</li>
-<li>
-<p>Modified -&gt; Staged: 通过<code>git add</code> 来完成</p>
-</li>
-<li>
-<p>UnModified -&gt; Untracked: 通过<code>git rm</code> 来完成</p>
-</li>
-<li>
-<p>Staged -&gt; UnModified: 通过<code>git commit</code> 来完成</p>
-<p>​</p>
-</li>
-</ul>
-<p>如果认为查看文件状态的命令过于啰嗦，可以使用<code>git status -s</code>以精简的形式展示文件状态， 如下：</p>
-<pre><code class="language-shell">$ git status -s 
- M README 
-MM Rakefile 
-A lib/git.rb 
-M lib/simplegit.rb 
-?? LICENSE.txt
-</code></pre>
-<p>​</p>
-<hr>
-<p>​</p>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Pro Git</a></li>
-<li><a href="http://www.itshouce.com.cn/linux/linux-git.html">http://www.itshouce.com.cn/linux/linux-git.html</a></li>
-</ul>
+          <p>之前曾经网站开张第一篇<a href="/post/welcome/">《wecome》</a>中提过，本人写博客的时间也算不短了，其中经历过几次大的迁移。其中一次就是在.com的自建网站上，但是由于个人疏忽域名被别人抢注了。经过4年多的时间终于把这个stanleylog.com的域名抢回来了，此处应有掌声&hellip;</p>
+<p>虽然这些年文章更新的不多，但是事情总是念念不忘。这下直接续费了10年，以防下次再犯这样的错误，等到了10年估计自己也已经写不动了，但起码是个念想。</p>
     </div>
 
     <div class="post-tags">
@@ -245,8 +157,8 @@ M lib/simplegit.rb
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.com/tags/git/">
-                    #git</a></span>
+            <span class="tag"><a href="https://stanleylog.com/tags//">
+                    #</a></span>
             
             </section>
         
@@ -287,10 +199,8 @@ M lib/simplegit.rb
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/" class="prev" rel="prev" title="Git入门（一）- 起步"><i class="iconfont icon-left"></i>&nbsp;Git入门（一）- 起步</a>
+        <a href="https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="RabbitMQ学习笔记"><i class="iconfont icon-left"></i>&nbsp;RabbitMQ学习笔记</a>
          
-        
-        <a href="https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="RHEL各个版本的通用管理命令">RHEL各个版本的通用管理命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
