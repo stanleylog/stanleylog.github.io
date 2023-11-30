@@ -6,17 +6,35 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Nov 2023 11:36:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Dec 2022 15:16:11 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>心路</title>
-      <link>https://stanleylog.com/tags/%E5%BF%83%E8%B7%AF/</link>
-      <pubDate>Thu, 30 Nov 2023 11:36:14 +0800</pubDate>
+      <title>COVID-19</title>
+      <link>https://stanleylog.com/tags/covid-19/</link>
+      <pubDate>Sun, 18 Dec 2022 15:16:11 +0800</pubDate>
       
-      <guid>https://stanleylog.com/tags/%E5%BF%83%E8%B7%AF/</guid>
+      <guid>https://stanleylog.com/tags/covid-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新冠</title>
+      <link>https://stanleylog.com/tags/%E6%96%B0%E5%86%A0/</link>
+      <pubDate>Sun, 18 Dec 2022 15:16:11 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/%E6%96%B0%E5%86%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>疫情</title>
+      <link>https://stanleylog.com/tags/%E7%96%AB%E6%83%85/</link>
+      <pubDate>Sun, 18 Dec 2022 15:16:11 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/%E7%96%AB%E6%83%85/</guid>
       <description></description>
     </item>
     
