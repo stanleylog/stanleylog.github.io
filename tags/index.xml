@@ -6,10 +6,19 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Nov 2023 11:36:14 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>心路</title>
+      <link>https://stanleylog.com/tags/%E5%BF%83%E8%B7%AF/</link>
+      <pubDate>Thu, 30 Nov 2023 11:36:14 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/%E5%BF%83%E8%B7%AF/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dev</title>
