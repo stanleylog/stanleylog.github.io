@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on StanleyLog - 自留地</title>
+    <link>https://stanleylog.com/tags/software/</link>
+    <description>Recent content in Software on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 11 Feb 2025 15:52:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.com/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>软件清单（2025年）</title>
+      <link>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952025%E5%B9%B4/</link>
+      <pubDate>Tue, 11 Feb 2025 15:52:31 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952025%E5%B9%B4/</guid>
+      <description>2025年开年电脑挂了，很快就定下了重新买一台MacBook Pro的想法。电脑虽好，但新老电脑的数据迁移、软件选型、整体重新配置还是很繁琐的。对之前买过的License的软件升级（带💰符号），寻找更为人性化的替代软件确实花费了不少的精力，主要目标还是寻找开源免费的软件，在这里也把挑选出的软件进行分享。 日常软件 Reeder💰 PDF Expert💰 KeePassXC Keka IINA ClashX Pro Arc Easydict Fantastical💰 MacVim MindNode💰 Mail</description>
+    </item>
+    
+  </channel>
+</rss>
