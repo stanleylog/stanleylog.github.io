@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>团队管理 on StanleyLog - 自留地</title>
+    <link>https://stanleylog.com/categories/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 团队管理 on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:03:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.com/categories/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>领导力</title>
+      <link>https://stanleylog.com/post/leadership/</link>
+      <pubDate>Sun, 07 Jul 2019 22:03:33 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/leadership/</guid>
+      <description>&lt;p&gt;极客时间是我每天都是使用的技术播客，填补了国内没有这个细分领域播客的空白，定位准确、内容丰富。希望之后越来越好。今天要说的是极客时间里陈浩的专栏《左耳听风》上的一片文章，看的时候一下感觉被触动到了。由此有了这篇博文。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
