@@ -57,7 +57,7 @@
     "datePublished": "2025-03-05 10:04:22 \u002b0800 CST",
     "dateModified" : "2025-03-05 10:04:22 \u002b0800 CST",
     "url" : "https:\/\/stanleylog.com\/post\/ubuntu%E5%AE%89%E8%A3%85docker\/",
-    "wordCount" : "263",
+    "wordCount" : "268",
     "keywords" : [ "docker", "StanleyLog - 自留地"]
 }
 </script>
@@ -169,10 +169,11 @@ sudo apt-get update
 
 </code></pre>
 <h3 id="安装docker-engine">安装Docker Engine</h3>
-<pre><code class="language-sh"> sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+<pre><code class="language-sh">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 </code></pre>
 <h3 id="验证安装">验证安装</h3>
-<pre><code class="language-sh">sudo docker run hello-world
+<pre><code class="language-sh">### 验证镜像拉取和运行容器
+sudo docker run hello-world
 
 #### 查看/lib/systemd/system目录中的docker.service是否创建
 ls -l /lib/systemd/system/docker.service
@@ -184,10 +185,6 @@ sudo systemctl status docker
 <pre><code class="language-sh">sudo cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
 {
   &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
-  &quot;log-driver&quot;: &quot;json-file&quot;,
-  &quot;log-opts&quot;: {
-    &quot;max-size&quot;: &quot;100m&quot;
-  },
   &quot;storage-driver&quot;: &quot;overlay2&quot;
 }
 EOF
