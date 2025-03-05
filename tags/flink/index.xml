@@ -6,7 +6,7 @@
     <description>Recent content in flink on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Mar 2025 15:38:20 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Nov 2023 15:38:20 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/flink/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Flink笔记</title>
       <link>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Wed, 05 Mar 2025 15:38:20 +0800</pubDate>
+      <pubDate>Tue, 14 Nov 2023 15:38:20 +0800</pubDate>
       
       <guid>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;基于Flink 1.17版本的学习笔记，包括部署、原理、算子、开发代码等等。&lt;/p&gt;</description>

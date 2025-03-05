@@ -6,37 +6,10 @@
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Mar 2025 15:38:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 10:04:22 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Flink笔记</title>
-      <link>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Wed, 05 Mar 2025 15:38:20 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;p&gt;基于Flink 1.17版本的学习笔记，包括部署、原理、算子、开发代码等等。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker笔记-Part3.创建Docker镜像</title>
-      <link>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/</link>
-      <pubDate>Wed, 05 Mar 2025 14:03:14 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/</guid>
-      <description>&lt;p&gt;演示Docker创建自有镜像的方式，以及如何查看镜像内容。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Git常用命令</title>
-      <link>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>&lt;p&gt;列举了一些在日常中经常使用的高频命令，以备忘记时查阅。&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Ubuntu安装Docker</title>
@@ -84,6 +57,24 @@
     </item>
     
     <item>
+      <title>Git常用命令</title>
+      <link>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 05 Nov 2024 10:41:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;列举了一些在日常中经常使用的高频命令，以备之后查阅。文章此后将继续维护。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flink笔记</title>
+      <link>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 14 Nov 2023 15:38:20 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;基于Flink 1.17版本的学习笔记，包括部署、原理、算子、开发代码等等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>疫情三年</title>
       <link>https://stanleylog.com/post/%E7%96%AB%E6%83%85%E4%B8%89%E5%B9%B4/</link>
       <pubDate>Sun, 18 Dec 2022 15:16:11 +0800</pubDate>
@@ -108,6 +99,15 @@
       
       <guid>https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;在开发的过程中，MQ组件算是在当下的开发模式下必不可少的组件。今天我们就介绍一下MQ领域中的一款优秀的产品-RabbitMQ，其与大名鼎鼎的Spring框架同属VMWare公司。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker笔记-Part3.创建Docker镜像</title>
+      <link>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Thu, 22 Oct 2020 14:03:14 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/</guid>
+      <description>&lt;p&gt;演示Docker创建自有镜像的方式，以及如何查看镜像内容。&lt;/p&gt;</description>
     </item>
     
     <item>

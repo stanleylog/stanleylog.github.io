@@ -6,7 +6,7 @@
     <description>Recent content in git on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Mar 2025 10:41:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2024 10:41:17 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Git常用命令</title>
       <link>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
+      <pubDate>Tue, 05 Nov 2024 10:41:17 +0800</pubDate>
       
       <guid>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>&lt;p&gt;列举了一些在日常中经常使用的高频命令，以备忘记时查阅。&lt;/p&gt;</description>
+      <description>&lt;p&gt;列举了一些在日常中经常使用的高频命令，以备之后查阅。文章此后将继续维护。&lt;/p&gt;</description>
     </item>
     
     <item>
