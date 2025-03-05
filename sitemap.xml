@@ -450,20 +450,6 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.com/tags/dev/</loc>
-      
-      <lastmod>2022-12-06T18:00:56+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://stanleylog.com/tags/mq/</loc>
       
       <lastmod>2022-12-06T18:00:56+08:00</lastmod>
@@ -565,20 +551,6 @@
       <loc>https://stanleylog.com/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/</loc>
       
       <lastmod>2019-11-07T21:51:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</loc>
-      
-      <lastmod>2019-10-25T20:48:26+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -758,6 +730,20 @@
     </url>
   
     <url>
+      <loc>https://stanleylog.com/tags/linux/</loc>
+      
+      <lastmod>2019-05-12T10:50:25+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.com/tags/ntp/</loc>
       
       <lastmod>2019-05-12T10:50:25+08:00</lastmod>
@@ -859,20 +845,6 @@
       <loc>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part1-centos%E5%AE%89%E8%A3%85docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/tags/linux/</loc>
-      
-      <lastmod>2019-02-08T19:30:15+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>

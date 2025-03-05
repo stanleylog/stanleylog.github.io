@@ -147,15 +147,6 @@
     </item>
     
     <item>
-      <title>dev</title>
-      <link>https://stanleylog.com/tags/dev/</link>
-      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/dev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mq</title>
       <link>https://stanleylog.com/tags/mq/</link>
       <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
@@ -188,15 +179,6 @@
       <pubDate>Thu, 07 Nov 2019 21:51:17 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>人生感悟</title>
-      <link>https://stanleylog.com/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</link>
-      <pubDate>Fri, 25 Oct 2019 20:48:26 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/</guid>
       <description></description>
     </item>
     
@@ -246,6 +228,15 @@
     </item>
     
     <item>
+      <title>linux</title>
+      <link>https://stanleylog.com/tags/linux/</link>
+      <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ntp</title>
       <link>https://stanleylog.com/tags/ntp/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
@@ -287,15 +278,6 @@
       <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://stanleylog.com/tags/linux/</link>
-      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/linux/</guid>
       <description></description>
     </item>
     
