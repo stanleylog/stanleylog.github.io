@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  
+  <link rel="canonical" href="https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Docker笔记-Part3.创建Docker镜像 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="Docker笔记-Part3.创建Docker镜像 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/stanleylog.com\/"
+    },
+    "articleSection" : "post",
+    "name" : "Docker笔记-Part3.创建Docker镜像",
+    "headline" : "Docker笔记-Part3.创建Docker镜像",
+    "description" : "创建Dockerfile FROM busybox:latest COPY --chmod=755 \u0026lt;\u0026lt;\u0026quot;EOF\u0026quot; \/start.sh echo \u0026quot;Starting...\u0026quot; for i in $(seq 1 5); do echo \u0026quot;$i\u0026quot; sleep 1 done echo \u0026quot;Exiting...\u0026quot; exit 1 EOF ENTRYPOINT \/start.sh 创建镜像 ➜ docker build -t startstop . [\u002b] Building 9.9s (7\/7) FINISHED docker:default =\u0026gt; [internal] load build definition from Dockerfile 0.0s =\u0026gt; =\u0026gt; transferring dockerfile: 215B 0.0s =\u0026gt; [internal] load metadata for docker.io\/library\/busybox:latest 8.0s =\u0026gt; [internal] load .dockerignore 0.0s =\u0026gt; =\u0026gt; transferring context: 2B 0.0s =\u0026gt; [internal] preparing inline document 0.0s =\u0026gt; [1\/2] FROM docker.io\/library\/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 1.7s =\u0026gt; =\u0026gt; resolve docker.io\/library\/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 0.0s =\u0026gt; =\u0026gt; sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 10.20kB \/ 10.20kB 0.0s =\u0026gt; =\u0026gt; sha256:42279ede3600b4e63af075a5e27d68232ff837d9cdcaba74feffc7ab0dfec0dc 610B \/ 610B 0.0s =\u0026gt; =\u0026gt; sha256:31311c5853a22c04d692f6581b4faa25771d915c1ba056c74e5ec82606eefdfa 459B \/ 459B 0.0s =\u0026gt; =\u0026gt; sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 2.16MB \/ 2.16MB 1.6s =\u0026gt; =\u0026gt; extracting sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 0.0s =\u0026gt; [2\/2] COPY --chmod=755 \u0026lt;\u0026lt;EOF \/start.sh 0.0s =\u0026gt; exporting to image 0.0s =\u0026gt; =\u0026gt; exporting layers 0.0s =\u0026gt; =\u0026gt; writing image sha256:56b8a880daa5e3b8a5d47d440b37ae234020a755f1c3c6f16939aca5a0490dc3 0.0s =\u0026gt; =\u0026gt; naming to docker.io\/library\/startstop 0.0s 1 warning found (use docker --debug to expand): - JSONArgsRecommended: JSON arguments recommended for ENTRYPOINT to prevent unintended behavior related to OS signals (line 11) ➜ docker images REPOSITORY TAG IMAGE ID CREATED SIZE startstop",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2025",
+    "datePublished": "2025-03-05 14:03:14 \u002b0800 CST",
+    "dateModified" : "2025-03-05 14:03:14 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F\/",
+    "wordCount" : "314",
+    "keywords" : [ "docker", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.com/">stanleylog.com</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.com/">stanleylog.com</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Docker笔记-Part3.创建Docker镜像</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2025-03-05 itemprop="datePublished">2025-03-05</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"> 工具使用 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="创建dockerfile">创建Dockerfile</h3>
+<pre><code class="language-sh">FROM busybox:latest
+COPY --chmod=755 &lt;&lt;&quot;EOF&quot; /start.sh
+echo &quot;Starting...&quot;
+for i in $(seq 1 5); do
+  echo &quot;$i&quot;
+  sleep 1
+done
+echo &quot;Exiting...&quot;
+exit 1
+EOF
+ENTRYPOINT /start.sh
+
+</code></pre>
+<h3 id="创建镜像">创建镜像</h3>
+<pre><code class="language-sh">➜  docker build -t startstop .
+[+] Building 9.9s (7/7) FINISHED                                                                                                                             docker:default
+ =&gt; [internal] load build definition from Dockerfile                                                                                                                   0.0s
+ =&gt; =&gt; transferring dockerfile: 215B                                                                                                                                   0.0s
+ =&gt; [internal] load metadata for docker.io/library/busybox:latest                                                                                                      8.0s
+ =&gt; [internal] load .dockerignore                                                                                                                                      0.0s
+ =&gt; =&gt; transferring context: 2B                                                                                                                                        0.0s
+ =&gt; [internal] preparing inline document                                                                                                                               0.0s
+ =&gt; [1/2] FROM docker.io/library/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0                                                1.7s
+ =&gt; =&gt; resolve docker.io/library/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0                                                0.0s
+ =&gt; =&gt; sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 10.20kB / 10.20kB                                                                       0.0s
+ =&gt; =&gt; sha256:42279ede3600b4e63af075a5e27d68232ff837d9cdcaba74feffc7ab0dfec0dc 610B / 610B                                                                             0.0s
+ =&gt; =&gt; sha256:31311c5853a22c04d692f6581b4faa25771d915c1ba056c74e5ec82606eefdfa 459B / 459B                                                                             0.0s
+ =&gt; =&gt; sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 2.16MB / 2.16MB                                                                         1.6s
+ =&gt; =&gt; extracting sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de                                                                              0.0s
+ =&gt; [2/2] COPY --chmod=755 &lt;&lt;EOF /start.sh                                                                                                                             0.0s
+ =&gt; exporting to image                                                                                                                                                 0.0s
+ =&gt; =&gt; exporting layers                                                                                                                                                0.0s
+ =&gt; =&gt; writing image sha256:56b8a880daa5e3b8a5d47d440b37ae234020a755f1c3c6f16939aca5a0490dc3                                                                           0.0s
+ =&gt; =&gt; naming to docker.io/library/startstop                                                                                                                           0.0s
+
+ 1 warning found (use docker --debug to expand):
+ - JSONArgsRecommended: JSON arguments recommended for ENTRYPOINT to prevent unintended behavior related to OS signals (line 11)
+➜  docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+startstop     latest    56b8a880daa5   10 seconds ago   4.27MB
+➜  docker run startstop:latest
+Starting...
+1
+2
+3
+4
+5
+Exiting...
+</code></pre>
+<h3 id="查看镜像">查看镜像</h3>
+<ul>
+<li>查看容器存储层的内容（容器与镜像变更的文件）：</li>
+</ul>
+<pre><code class="language-shell">docker diff 容器名 
+</code></pre>
+<ul>
+<li>保存容器为镜像（不推荐的方法）：</li>
+</ul>
+<pre><code class="language-shell">docker commit \ 
+--author &quot;Tao Wang &lt;[twang2218@gmail.com](mailto:twang2218@gmail.com)&gt;&quot; \ 
+--message &quot;修改了默认网页&quot; \ 
+webserver \ 
+nginx:v2 
+</code></pre>
+<ul>
+<li>查看镜像的提交历史记录:</li>
+</ul>
+<pre><code class="language-shell">docker history 镜像名 
+</code></pre>
+
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/docker/">
+                    #docker</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/e49b252a78147069c496fc7e45e6689f.jpeg" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.com/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="prev" rel="prev" title="Git常用命令"><i class="iconfont icon-left"></i>&nbsp;Git常用命令</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2025</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.com/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?481adac29b01c4869c3b1dce857d4cfe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

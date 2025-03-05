@@ -130,6 +130,40 @@
     <article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/">Docker笔记-Part3.创建Docker镜像</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+
+       			创建Dockerfile FROM busybox:latest COPY --chmod=755 &lt;&lt;&quot;EOF&quot; /start.sh echo &quot;Starting...&quot; for i in $(seq 1 5); do echo &quot;$i&quot; sleep 1 done echo &quot;Exiting...&quot; exit 1 EOF ENTRYPOINT /start.sh 创建镜像 ➜ docker build -t startstop . [+] Building 9.9s (7/7) FINISHED docker:default =&gt; [internal] load build definition from Dockerfile 0.0s =&gt; =&gt; transferring dockerfile: 215B 0.0s =&gt; [internal] load metadata for docker.io/library/busybox:latest 8.0s =&gt; [internal] load .dockerignore 0.0s =&gt; =&gt; transferring context: 2B 0.0s =&gt; [internal] preparing inline document 0.0s =&gt; [1/2] FROM docker.io/library/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 1.7s =&gt; =&gt; resolve docker.io/library/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 0.0s =&gt; =&gt; sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 10.20kB / 10.20kB 0.0s =&gt; =&gt; sha256:42279ede3600b4e63af075a5e27d68232ff837d9cdcaba74feffc7ab0dfec0dc 610B / 610B 0.0s =&gt; =&gt; sha256:31311c5853a22c04d692f6581b4faa25771d915c1ba056c74e5ec82606eefdfa 459B / 459B 0.0s =&gt; =&gt; sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 2.16MB / 2.16MB 1.6s =&gt; =&gt; extracting sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 0.0s =&gt; [2/2] COPY --chmod=755 &lt;&lt;EOF /start.sh 0.0s =&gt; exporting to image 0.0s =&gt; =&gt; exporting layers 0.0s =&gt; =&gt; writing image sha256:56b8a880daa5e3b8a5d47d440b37ae234020a755f1c3c6f16939aca5a0490dc3 0.0s =&gt; =&gt; naming to docker.io/library/startstop 0.0s 1 warning found (use docker --debug to expand): - JSONArgsRecommended: JSON arguments recommended for ENTRYPOINT to prevent unintended behavior related to OS signals (line 11) ➜ docker images REPOSITORY TAG IMAGE ID CREATED SIZE startstop
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2025-03-05 itemprop="datePublished">2025-03-05</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"> 工具使用 </a>
+                        
+                </span>
+        </div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://stanleylog.com/tags/docker/">
+               	 #docker</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Git常用命令</a></h1>
 			</header>
 			<div class="post-content">
@@ -383,40 +417,6 @@
 				
 			</div>
 		</article>
-	<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://stanleylog.com/post/%E5%9F%9F%E5%90%8D%E6%8A%A2%E5%A4%BA%E6%88%98/">域名抢夺战</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			<p>之前曾经网站开张第一篇<a href="/post/welcome/">《wecome》</a>中提过，本人写博客的时间也算不短了，其中经历过几次大的迁移。其中一次就是在.com的自建网站上，但是由于个人疏忽域名被别人抢注了。经过4年多的时间终于把这个stanleylog.com的域名抢回来了，此处应有掌声&hellip;</p>
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-12-14 itemprop="datePublished">2022-12-14</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://stanleylog.com/categories/%E7%AB%99%E5%8A%A1/"> 站务 </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://stanleylog.com/tags//">
-               	 #</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
 	
 
 	
@@ -467,6 +467,20 @@
     <li class="page-item ">
         <span class="page-link">
             <a href="/page/3/">3</a></li>
+        </span>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item ">
+        <span class="page-link">
+            <a href="/page/4/">4</a></li>
         </span>
     
     

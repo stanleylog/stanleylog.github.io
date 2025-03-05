@@ -4,7 +4,91 @@
     <url>
       <loc>https://stanleylog.com/categories/</loc>
       
-      <lastmod>2025-03-05T10:41:17+08:00</lastmod>
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/tags/docker/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/tags/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
+      
+      <lastmod>2025-03-05T14:03:14+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -33,76 +117,6 @@
       <loc>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
       
       <lastmod>2025-03-05T10:41:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/post/</loc>
-      
-      <lastmod>2025-03-05T10:41:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/</loc>
-      
-      <lastmod>2025-03-05T10:41:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/tags/</loc>
-      
-      <lastmod>2025-03-05T10:41:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
-      
-      <lastmod>2025-03-05T10:41:17+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/tags/docker/</loc>
-      
-      <lastmod>2025-03-05T10:04:22+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>

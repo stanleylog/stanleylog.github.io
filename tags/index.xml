@@ -6,10 +6,19 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Mar 2025 10:41:17 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 14:03:14 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://stanleylog.com/tags/docker/</link>
+      <pubDate>Wed, 05 Mar 2025 14:03:14 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/docker/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -17,15 +26,6 @@
       <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://stanleylog.com/tags/docker/</link>
-      <pubDate>Wed, 05 Mar 2025 10:04:22 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/docker/</guid>
       <description></description>
     </item>
     
