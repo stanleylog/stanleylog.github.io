@@ -151,7 +151,6 @@
           <p>基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。</p>
 <h3 id="检查已安装或冲突的包">检查已安装或冲突的包</h3>
 <pre><code class="language-sh">for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-
 </code></pre>
 <h3 id="安装docker-apt仓库">安装Docker Apt仓库</h3>
 <pre><code class="language-sh"># Add Docker's official GPG key:
@@ -167,11 +166,9 @@ echo \
   $(. /etc/os-release &amp;&amp; echo &quot;${UBUNTU_CODENAME:-$VERSION_CODENAME}&quot;) stable&quot; | \
   sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 sudo apt-get update
-
 </code></pre>
 <h3 id="安装docker-engine">安装Docker Engine</h3>
 <pre><code class="language-sh">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 </code></pre>
 <h3 id="配置用户组">配置用户组</h3>
 <pre><code class="language-sh">sudo groupadd docker
@@ -186,7 +183,6 @@ ls -l /lib/systemd/system/docker.service
 
 ### 查看docker.service状态
 sudo systemctl status docker
-
 </code></pre>
 <h3 id="配置docker">配置Docker</h3>
 <pre><code class="language-sh">sudo cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
@@ -195,7 +191,6 @@ sudo systemctl status docker
   &quot;storage-driver&quot;: &quot;overlay2&quot;
 }
 EOF
-
 </code></pre>
     </div>
 
