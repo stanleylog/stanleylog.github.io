@@ -6,10 +6,19 @@
     <description>Recent content in 软件开发 on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Dec 2022 18:00:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 15:38:20 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flink笔记</title>
+      <link>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:20 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/flink%E7%AC%94%E8%AE%B0/</guid>
+      <description>集群部署 集群角色 客户端（Client）：代码由客户端获取并转换，之后提交给JobManager。 JobManager就是Flink集群里的“管事人”， 对作业进行中央调度管理；而它获取到要执行的作用后，会进一步处理转换，然后分发任务给众多的TaskManager。 TaskManager是真正“干活的人”，数据的护理操作都是它们来做的。 Flink支持多种不同的部署场景，还可以和不同的资源管理平台方便的</description>
+    </item>
     
     <item>
       <title>RabbitMQ学习笔记</title>
@@ -18,6 +27,24 @@
       
       <guid>https://stanleylog.com/post/rabbitmq%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;在开发的过程中，MQ组件算是在当下的开发模式下必不可少的组件。今天我们就介绍一下MQ领域中的一款优秀的产品-RabbitMQ，其与大名鼎鼎的Spring框架同属VMWare公司。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C语言学习笔记-指针</title>
+      <link>https://stanleylog.com/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/</link>
+      <pubDate>Thu, 07 Nov 2019 21:51:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/</guid>
+      <description>&lt;p&gt;C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hadoop常用命令</title>
+      <link>https://stanleylog.com/post/hadoop%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/hadoop%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>HDFS 格式化NameNode bin/hdfs namenode -format 启停NameNode sbin/hadoop-daemon.sh start/stop namenode 启停DataNode sbin/hadoop-daemon.sh start/stop datanode 启停HDFS集群 sbin/start/stop-dfs.sh YARN 启停ResourceManager sbin/yarn-daemon.sh start/stop resourcemanager 启停NodeManager sbin/yarn-daemon.sh start/stop nodemanager 启停WebAppProxy服务 sbin/yarn-daemon.sh start/stop proxyserver 启停MapReduce JobHistory Server sbin/mr-jobhistory-daemon.sh start/stop historyserver 启停所有Yarn服务 sbin/start/stop-yarn.sh 状态查询 可是用jps命令查看各个服务是否启动，各个服务/进程的对应关系 进程 所属服务 备注 NameNode HDFS sbin/hadoop-daemon.sh hdfs start namenode DataNode HDFS sbin/hadoop-daemon.sh hdfs start datanode SecondaryNameNode HDFS ResourceManager YARN NodeManager YARN WebAppProxy YARN JobHistoryServer MapReduce QuorumPeerMain Zookeeper DFSZKFailoverController</description>
     </item>
     
   </channel>

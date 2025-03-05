@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.com/post/%E6%9C%80%E5%88%9D%E7%9A%84%E5%8A%A8%E5%8A%9B/" />
+  <link rel="next" href="https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/" />
+  <link rel="canonical" href="https://stanleylog.com/post/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           C语言学习笔记-指针 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="C语言学习笔记-指针 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/stanleylog.com\/"
+    },
+    "articleSection" : "post",
+    "name" : "C语言学习笔记-指针",
+    "headline" : "C语言学习笔记-指针",
+    "description" : "\u003cp\u003eC语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。\u003c\/p\u003e",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-07 21:51:17 \u002b0800 CST",
+    "dateModified" : "2019-11-07 21:51:17 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%87%E9%92%88\/",
+    "wordCount" : "693",
+    "keywords" : [ "c", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.com/">stanleylog.com</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.com/">stanleylog.com</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">C语言学习笔记-指针</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2019-11-07 itemprop="datePublished">2019-11-07</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"> 软件开发 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>C语言最为迷人之处中最光芒万丈的莫属于指针了，指针是指向程序运行中变量及函数的内存地址。对于指针的精妙使用可以实现很多高效的运算，最为常用的函数的非值传递就是通过指针实现的。</p>
+<p>下面的内容为关于指针使用的一些内容：</p>
+<h2 id="指针定义">指针定义</h2>
+<p>指针与其所指向的内容息息相关，我们是通过指针符号与变量类型的组合方式定义指针的。 如下：</p>
+<pre><code class="language-c">//指针定义
+int *x; 
+char *y;
+
+//指针初始化
+int a = 10;
+x = &amp;a;
+</code></pre>
+<p>定义指针类型变量与普通变量定义不同之处在于在变量名之前的<code>*</code>， 这样表名定义的为指向某个具体类型的指针变量。</p>
+<p>初始化指针需要通过取值符号<code>&amp;</code>参与获取某个普通变量的地址进行，将某个变量的内存地址赋予指针变量。</p>
+<h2 id="指针的使用">指针的使用</h2>
+<p>下面我们通过一个变量交换的函数说明一下指针的常见的使用。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void swap(int *x, int *y);
+
+int main() {
+
+    //定义指针a,b
+    int *a, *b, x=10, y=20;
+    a = &amp;x; //将指针a指向变量x
+    b = &amp;y; //将指针b指向变量y
+    //打印指针a,b所指向变量的值
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+		
+    //交换变量a,b的值
+    swap(a, b);
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+
+    //将指针a所指向的变量的值修改为10，其实就是变量x的值修改为10。
+    *a = 10;
+    printf(&quot;%d\t%d\n&quot;, *a, *b);
+    printf(&quot;%d\t%d\n&quot;, x, y);
+   
+    return 0;
+}
+
+//形参为指针的交换变量函数
+void swap(int *x, int *y){
+    //定义交换过程中的临时变量
+    int tmp; 
+    //将指针x指向的变量的值赋值给tmp
+    tmp = *x; 
+    //将指针y指向的变量的值赋值给指针x指向的变量
+    *x = *y; 
+    //将tmp变量中的值赋值给指针y所指向的变量
+    *y = tmp;
+}
+</code></pre>
+<p>以上的例子我们可以观察出如下的内容：</p>
+<ul>
+<li><code>*a</code>代表指针a所指向的变量，而非指针a的值</li>
+<li>指针初始化后是可以对其直接赋值的，如：<code>*a = 10;</code>。不过其含义仍然为指针a所指向变量的值修改为10，其实就是示例中的变量x。</li>
+<li>在初始化指针时，我们需要借助<code>&amp;</code>取值符将变量与指针建立关系。</li>
+</ul>
+<p><em>&mdash;ADD 2019-11-07</em></p>
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/c/">
+                    #c</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/e49b252a78147069c496fc7e45e6689f.jpeg" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.com/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.com/post/%E6%9C%80%E5%88%9D%E7%9A%84%E5%8A%A8%E5%8A%9B/" class="prev" rel="prev" title="最初的动力"><i class="iconfont icon-left"></i>&nbsp;最初的动力</a>
+         
+        
+        <a href="https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/" class="next" rel="next" title="Prometheus介绍">Prometheus介绍&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2025</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.com/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?481adac29b01c4869c3b1dce857d4cfe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

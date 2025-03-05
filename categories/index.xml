@@ -6,10 +6,19 @@
     <description>Recent content in Categories on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Mar 2025 14:03:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 15:38:20 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>软件开发</title>
+      <link>https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:20 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>工具使用</title>
@@ -35,15 +44,6 @@
       <pubDate>Wed, 14 Dec 2022 14:08:30 +0800</pubDate>
       
       <guid>https://stanleylog.com/categories/%E7%AB%99%E5%8A%A1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>软件开发</title>
-      <link>https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Tue, 06 Dec 2022 18:00:56 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
