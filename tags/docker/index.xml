@@ -6,10 +6,19 @@
     <description>Recent content in docker on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Jun 2019 22:34:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 10:04:22 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu安装Docker</title>
+      <link>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</link>
+      <pubDate>Wed, 05 Mar 2025 10:04:22 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</guid>
+      <description>&lt;p&gt;基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Docker常用命令</title>

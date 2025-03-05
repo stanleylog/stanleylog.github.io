@@ -100,6 +100,34 @@
     </url>
   
     <url>
+      <loc>https://stanleylog.com/tags/docker/</loc>
+      
+      <lastmod>2025-03-05T10:04:22+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</loc>
+      
+      <lastmod>2025-03-05T10:04:22+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.com/tags/%E5%AD%A9%E5%AD%90/</loc>
       
       <lastmod>2025-03-01T13:21:19+08:00</lastmod>
@@ -605,20 +633,6 @@
   
     <url>
       <loc>https://stanleylog.com/tags/devops/</loc>
-      
-      <lastmod>2019-06-21T22:34:08+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/tags/docker/</loc>
       
       <lastmod>2019-06-21T22:34:08+08:00</lastmod>
       

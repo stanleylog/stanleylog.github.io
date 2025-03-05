@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Ubuntu安装Docker</title>
+      <link>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</link>
+      <pubDate>Wed, 05 Mar 2025 10:04:22 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</guid>
+      <description>&lt;p&gt;基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>软件清单（2025年）</title>
       <link>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952025%E5%B9%B4/</link>
       <pubDate>Tue, 11 Feb 2025 15:52:31 +0800</pubDate>

@@ -9,9 +9,9 @@
   <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
   <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
   
-  <link rel="prev" href="https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/" />
-  
-  <link rel="canonical" href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  <link rel="prev" href="https://stanleylog.com/post/%E6%95%99%E8%82%B2%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E4%BA%86/" />
+  <link rel="next" href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  <link rel="canonical" href="https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,10 +21,10 @@
   <title>
        
        
-           Git常用命令 | StanleyLog - 自留地
+           Ubuntu安装Docker | StanleyLog - 自留地
        
   </title>
-  <meta name="title" content="Git常用命令 | StanleyLog - 自留地">
+  <meta name="title" content="Ubuntu安装Docker | StanleyLog - 自留地">
     
   
   
@@ -44,9 +44,9 @@
          "@id": "https:\/\/stanleylog.com\/"
     },
     "articleSection" : "post",
-    "name" : "Git常用命令",
-    "headline" : "Git常用命令",
-    "description" : "\u003cp\u003e列举了一些在日常中经常使用的高频命令，以备忘记时查阅。\u003c\/p\u003e",
+    "name" : "Ubuntu安装Docker",
+    "headline" : "Ubuntu安装Docker",
+    "description" : "\u003cp\u003e基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。\u003c\/p\u003e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Stanley Sun",
     "copyrightHolder" : "Stanley Sun",
     "copyrightYear" : "2025",
-    "datePublished": "2025-03-05 10:41:17 \u002b0800 CST",
-    "dateModified" : "2025-03-05 10:41:17 \u002b0800 CST",
-    "url" : "https:\/\/stanleylog.com\/post\/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/",
-    "wordCount" : "921",
-    "keywords" : [ "git", "StanleyLog - 自留地"]
+    "datePublished": "2025-03-05 10:04:22 \u002b0800 CST",
+    "dateModified" : "2025-03-05 10:04:22 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/ubuntu%E5%AE%89%E8%A3%85docker\/",
+    "wordCount" : "263",
+    "keywords" : [ "docker", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -118,7 +118,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Git常用命令</h1>
+        <h1 class="post-title" itemprop="name headline">Ubuntu安装Docker</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
                 <span class="post-time">
@@ -148,110 +148,49 @@
           
           
 
-          <p>列举了一些在日常中经常使用的高频命令，以备忘记时查阅。</p>
-<h3 id="配置">配置</h3>
-<pre><code class="language-shell"># 配置示例
-git config --global user.name 'your_name'
-git config --global user.eamil 'your_mail'
+          <p>基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。</p>
+<h3 id="检查已安装或冲突的包">检查已安装或冲突的包</h3>
+<pre><code class="language-sh">for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+</code></pre>
+<h3 id="安装docker-apt仓库">安装Docker Apt仓库</h3>
+<pre><code class="language-sh"># Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# 三个作用域
-git config --local #只对某个仓库生效, [DEFAULT]
-git config --global #对当前用户所有仓库生效
-git config --system #对系统所有登陆用户有效
+# Add the repository to Apt sources:
+echo \
+  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release &amp;&amp; echo &quot;${UBUNTU_CODENAME:-$VERSION_CODENAME}&quot;) stable&quot; | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
 
-# 查看配置
-git config --list -- local
-git config --list -- global
-git config --list -- system
 </code></pre>
-<h3 id="创建仓库">创建仓库</h3>
-<pre><code class="language-shell"># 已有项目
-git init
+<h3 id="安装docker-engine">安装Docker Engine</h3>
+<pre><code class="language-sh"> sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre>
+<h3 id="验证安装">验证安装</h3>
+<pre><code class="language-sh">sudo docker run hello-world
 
-# 新建项目
-git init your_project
-</code></pre>
-<h3 id="基础操作">基础操作</h3>
-<pre><code class="language-shell">git add &lt;your_file&gt; # 管理文件
-git status # 查看状态
-git commit -m 'msg...' # 提交
-git add -u # 更新暂存区中文件变化
-git reset --hard #清除暂存区中的变化
-git mv &lt;oldname&gt; &lt;newname&gt; #文件更名
-git rm &lt;filename&gt; # 删除文件
+#### 查看/lib/systemd/system目录中的docker.service是否创建
+ls -l /lib/systemd/system/docker.service
 
-git log --oneline # 单行历史信息
-git log -n4 # 查看最近4次历史
-git log --all # 查看所有分支历史
-git log --all --graph # 图形化的方式查看所有分支历史
-
-
-git branch -av #查看本地分支
-git checkout -b temp 7e58904 #根据之前的commit创建分支
-git commit -am 'xxx' #添加到暂存区并提交commit
-
-git cat-file -t 7e58904 #查看git对象类型
-git cat-file -p 7e58904 #查看git对象内容
+### 查看docker.service状态
+sudo systemctl status docker
 </code></pre>
-<h3 id="撤销提交">撤销提交</h3>
-<pre><code class="language-shell">git reset HEAD~1 #撤销最近一次commit
-git revert 7e58904 #撤销执行一次commit，并保留历史记录
-</code></pre>
-<h3 id="分离头指针">分离头指针</h3>
-<pre><code class="language-shell">git checkout 7e58904 #创建分离头指针
-git reflog #可以查看到历史上的分离头指针
-</code></pre>
-<h3 id="删除分支">删除分支</h3>
-<pre><code class="language-shell">git branch -D 分支名 #删除分支, 这是强制删除
-git branch -b 新分支名 原有分支hash # 恢复被删除的分支, 原有分支hash可以通过git reflog查看
-</code></pre>
-<h3 id="修改提交信息">修改提交信息</h3>
-<pre><code class="language-shell">git rebase -i 7e58904 # 变基，修改此后提交的历史信息
-git commit --amend # 修改最后提交信息
-git rebase -i 7e58904, reword 7e58903 # 修改历史提交信息
-</code></pre>
-<h3 id="合并历史提交">合并历史提交</h3>
-<pre><code class="language-shell">git rebase -i 7e58904 #通过变基中的squash进行合并， 如果是间隔commit，需要将合并的commit更改顺序到一起
-</code></pre>
-<h3 id="文件比较">文件比较</h3>
-<pre><code class="language-shell"># 暂存区和HEAD比较
-git diff --cached # 注意提交到暂存区需要使用git add命令，即使已经add过之后又进行修改的文件
-
-# 工作区和暂存区比较
-git diff
-git diff -- 文件名 # 比较指定文件
-
-git diff &lt;commit-hash&gt; &lt;commit-hash&gt; -- &lt;file&gt; # 比较指定两个commit中指定文件的差异
-</code></pre>
-<h3 id="文件恢复">文件恢复</h3>
-<pre><code class="language-shell"># 暂存区恢复成HEAD
-git reset HEAD -- &lt;file&gt;
-
-# 工作区恢复成暂存区
-git checkout -- &lt;file&gt;
-git restore xxx  #回滚暂存区
-</code></pre>
-<p>如果操作暂存区使用reset, 如果操作工作区用checkout</p>
-<h3 id="删除提交">删除提交</h3>
-<pre><code class="language-shell"># 删除最近几次的commit
-git reset &lt;commit-hash&gt; --hard #将丢弃暂存区和工作区中的内容
-</code></pre>
-<h3 id="临时切换分支">临时切换分支</h3>
-<pre><code class="language-shell">git stash #创建stash
-git stash list # 查看已有的stash
-git stash apply # 恢复指定stash，但不删除
-git stash pop # 恢复指定stash, 并删除stash记录
-</code></pre>
-<h3 id="忽略文件">忽略文件</h3>
-<pre><code class="language-shell">.gitignore
-### 内容参考 https://github.com/github/gitignore 
-</code></pre>
-<h3 id="远程仓库">远程仓库</h3>
-<pre><code class="language-shell">git remote -v 
-git remote add xxx xxx.git
-git push 
-</code></pre>
-<pre><code class="language-shell">git branch -m &lt;old&gt; &lt;new&gt; # 分支改名
+<h3 id="配置docker">配置Docker</h3>
+<pre><code class="language-sh">sudo cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
+  &quot;log-driver&quot;: &quot;json-file&quot;,
+  &quot;log-opts&quot;: {
+    &quot;max-size&quot;: &quot;100m&quot;
+  },
+  &quot;storage-driver&quot;: &quot;overlay2&quot;
+}
+EOF
 </code></pre>
     </div>
 
@@ -260,8 +199,8 @@ git push
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://stanleylog.com/tags/git/">
-                    #git</a></span>
+            <span class="tag"><a href="https://stanleylog.com/tags/docker/">
+                    #docker</a></span>
             
             </section>
         
@@ -302,8 +241,10 @@ git push
 
     <div class="post-nav">
         
-        <a href="https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/" class="prev" rel="prev" title="Ubuntu安装Docker"><i class="iconfont icon-left"></i>&nbsp;Ubuntu安装Docker</a>
+        <a href="https://stanleylog.com/post/%E6%95%99%E8%82%B2%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E4%BA%86/" class="prev" rel="prev" title="教育到底怎么了！"><i class="iconfont icon-left"></i>&nbsp;教育到底怎么了！</a>
          
+        
+        <a href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="Git常用命令">Git常用命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
