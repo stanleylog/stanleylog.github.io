@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.com/post/%E7%96%AB%E6%83%85%E4%B8%89%E5%B9%B4/" />
+  <link rel="next" href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  <link rel="canonical" href="https://stanleylog.com/post/flink%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Flink学习笔记 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="Flink学习笔记 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/stanleylog.com\/"
+    },
+    "articleSection" : "post",
+    "name" : "Flink学习笔记",
+    "headline" : "Flink学习笔记",
+    "description" : "\u003cp\u003e基于Flink 1.17版本的学习笔记，包括部署、原理、算子、开发代码等等。\u003c\/p\u003e",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-11-14 15:38:20 \u002b0800 CST",
+    "dateModified" : "2023-11-14 15:38:20 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/flink%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/",
+    "wordCount" : "11988",
+    "keywords" : [ "flink","bigdata", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.com/">stanleylog.com</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.com/">stanleylog.com</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Flink学习笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2023-11-14 itemprop="datePublished">2023-11-14</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>基于Flink 1.17版本的学习笔记，包括部署、原理、算子、开发代码等等。</p>
+<h2 id="集群部署">集群部署</h2>
+<h3 id="集群角色">集群角色</h3>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305154040135.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305154040135"></p>
+<ul>
+<li>客户端（Client）：代码由客户端获取并转换，之后提交给JobManager。</li>
+<li>JobManager就是Flink集群里的“管事人”， 对作业进行中央调度管理；而它获取到要执行的作用后，会进一步处理转换，然后分发任务给众多的TaskManager。</li>
+<li>TaskManager是真正“干活的人”，数据的护理操作都是它们来做的。</li>
+</ul>
+<p>Flink支持多种不同的部署场景，还可以和不同的资源管理平台方便的集成。</p>
+<h3 id="集群规划">集群规划</h3>
+<table>
+<thead>
+<tr>
+<th>节点服务器</th>
+<th>hadoop3</th>
+<th>hadoop2</th>
+<th>hadoop1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角色</td>
+<td>JobManager TaskManager</td>
+<td>Task Manager</td>
+<td>Task Manager</td>
+</tr>
+</tbody>
+</table>
+<h4 id="修改配置文件">修改配置文件</h4>
+<pre><code class="language-shell">$ vi flink-conf.yaml
+
+jobmanager.rpc.address: pi3
+jobmanager.bind-host: 0.0.0.0
+
+taskmanager.bind-host: 0.0.0.0
+### 更为各台主机的主机名
+taskmanager.host: pi3
+
+rest.address: pi3
+rest.bind-address: 0.0.0.0
+
+$ vi workers
+pi3
+pi2
+pi4
+
+$ vi masters
+pi3
+</code></pre>
+<h4 id="分发文件到各主机">分发文件到各主机</h4>
+<pre><code class="language-shell">$ scp -r /opt/flink-1.17.1 pi2:/opt/flink-1.17.1
+$ scp -r /opt/flink-1.17.1 pi4:/opt/flink-1.17.1
+</code></pre>
+<h4 id="启动集群">启动集群</h4>
+<pre><code class="language-shell">$ bin/start-cluster.sh
+Starting cluster.
+Starting standalonesession daemon on host pi3.
+Starting taskexecutor daemon on host pi3.
+Starting taskexecutor daemon on host pi2.
+Starting taskexecutor daemon on host pi4.
+</code></pre>
+<h5 id="问题1error-vm-option-useg1gc-is-experimental-and-must-be-enabled-via--xxunlockexperimentalvmoptions">问题1：Error: VM option &lsquo;UseG1GC&rsquo; is experimental and must be enabled via -XX:+UnlockExperimentalVMOptions.</h5>
+<p>解决方法：</p>
+<pre><code class="language-shell">/opt/flink-1.17.1/bin$ vi taskmanager.sh
+# 注释如下内容
+if [ -z &quot;${FLINK_ENV_JAVA_OPTS}&quot; ] &amp;&amp; [ -z &quot;${FLINK_ENV_JAVA_OPTS_TM}&quot; ]; then
+    export JVM_ARGS=&quot;$JVM_ARGS -XX:+UseG1GC&quot;
+fi
+
+scp taskmanager.sh pi2:/opt/flink-1.17.1/bin
+scp taskmanager.sh pi3:/opt/flink-1.17.1/bin
+scp taskmanager.sh pi4:/opt/flink-1.17.1/bin
+</code></pre>
+<h4 id="手工打包工程">手工打包工程</h4>
+<pre><code class="language-xml">修改pom.xml, 在build.plugins中添加如下内容:
+
+&lt;!-- Flink官方打包插件 --&gt;  
+&lt;plugin&gt;  
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;  
+    &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;  
+    &lt;version&gt;3.2.4&lt;/version&gt;  
+    &lt;executions&gt;        &lt;execution&gt;            &lt;phase&gt;package&lt;/phase&gt;  
+            &lt;goals&gt;                &lt;goal&gt;shade&lt;/goal&gt;  
+            &lt;/goals&gt;            &lt;configuration&gt;                &lt;artifactSet&gt;                    &lt;excludes&gt;                        &lt;exclude&gt;com.google.code.findbugs:jsr305&lt;/exclude&gt;  
+                        &lt;exclude&gt;org.slf4j:*&lt;/exclude&gt;  
+                        &lt;exclude&gt;log4j:*&lt;/exclude&gt;  
+                    &lt;/excludes&gt;                &lt;/artifactSet&gt;                &lt;filters&gt;                    &lt;filter&gt;                        &lt;!-- Do not copy the signatures in the META-INF folder.  
+                        Otherwise, this might cause SecurityExceptions when using the JAR. --&gt;                        &lt;artifact&gt;*:*&lt;/artifact&gt;  
+                        &lt;excludes&gt;                            &lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;  
+                            &lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;  
+                            &lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;  
+                        &lt;/excludes&gt;                    &lt;/filter&gt;                &lt;/filters&gt;                &lt;transformers&gt;                    &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;  
+                        &lt;mainClass&gt;my.programs.main.clazz&lt;/mainClass&gt;  
+                    &lt;/transformer&gt;                &lt;/transformers&gt;            &lt;/configuration&gt;        &lt;/execution&gt;    &lt;/executions&gt;&lt;/plugin&gt;
+                    
+</code></pre>
+<h4 id="命令行运行代码">命令行运行代码</h4>
+<pre><code class="language-shell">bin/flink run -m pi3:8081 -c com.stanleylog.WordCountStreamunboundedDemo ~/learning-flink-1.0-SNAPSHOT.jar
+</code></pre>
+<h3 id="部署模式">部署模式</h3>
+<ul>
+<li>会话模式（Session Mode）</li>
+<li>单作业模式（Per-Job Mode） 需要资源管理平台才可支持。</li>
+<li>应用模式（Application Mode）  通过standalone-job.sh start &ndash;job-classname xxx.xxx.xxx启动, 并且上传的Jar必须在lib目录下。
+三种模式主要区别的集群的<strong>生命周期</strong>以及<strong>资源的分配方式</strong>上。</li>
+</ul>
+<h4 id="运行模式">运行模式</h4>
+<ul>
+<li>Standalone 模式, Flink自己管理资源，不依赖外部资源管理平台。没有自动扩展或重新分配资源的保证, 必须手动处理。默认使用会话模式， 可支持应用模式，不支持单作业模式。</li>
+<li>YARN模式, 最为常用的模式。</li>
+<li>K8S模式</li>
+</ul>
+<h5 id="standalone模式">Standalone模式</h5>
+<pre><code class="language-shell">### 启动
+$ mv ~/learning-flink-1.0-SNAPSHOT.jar /opt/flink-1.17.1/lib
+$ bin/standalone-job.sh start --job-classname com.stanleylog.WordCountStreamunboundedDemo
+$ bin/taskmanager.sh start  ### taskmanager需要手工启动
+
+### 停止
+$ bin/taskmanager.sh stop
+$ bin/standalone-job.sh stop
+</code></pre>
+<h5 id="yarn模式">Yarn模式</h5>
+<pre><code class="language-shell">$ vi /etc/profile
+
+# Hadoop Env
+export HADOOP_HOME=/opt/hadoop-2.7.7
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+
+# Flink Env
+export HADOOP_CLASSPATH=`hadoop classpath`
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
+</code></pre>
+<h5 id="会话模式session">会话模式（Session）</h5>
+<pre><code class="language-shell"># 启动
+$ bin/yarn-session.sh -d -nm flink-test
+
+# 停止
+$ echo &quot;stop&quot; | ./bin/yarn-session.sh -id application_xxx
+# 或者
+$ yarn application -kill application_xxx
+</code></pre>
+<p>高版本的Flink中，无需去更改Flink配置文件，它会自己进行动态覆盖。</p>
+<h6 id="命令行运行代码-1">命令行运行代码</h6>
+<pre><code class="language-shell">$ bin/flink run -d -c com.stanleylog.WordCountStreamunboundedDemo ~/learning-flink-1.0-SNAPSHOT.jar
+</code></pre>
+<h5 id="单作业模式pre-job">单作业模式（Pre-Job）</h5>
+<pre><code class="language-shell">### 启动
+$ bin/flink run -d -t yarn-pre-job -c com.stanleylog.WordCountStreamunboundedDemo ~/learning-flink-1.0-SNAPSHOT.jar
+
+### 关闭
+# YARN UI界面 
+# 或者
+$ bin/flink list -t yarn-pre-job -Dyarn.application.id=application_xxx #查看JOB_ID
+$ bin/flink cancel -t yarn-pre-job -Dyarn.application.id=application_xxx &lt;JOB_ID&gt;
+</code></pre>
+<h5 id="应用模式application重点">应用模式（Application）重点</h5>
+<pre><code class="language-shell">### 启动
+$ bin/flink run-application -d -t yarn-application -nm test -c com.stanleylog.WordCountStreamunboundedDemo ~/learning-flink-1.0-SNAPSHOT.jar
+
+### 关闭
+# YARN UI界面 
+# 或者
+$ bin/flink list -t yarn-application -Dyarn.application.id=application_xxx #查看JOB_ID
+$ bin/flink cancel -t yarn-application -Dyarn.application.id=application_xxx &lt;JOB_ID&gt;
+
+</code></pre>
+<p>使用HDFS文件的模式  &mdash;推荐生产环境使用</p>
+<pre><code class="language-shell">### 上传Flink类库
+$ hadoop fs -mkdir /flink-dist
+$ hadoop fs -put /opt/flink-1.17.1/lib/ /flink-dist
+$ hadoop fs -put /opt/flink-1.17.1/plugins/ /flink-dist
+
+### 上传Flink程序
+$ hadoop fs -mkdir /flink-jars
+$ hadoop fs -put ~/learning-flink-1.0-SNAPSHOT.jar /flink-jars
+
+### 启动
+$ bin/flink run-application -d -t yarn-application -Dyarn.provided.lib.dirs=&quot;hdfs://hadoop1:9000/flink-dist&quot; -c com.stanleylog.WordCountStreamunboundedDemo hdfs://hadoop1:9000/flink-jars/learning-flink-1.0-SNAPSHOT.jar
+</code></pre>
+<h5 id="历史服务器">历史服务器</h5>
+<pre><code class="language-shell">$ hadoop fs -mkdir -p /logs/flink-job
+
+### 修改flink配置
+$ vi conf/flink-conf.yaml
+jobmanager.archive.fs.dir: hdfs://hadoop1:9000/logs/flink-job
+historyserver.web.address: hadoop2
+historyserver.web.port: 8082
+historyserver.archive.fs.dir: hdfs://hadoop1:9000/logs/flink-job
+historyserver.archive.fs.refresh-interval: 5000
+
+### 启动
+bin/historyserver.sh start
+
+### 停止
+bin/historyserver.sh stop
+</code></pre>
+<p>可以通过 http://hadoop2:8082 访问</p>
+<h2 id="运行时架构">运行时架构</h2>
+<p>![[Pasted image 20231117110403.png]]</p>
+<p>重要组件：</p>
+<ul>
+<li>JobMaster</li>
+<li>资源管理器（ResourceManager）</li>
+<li>分发器（Dispatcher）</li>
+<li>任务管理器（TaskManager）</li>
+</ul>
+<h3 id="核心概念">核心概念</h3>
+<h4 id="并行度">并行度</h4>
+<p>Flink的并行度代表最大并行度数量，可以通过.setParallelism()进行设置。
+设置方式, 执行优先级如下：</p>
+<ul>
+<li>代码中通过setParallelism设置并行度</li>
+<li>env整体设置并行度</li>
+<li>命令行提交代码时通过-p参数进行设置并行度</li>
+<li>WebUI 提交页面设置并行度</li>
+<li>Flink配置文件中的默认并行度</li>
+</ul>
+<h4 id="算子链">算子链</h4>
+<ol>
+<li>一对一（One to One）</li>
+<li>重分区（Redistributing）</li>
+</ol>
+<p>关闭算子链</p>
+<ol>
+<li>算子链可以通过env.disableOperatorChaining()进行全局禁用，禁用之后所有的算子将不会被合并。</li>
+<li>某个算子不参与链化：算子A.disableChaining()，算子A不会与前面和后面的算子进行合并。</li>
+<li>从某个算子开启新链条：算子A.startNewChain(), 算子A不参与前面的合并，从A开始正常链化。</li>
+</ol>
+<h4 id="任务槽slot">任务槽（Slot）</h4>
+<p>主要按照内存划分资源，每个slot专门给具体的task使用，不会进行资源的调配。可以通过修改配置参数更改默认的TaskManager分配的Slot数量。</p>
+<pre><code class="language-shell">taskmanager.numberOfTaskSlots: 1
+</code></pre>
+<p>CPU资源不会进行资源隔离的，所以建议使用所在主机的CPU核心数划分此参数。
+在同一作业中，不同任务节点的并行任务可以放在同一slot上执行。
+可以通过.slotSharingGroup设置算子的不用共享组，默认共享组为default.</p>
+<h4 id="任务槽和并行度的关系">任务槽和并行度的关系</h4>
+<p>任务槽是静态的概念，是指TaskManager具有的并发执行能力，可以通过taskmanager.numberOfTaskSlots进行配置；
+而并行度是动态的概念，也就是TaskManager运行程序时实际使用的并发能力，可通过参数paralleism.default配置。
+slot数量必须&gt;= job并行度</p>
+<h3 id="作业提交流程">作业提交流程</h3>
+<h4 id="standalone会话模式作业提交流程">Standalone会话模式作业提交流程</h4>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305154637570.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305154637570"></p>
+<ol>
+<li>逻辑流图（Stream Graph）</li>
+<li>作业流图（Job Graph）</li>
+<li>执行图（Execution Graph） 最为重要</li>
+<li>物理图（Physical Graph）</li>
+</ol>
+<h4 id="yarn应用模式作业提交流程">Yarn应用模式作业提交流程</h4>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165129856.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165129856"></p>
+<h2 id="datastream-api">DataStream API</h2>
+<p>五大类API：</p>
+<ul>
+<li>Execution Environment（获取执行环境）</li>
+<li>Source（读取数据源）</li>
+<li>Transformation（转换操作）</li>
+<li>Sink（输出）</li>
+<li>Execution（触发执行）</li>
+</ul>
+<h3 id="执行环境execution-environment">执行环境（Execution Environment）</h3>
+<h4 id="创建执行环境">创建执行环境</h4>
+<h5 id="自动获取环境">自动获取环境</h5>
+<p>它会根据当前运行的上下文直接得到正确的结果：如果程序是独立运行的，就返回一个本地执行环境；如果是创建了jar包，然后从命令行调用它并提交到集群执行，那么就返回集群的执行环境。也就是说，这个方法会根据当前运行的方式，自行决定该返回什么样的运行环境。</p>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+</code></pre>
+<h5 id="创建本地环境">创建本地环境</h5>
+<p>这个方法返回一个本地执行环境。可以在调用时传入一个参数，指定默认的并行度；如果不传入，则默认并行度就是本地的CPU核心数。</p>
+<pre><code class="language-java">StreamExecutionEnvironment localEnv = StreamExecutionEnvironment.createLocalEnvironment();
+</code></pre>
+<h5 id="创建远程环境">创建远程环境</h5>
+<p>这个方法返回集群执行环境。需要在调用时指定JobManager的主机名和端口号，并指定要在集群中运行的Jar包。</p>
+<pre><code class="language-java">StreamExecutionEnvironment remoteEnv = StreamExecutionEnvironment
+          .createRemoteEnvironment(
+           &quot;host&quot;,                   // JobManager主机名
+           1234,                     // JobManager进程端口号
+           &quot;path/to/jarFile.jar&quot;  // 提交给JobManager的JAR包
+);
+</code></pre>
+<h4 id="执行模式execution-mode">执行模式（Execution Mode）</h4>
+<h5 id="流执行模式streaming">流执行模式（Streaming）</h5>
+<p>这是DataStream API最经典的模式，一般用于需要持续实时处理的无界数据流。默认情况下，程序使用的就是Streaming执行模式。</p>
+<h5 id="批执行模式batch">批执行模式（Batch）</h5>
+<p>专门用于批处理的执行模式。</p>
+<h5 id="自动模式automatic">自动模式（AutoMatic）</h5>
+<p>在这种模式下，将由程序根据输入数据源是否有界，来自动选择执行模式。
+批执行模式的使用。主要有两种方式：</p>
+<ul>
+<li>通过命令行配置</li>
+</ul>
+<pre><code class="language-java">bin/flink run -Dexecution.runtime-mode=BATCH ...
+</code></pre>
+<p>在提交作业时，增加execution.runtime-mode参数，指定值为BATCH。</p>
+<ul>
+<li>通过代码配置</li>
+</ul>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+env.setRuntimeMode(RuntimeExecutionMode.BATCH);
+</code></pre>
+<p>在代码中，直接基于执行环境调用setRuntimeMode方法，传入BATCH模式。
+实际应用中一般不会在代码中配置，而是使用命令行，这样更加灵活。</p>
+<h4 id="触发程序执行">触发程序执行</h4>
+<p>写完输出（sink）操作并不代表程序已经结束。因为当main()方法被调用时，其实只是定义了作业的每个执行操作，然后添加到数据流图中；这时并没有真正处理数据——因为数据可能还没来。Flink是由事件驱动的，只有等到数据到来，才会触发真正的计算，这也被称为“延迟执行”或“懒执行”。</p>
+<pre><code class="language-java">env.execute();
+</code></pre>
+<h3 id="源算子source">源算子（Source）</h3>
+<h4 id="从集合中读取数据">从集合中读取数据</h4>
+<pre><code class="language-java">List&lt;Integer&gt; data = Arrays.asList(1, 22, 3);
+DataStreamSource&lt;Integer&gt; ds = env.fromCollection(data);
+</code></pre>
+<h4 id="从文件中读取数据">从文件中读取数据</h4>
+<p>POM.xml中添加</p>
+<pre><code class="language-xml">&lt;dependency&gt;  
+    &lt;groupId&gt;org.apache.flink&lt;/groupId&gt;  
+    &lt;artifactId&gt;flink-connector-files&lt;/artifactId&gt;  
+    &lt;version&gt;${flink.version}&lt;/version&gt;  
+    &lt;scope&gt;provided&lt;/scope&gt;  
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();  
+env.setParallelism(1);  
+  
+FileSource&lt;String&gt; fileSource = FileSource.forRecordStreamFormat(  
+        new TextLineInputFormat(),  
+        new Path(&quot;input/word.txt&quot;)  
+).build();  
+  
+env.fromSource(fileSource, WatermarkStrategy.noWatermarks(), &quot;filesource&quot;).print();  
+  
+  
+env.execute();
+</code></pre>
+<h4 id="从kafka中读取数据">从Kafka中读取数据</h4>
+<pre><code class="language-xml">&lt;dependency&gt;  
+    &lt;groupId&gt;org.apache.flink&lt;/groupId&gt;  
+    &lt;artifactId&gt;flink-connector-kafka&lt;/artifactId&gt;  
+    &lt;version&gt;${flink.version}&lt;/version&gt;  
+    &lt;scope&gt;provided&lt;/scope&gt;  
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();  
+env.setParallelism(1);  
+  
+KafkaSource&lt;String&gt; kafkaSource = KafkaSource.&lt;String&gt;builder()  
+        .setBootstrapServers(&quot;hadoop3:9092&quot;)  
+        .setGroupId(&quot;stanley&quot;)  
+        .setTopics(&quot;topic_1&quot;)  
+        .setValueOnlyDeserializer(new SimpleStringSchema())  
+        .setStartingOffsets(OffsetsInitializer.latest())  
+        .build();  
+  
+env.fromSource(kafkaSource, WatermarkStrategy.noWatermarks(), &quot;kafkasource&quot;).print();  
+  
+env.execute();
+</code></pre>
+<h4 id="从数据生成器中读取数据">从数据生成器中读取数据</h4>
+<pre><code class="language-xml">&lt;dependency&gt;  
+    &lt;groupId&gt;org.apache.flink&lt;/groupId&gt;  
+    &lt;artifactId&gt;flink-connector-datagen&lt;/artifactId&gt;  
+    &lt;version&gt;${flink.version}&lt;/version&gt;  
+    &lt;scope&gt;provided&lt;/scope&gt;  
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();  
+env.setParallelism(1);  
+  
+DataGeneratorSource&lt;String&gt; datageneratorSource = new DataGeneratorSource&lt;&gt;(  
+        new GeneratorFunction&lt;Long, String&gt;() {  
+            @Override  
+            public String map(Long value) throws Exception {  
+                return &quot;Number: &quot; + value;  
+            }  
+        },  
+        Long.MAX_VALUE,  
+        RateLimiterStrategy.perSecond(3),  
+        Types.STRING  
+);  
+  
+env.fromSource(datageneratorSource,WatermarkStrategy.noWatermarks(), &quot;data-generator&quot;).print();  
+  
+env.execute();
+</code></pre>
+<h3 id="转换算子transformation">转换算子（Transformation）</h3>
+<h4 id="基本转换算子">基本转换算子</h4>
+<h5 id="映射map">映射（map）</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165215532.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165215532">
+用于数据流中的数据进行转换，形成新的数据流。简单的说，就是一个“一一映射”，消费一个元素就产生一个元素。</p>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;String&gt; map = sensorDS.map(new MapFunction&lt;WaterSensor, String&gt;() {  
+    @Override  
+    public String map(WaterSensor value) throws Exception {  
+        return value.getId();  
+    }  
+});
+</code></pre>
+<h5 id="过滤filter">过滤（Filter）</h5>
+<p>对数据执行一个过滤，通过布尔条件表达式设置过滤条件，对于每一个流内元素进行判断，若为true则元素正常输出，若为false则元素被过滤掉。
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165236051.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165236051"></p>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;WaterSensor&gt; filter = sensorDS.filter(new FilterFunction&lt;WaterSensor&gt;() {  
+    @Override  
+    public boolean filter(WaterSensor value) throws Exception {  
+        return &quot;s1&quot;.equals(value.getId());  
+    }  
+});
+</code></pre>
+<h5 id="扁平映射flatmap">扁平映射（flatMap）</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165254715.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165254715">
+将数据流中的整体（一般是集合类型)拆分成一个一个的个体使用。消费一个元素，可以产生0到多个元素，简单的说就是”一进多出“。flatmap可以认为是“扁平化”flatten和“映射”map两步操作的结合。就是按某种规则对数据进行打散拆分，再对拆分后的元素做转换处理。</p>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;String&gt; flatMap = sensorDS.flatMap(new FlatMapFunction&lt;WaterSensor, String&gt;() {  
+    @Override  
+    public void flatMap(WaterSensor value, Collector&lt;String&gt; out) throws Exception {  
+        if (&quot;s1&quot;.equals(value.getId())) {  
+            out.collect(value.getVc() + &quot;&quot;);  
+        } else if (&quot;s2&quot;.equals(value.getId())) {  
+            out.collect(value.getVc() + &quot;&quot;);  
+            out.collect(value.getTs() + &quot;&quot;);  
+        }  
+    }  
+});
+</code></pre>
+<h4 id="聚合算子">聚合算子</h4>
+<h5 id="按键分区keyby">按键分区（keyBy）</h5>
+<p>keyBy是聚合前必须要用到的一个算子。keyBy通过指定键（key），可以将一条流逻辑上划分成不同的分区（partition）。这里说的分区，其实就是并行处理的子任务。
+基于不同的key，流中的数据将被分到不同的分区中去；这样一来，所有具有相同的key的数据，都被发往同一个分区。
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165315960.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165315960"></p>
+<pre><code class="language-java">/**  
+ * 1. 返回的是一个KeyedStream 键控流 
+ * 2. keyby不是转换算子，只是对数据进行重分区, 也不能设置并行度 
+ * 3. keyby 分组和分区的关系： 
+ *  1). keyby是对数据分组，保证相同的key的数据 在同一个分区 
+ *  2). 分区：一个子任务，可以理解为一个分区. 一个分区（子任务）可以存在多个分组(key) 
+ **/
+KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(new KeySelector&lt;WaterSensor, String&gt;() {  
+    @Override  
+    public String getKey(WaterSensor value) throws Exception {  
+        return value.getId();  
+    }  
+});  
+  
+sensorKS.print();
+
+</code></pre>
+<h5 id="简单聚合summinmaxminbymaxby">简单聚合（sum/min/max/minBy/maxBy）</h5>
+<pre><code class="language-java">/**  
+* 简单聚合算子         
+* 1。 keyby之后才能调用         
+**/  
+// 传位置索引的，不适用pojo类型，适用于tuple类型。  
+//        SingleOutputStreamOperator&lt;WaterSensor&gt; result= sensorKS.sum(2);  
+//        SingleOutputStreamOperator&lt;WaterSensor&gt; result= sensorKS.sum(&quot;vc&quot;);  
+//        SingleOutputStreamOperator&lt;WaterSensor&gt; result= sensorKS.min(&quot;vc&quot;);  
+//        SingleOutputStreamOperator&lt;WaterSensor&gt; result= sensorKS.max(&quot;vc&quot;);  
+/**  
+ * maxBy: 会将返回比较字段的最大值，非比较字段也保留最大值记录的值         
+ * max值返回比较字段的最大值，而非比较字段保留第一次值         
+ *         
+ * min/minBy也是如此规则         
+ **/        
+SingleOutputStreamOperator&lt;WaterSensor&gt; result= sensorKS.maxBy(&quot;vc&quot;);
+</code></pre>
+<h5 id="归约聚合reduce">归约聚合（reduce）</h5>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;WaterSensor&gt; reduce = sensorKS.reduce(new ReduceFunction&lt;WaterSensor&gt;() {  
+    @Override  
+    public WaterSensor reduce(WaterSensor value1, WaterSensor value2) throws Exception {  
+        System.out.println(&quot;value1: &quot; + value1);  
+        System.out.println(&quot;value2: &quot; + value2);  
+        return new WaterSensor(value1.getId(), value1.getTs(), value1.getVc() + value2.getVc());  
+    }  
+});  
+  
+reduce.print();
+</code></pre>
+<h4 id="用户自定义函数udf">用户自定义函数（UDF）</h4>
+<p>用户自定义函数分为：函数类、匿名函数、富函数类。</p>
+<h5 id="函数类function-classes">函数类（Function Classes）</h5>
+<pre><code class="language-java">public class FilterFunctionImpl implements FilterFunction&lt;WaterSensor&gt; {  
+  
+    public String id;  
+  
+    public FilterFunctionImpl(String id) {  
+        this.id = id;  
+    }  
+  
+    @Override  
+    public boolean filter(WaterSensor value) throws Exception {  
+        return this.id.equals(value.getId());  
+    }  
+}
+</code></pre>
+<h5 id="匿名类">匿名类</h5>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;String&gt; flatMap = sensorDS.flatMap(new FlatMapFunction&lt;WaterSensor, String&gt;() {  
+    @Override  
+    public void flatMap(WaterSensor value, Collector&lt;String&gt; out) throws Exception {  
+        if (&quot;s1&quot;.equals(value.getId())) {  
+            out.collect(value.getVc() + &quot;&quot;);  
+        } else if (&quot;s2&quot;.equals(value.getId())) {  
+            out.collect(value.getVc() + &quot;&quot;);  
+            out.collect(value.getTs() + &quot;&quot;);  
+        }  
+    }  
+});
+</code></pre>
+<h5 id="富函数类richfunction-classes">富函数类（RichFunction Classes）</h5>
+<pre><code class="language-java">SingleOutputStreamOperator&lt;Integer&gt; map = source.map(new RichMapFunction&lt;Integer, Integer&gt;() {  
+  
+    @Override  
+    public void open(Configuration parameters) throws Exception {  
+        super.open(parameters);  
+  
+        RuntimeContext runtimeContext = getRuntimeContext();  
+        int indexOfThisSubtask = runtimeContext.getIndexOfThisSubtask();  
+        String taskNameWithSubtasks = runtimeContext.getTaskNameWithSubtasks();  
+  
+        System.out.println(indexOfThisSubtask + &quot;: &quot; + taskNameWithSubtasks + &quot;调用Open...&quot;);  
+    }  
+  
+    @Override  
+    public void close() throws Exception {  
+        super.close();  
+  
+        RuntimeContext runtimeContext = getRuntimeContext();  
+        int indexOfThisSubtask = runtimeContext.getIndexOfThisSubtask();  
+        String taskNameWithSubtasks = runtimeContext.getTaskNameWithSubtasks();  
+  
+        System.out.println(indexOfThisSubtask + &quot;: &quot; + taskNameWithSubtasks + &quot;调用Close...&quot;);  
+    }  
+  
+    @Override  
+    public Integer map(Integer value) throws Exception {  
+        return value + 1;  
+    }  
+});
+</code></pre>
+<h4 id="物理分区算子physical-partitioning">物理分区算子（Physical Partitioning）</h4>
+<p>常见的物理分区算子包括：随机分配（Random）、轮训分配（Round-Robin）、重缩放（Rescale）和广播（Broadcast）</p>
+<p>global : 全部发往第一个子任务中<br>
+keyby: 按指定key去发送， 相同可以发往同一个子任务<br>
+one-to-one: forward分区器<br>
+总结：flink提供7种分区器+1中自定义</p>
+<h5 id="随机分配shuffle">随机分配（shuffle）</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165346940.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165346940"></p>
+<pre><code class="language-java">stream.shuffle()
+</code></pre>
+<h5 id="轮询分区round-robin">轮询分区（round-robin）</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305165406779.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305165406779"></p>
+<pre><code class="language-java">stream.rebalance()
+</code></pre>
+<h5 id="重缩放分区rescale">重缩放分区（rescale）</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171006662.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171006662"></p>
+<pre><code class="language-java">stream.rescale()
+</code></pre>
+<h5 id="广播broadcast">广播（broadcast）</h5>
+<pre><code class="language-java">stream.broadcast()
+</code></pre>
+<h5 id="全局分区global">全局分区（global）</h5>
+<pre><code class="language-java">stream.global()
+</code></pre>
+<h5 id="自定义分区custom">自定义分区（Custom）</h5>
+<pre><code class="language-java">public class MyPartitioner implements Partitioner&lt;String&gt; {
+    @Override
+    public int partition(String key, int numPartitions) {
+        return Integer.parseInt(key) % numPartitions;
+    }
+}
+
+DataStream&lt;String&gt; myDS = socketDS
+	           .partitionCustom( new MyPartitioner(), value -&gt; value);
+</code></pre>
+<h4 id="分流">分流</h4>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171028002.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171028002"></p>
+<h5 id="使用filter实现分流效果">使用Filter实现分流效果</h5>
+<p>但是存在缺点，因为数据都会被所有的filter所处理。</p>
+<pre><code class="language-java">DataStreamSource&lt;String&gt; socketDS = env.socketTextStream(&quot;localhost&quot;, 7777);  
+/**  
+ * 使用filter实现分流效果 * 缺点：相同的数据会被处理多次 
+ **/
+socketDS.filter(value -&gt; Integer.parseInt(value) % 2 == 0).print(&quot;偶数流&quot;);  
+  
+socketDS.filter(value -&gt; Integer.parseInt(value) % 2 == 1).print(&quot;奇数流&quot;);
+</code></pre>
+<h5 id="侧输出流">侧输出流</h5>
+<p>解决了Filter重复处理的问题</p>
+<pre><code class="language-java">OutputTag&lt;WaterSensor&gt; s1Tag = new OutputTag&lt;&gt;(&quot;s1&quot;, Types.POJO(WaterSensor.class));  
+OutputTag&lt;WaterSensor&gt; s2Tag = new OutputTag&lt;&gt;(&quot;s2&quot;, Types.POJO(WaterSensor.class));  
+  
+SingleOutputStreamOperator&lt;WaterSensor&gt; process = map.process(new ProcessFunction&lt;WaterSensor, WaterSensor&gt;() {  
+    @Override  
+    public void processElement(WaterSensor value, Context ctx, Collector&lt;WaterSensor&gt; out) throws Exception {  
+  
+        String id = value.getId();  
+  
+        if (&quot;s1&quot;.equals(id)) { //放到侧输出流s1中  
+            ctx.output(s1Tag, value);  
+        } else if (&quot;s2&quot;.equals(id)) { //放到侧输出流s2中  
+            ctx.output(s2Tag, value);  
+        } else {  
+            out.collect(value);  
+        }  
+    }  
+});
+</code></pre>
+<h4 id="合流">合流</h4>
+<h5 id="联合union">联合（Union）</h5>
+<p>union的流之间必须是相同类型
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171048186.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171048186"></p>
+<pre><code class="language-java">DataStreamSource&lt;Integer&gt; source1 = env.fromElements(1, 2, 3);  
+DataStreamSource&lt;Integer&gt; source2 = env.fromElements(4, 5, 6);  
+DataStreamSource&lt;String&gt; source3 = env.fromElements(&quot;7&quot;, &quot;8&quot;, &quot;9&quot;);  
+  
+source1.union(source2).union(source3.map(value -&gt; Integer.parseInt(value))).print();
+</code></pre>
+<h5 id="连接connect">连接（Connect）</h5>
+<p>连接后得到的不是DataStream，连接的流是形式上放在同一个流中, 事实上内部各自保留各自的数据形式不变, 彼此相互独立。一次只能连接两条流。
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171108382.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171108382"></p>
+<pre><code class="language-java">DataStreamSource&lt;Integer&gt; source1 = env.fromElements(1, 2, 3);  
+DataStreamSource&lt;String&gt; source2 = env.fromElements(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);  
+  
+ConnectedStreams&lt;Integer, String&gt; connect = source1.connect(source2);  
+SingleOutputStreamOperator&lt;String&gt; map = connect.map(new CoMapFunction&lt;Integer, String, String&gt;() {  
+    @Override  
+    public String map1(Integer value) throws Exception {  
+        return String.valueOf(value);  
+    }  
+  
+    @Override  
+    public String map2(String value) throws Exception {  
+        return value;  
+    }  
+});
+</code></pre>
+<h3 id="输出算子sink">输出算子（Sink）</h3>
+<p>Flink1.2开始使用stream.sinkTo(&hellip;)
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171129988.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171129988">
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171148038.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171148038"></p>
+<h4 id="filesink">FileSink</h4>
+<pre><code class="language-java">
+FileSink&lt;String&gt; fileSink = FileSink.&lt;String&gt;forRowFormat(new Path(&quot;output&quot;), new SimpleStringEncoder&lt;&gt;(&quot;UTF-8&quot;))  
+        // 输出文件的一些配置：文件前缀、后缀...  
+        .withOutputFileConfig(OutputFileConfig.builder()  
+                .withPartPrefix(&quot;filesink&quot;)  
+                .withPartSuffix(&quot;.log&quot;)  
+                .build()  
+        )  
+        // 文件分桶  
+        .withBucketAssigner(new DateTimeBucketAssigner&lt;&gt;(&quot;yyyy-MM-dd HH&quot;, ZoneId.systemDefault()))  
+        // 文件滚动策略  
+        .withRollingPolicy(  
+                DefaultRollingPolicy.builder()  
+                        .withRolloverInterval(Duration.ofSeconds(10))  
+                        .withMaxPartSize(new MemorySize(1024 * 1024))  
+                        .build()  
+        )  
+        .build();
+
+</code></pre>
+<h4 id="kafkasink">KafkaSink</h4>
+<pre><code class="language-java">// 必须开启checkpoint， 否则无法写入kafka  
+env.enableCheckpointing(2000, CheckpointingMode.EXACTLY_ONCE);  
+  
+  
+DataStreamSource&lt;String&gt; socketDS = env.socketTextStream(&quot;localhost&quot;, 7777);  
+KafkaSink&lt;String&gt; kafkaSink = KafkaSink.&lt;String&gt;builder()  
+        // 指定kafka的地址和端口  
+        .setBootstrapServers(&quot;hadoop3:9092&quot;)  
+        // 指定序列化器, 指定topic名称、具体的序列化  
+        .setRecordSerializer(  
+                KafkaRecordSerializationSchema.&lt;String&gt;builder()  
+                        .setTopic(&quot;ws&quot;)  
+                        .setValueSerializationSchema(new SimpleStringSchema())  
+                        .build())  
+        // 写到kafka的一致性级别：精准一次、至少一次  
+        .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)  
+        // 如果是精准一次 必须要设置事务前缀  
+        .setTransactionalIdPrefix(&quot;stanley-&quot;)  
+        // 如果是精准一次 必须设置事务超时时间 , 要大于checkpoint时间， 小于max 15分钟  
+        .setProperty(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, String.valueOf(10 * 60 * 1000))  
+        .build();  
+  
+socketDS.sinkTo(kafkaSink);
+</code></pre>
+<h4 id="kafkasinkwithkey">KafkaSinkWithKey</h4>
+<pre><code class="language-java">
+// 必须开启checkpoint， 否则无法写入kafka  
+env.enableCheckpointing(2000, CheckpointingMode.EXACTLY_ONCE);  
+  
+  
+DataStreamSource&lt;String&gt; socketDS = env.socketTextStream(&quot;localhost&quot;, 7777);  
+KafkaSink&lt;String&gt; kafkaSink = KafkaSink.&lt;String&gt;builder()  
+        // 指定kafka的地址和端口  
+        .setBootstrapServers(&quot;hadoop3:9092&quot;)  
+        // 指定序列化器, 指定topic名称、具体的序列化  
+        .setRecordSerializer(  
+                new KafkaRecordSerializationSchema&lt;String&gt;() {  
+                    @Nullable  
+                    @Override                    public ProducerRecord&lt;byte[], byte[]&gt; serialize(String element, KafkaSinkContext context, Long timestamp) {  
+  
+                        String[] datas = element.split(&quot;,&quot;);  
+                        byte[] key = datas[0].getBytes(StandardCharsets.UTF_8);  
+                        byte[] value = element.getBytes(StandardCharsets.UTF_8);  
+  
+                        return new ProducerRecord&lt;&gt;(&quot;ws&quot;, key, value);  
+                    }  
+                }  
+        )  
+        // 写到kafka的一致性级别：精准一次、至少一次  
+        .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)  
+        // 如果是精准一次 必须要设置事务前缀  
+        .setTransactionalIdPrefix(&quot;stanley-&quot;)  
+        // 如果是精准一次 必须设置事务超时时间 , 要大于checkpoint时间， 小于max 15分钟  
+        .setProperty(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, String.valueOf(10 * 60 * 1000))  
+        .build();  
+  
+socketDS.sinkTo(kafkaSink);
+
+</code></pre>
+<h4 id="mysqlsink">MySQLSink</h4>
+<pre><code class="language-java">/**  
+ * 1. 只能使用老式的addsink写法 
+ * 2. JdbcSink的四个参数 
+ *  1) 执行的SQL 
+ *  2) 预编译SQL 
+ *  3) 执行选项， 攒批，重试 
+ *  4) 连接选项, url, 用户名，密码 
+ **/
+ SinkFunction&lt;WaterSensor&gt; jdbcSink = JdbcSink.sink(  
+        &quot;insert into ws values(?, ?, ?)&quot;,  
+        new JdbcStatementBuilder&lt;WaterSensor&gt;() {  
+            @Override  
+            public void accept(PreparedStatement preparedStatement, WaterSensor waterSensor) throws SQLException {  
+                preparedStatement.setString(1, waterSensor.getId());  
+                preparedStatement.setLong(2, waterSensor.getTs());  
+                preparedStatement.setInt(3, waterSensor.getVc());  
+            }  
+        },  
+        JdbcExecutionOptions.builder()  
+                .withMaxRetries(3)  
+                .withBatchSize(100)  
+                .withBatchIntervalMs(3000)  
+                .build(),  
+        new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()  
+                .withUrl(&quot;jdbc:mysql://localhost:3306/flink?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=UTF-8&quot;)  
+                .withUsername(&quot;root&quot;)  
+                .withPassword(&quot;12345&quot;)  
+                .withConnectionCheckTimeoutSeconds(60)  
+                .build()  
+  
+);  
+  
+sensorDS.addSink(jdbcSink)
+</code></pre>
+<h4 id="自定义sink">自定义Sink</h4>
+<p>建议优先使用官方提供的Sink，除非没有途径才考虑自定义Sink。</p>
+<pre><code class="language-java">stream.addSink(new MySinkFunction&lt;String&gt;());
+</code></pre>
+<h2 id="flink中的时间和窗口">Flink中的时间和窗口</h2>
+<h3 id="窗口">窗口</h3>
+<p>所谓窗口就是划定的一段时间范围,对范围内的数据进行处理，就是所谓的窗口计算。
+Flink是一种流式计算引擎，主要用来处理无界数据流，数据源源不断，无穷无尽。想要更加方便高效的处理无界流，一种方式就是将无限数据切割成有限的“数据块”进行处理，这就是所谓的“窗口”。
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171218556.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171218556"></p>
+<h4 id="窗口的分类">窗口的分类</h4>
+<h5 id="按驱动类型划分">按驱动类型划分</h5>
+<ul>
+<li>时间窗口（Time Window）</li>
+<li>计数窗口（Count Window）</li>
+</ul>
+<h6 id="按窗口分配数据的规则分类">按窗口分配数据的规则分类</h6>
+<ul>
+<li>滚动窗口（Tumbling Window）</li>
+</ul>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171246738.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171246738"></p>
+<pre><code>滚动窗口有固定的大小， 是一种对数据进行“均匀切片”的划分方式，窗口之间没有重叠，也不会有间隔，是“首尾相接”的状态。每个数据都会被分配到一个窗口，而且只会属于一个窗口。
+</code></pre>
+<ul>
+<li>滑动窗口（Siding Window）</li>
+</ul>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171309348.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171309348"></p>
+<pre><code>滑动窗口的大小也是固定的，但是窗口之间并不是首尾相接的，而是可以“错开”一定的位置。
+定义滑动窗口的参数有两个，除去窗口大小（Window Size）之外，还有一个滑动步长(Window slide), 它其实代表窗口计算的频率。
+滑动窗口会出现“重叠”，数据也可能会被同时分配到多个窗口中。
+</code></pre>
+<ul>
+<li>会话窗口（Session Window）</li>
+</ul>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171331510.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171331510"></p>
+<pre><code>是基于会话来对数据进行分组的，会话窗口只能基于时间来定义。
+会话窗口中，最重要的参数就是会话的超时时间，也就是两个会话窗口之间的最小距离。会话窗口的长度不固定，起始和结束时间也是不确定的，各个分区之间窗口没有任何关联。会话窗口之间一定是不会重叠的。
+</code></pre>
+<ul>
+<li>全局窗口（Global Window）</li>
+</ul>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171349144.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171349144"></p>
+<pre><code>这种窗口全局有效，会把相同key的所有数据都分配到同一个窗口中。这种窗口没有结束的时候，默认是不会作为触发计算的
+</code></pre>
+<h4 id="窗口分配器">窗口分配器</h4>
+<p>定义窗口分配器（Window Assigners）是构建窗口算子的第一步，它的作用就是定义数据应该被“分配”到哪个窗口。所以可以说，窗口分配器其实就是在指定窗口的类型。
+窗口分配器最通用的定义方式，就是调用.window()方法。这个方法需要传入一个WindowAssigner作为参数，返回WindowedStream。如果是非按键分区窗口，那么直接调用.windowAll()方法，同样传入一个WindowAssigner，返回的是AllWindowedStream。
+窗口按照驱动类型可以分成时间窗口和计数窗口，而按照具体的分配规则，又有滚动窗口、滑动窗口、会话窗口、全局窗口四种。除去需要自定义的全局窗口外，其他常用的类型Flink中都给出了内置的分配器实现，我们可以方便地调用实现各种需求。</p>
+<p>时间窗口</p>
+<ul>
+<li>滚动时间窗口（TumblingProcessingTimeWindows/TumblingEventTimeWindows）</li>
+</ul>
+<pre><code class="language-java">sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(10))); 
+// 滚动时间窗口, 窗口长度为10s
+</code></pre>
+<ul>
+<li>滑动时间窗口（SlidingProcessingTimeWindows/SlidingEventTimeWindows）</li>
+</ul>
+<pre><code class="language-java">sensorKS.window(SlidingProcessingTimeWindows.of(Time.seconds(10), Time.seconds(2))); 
+// 滑动时间窗口， 窗口长度为10s， 滑动步长2s
+</code></pre>
+<ul>
+<li>会话时间窗口（ProcessingTimeSessionWindows/EventTimeSessionWindows）</li>
+</ul>
+<pre><code class="language-java">sensorKS.window(ProcessingTimeSessionWindows.withGap(Time.seconds(5))); 
+// 会话窗口， 间隔5s
+</code></pre>
+<p>计数窗口</p>
+<ul>
+<li>滚动窗口（countWindow）</li>
+</ul>
+<pre><code class="language-java">sensorKS.countWindow(5); 
+// 滚动窗口，窗口长度为5个元素
+</code></pre>
+<ul>
+<li>滑动窗口（countWindow）</li>
+</ul>
+<pre><code class="language-java">sensorKS.countWindow(5, 2); 
+// 滑动窗口， 窗口长度为5个元素，窗口步长为2个元素
+</code></pre>
+<ul>
+<li>全局窗口（window）</li>
+</ul>
+<pre><code class="language-java">sensorKS.window(GlobalWindows.create()); 
+// 全局窗口，计数窗口的底层就是使用的这个, 需要自定义触发器，很少使用
+</code></pre>
+<h4 id="窗口函数">窗口函数</h4>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171619199.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171619199"></p>
+<h5 id="增量聚合函数">增量聚合函数</h5>
+<h6 id="归约函数reducefunction">归约函数（ReduceFunction）</h6>
+<pre><code class="language-java">KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(value -&gt; value.getId());  
+  
+// 窗口分配器  
+WindowedStream&lt;WaterSensor, String, TimeWindow&gt; sensorWS = sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(5)));  
+
+//窗口函数  
+/**  
+ * 窗口的reduce 
+ * 1. 相同key的第一条数据来的时候，不会调用reduce方法 
+ * 2. 增量聚合：来一条数据后， 就会计算一次，但不会输出 
+ * 3. 在窗口触发的时候才会输出整个窗口的最终计算结果 */
+   
+   SingleOutputStreamOperator&lt;WaterSensor&gt; reduce = sensorWS.reduce(new ReduceFunction&lt;WaterSensor&gt;() {  
+    @Override  
+    public WaterSensor reduce(WaterSensor value1, WaterSensor value2) throws Exception {  
+        System.out.println(&quot;调用reduce方法， value1=&quot; + value1 + &quot;, value2=&quot; + value2);  
+        return new WaterSensor(value1.getId(), value2.getTs(), value1.getVc() + value2.getVc());  
+    }  
+});
+</code></pre>
+<h6 id="增量聚合函数aggregatefunction">增量聚合函数（AggregateFunction）</h6>
+<pre><code class="language-java">KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(value -&gt; value.getId());  
+  
+// 窗口分配器  
+WindowedStream&lt;WaterSensor, String, TimeWindow&gt; sensorWS = sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(5)));  
+  
+//窗口函数  
+/**  
+ * 窗口的Aggregate 
+ * 三个参数：第一个类型输入数来据的类型，第二个类型累加器的类型，存储中间计算结果的类型， 第三个类型输出数据的类型 
+ * 1. 属于本窗口的第一条数据来， 创建窗口，创建累加器 
+ * 2. 增量聚合：来一条计算一条，调研一次add方法 
+ * 3. 窗口输出时调研一次getresult方法 
+ * 4. 输入、中间累加器、输出 类型可以不一样，非常灵活 */
+SingleOutputStreamOperator&lt;String&gt; aggregate = sensorWS.aggregate(new AggregateFunction&lt;WaterSensor, Integer, String&gt;() {  
+    @Override  
+    public Integer createAccumulator() {  
+        System.out.println(&quot;创建累加器&quot;);  
+        return 0;  
+    }  
+  
+    // 聚合逻辑  
+    @Override  
+    public Integer add(WaterSensor value, Integer accumulator) {  
+        System.out.println(&quot;调研add方法, value=&quot; + value);  
+        return accumulator + value.getVc();  
+    }  
+  
+    // 获取最终结果，窗口触发输出  
+    @Override  
+    public String getResult(Integer accumulator) {  
+        System.out.println(&quot;调研getResult方法&quot;);  
+        return accumulator.toString();  
+    }  
+  
+    @Override  
+    public Integer merge(Integer a, Integer b) {  
+        System.out.println(&quot;调研merge方法&quot;);  
+        return null;    }  
+});
+</code></pre>
+<h6 id="全窗口函数processwindowfunctionapplyfunction">全窗口函数（ProcessWindowFunction/ApplyFunction）</h6>
+<pre><code class="language-java">KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(value -&gt; value.getId());  
+  
+        // 窗口分配器  
+        WindowedStream&lt;WaterSensor, String, TimeWindow&gt; sensorWS = sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(10)));  
+  
+//        sensorWS.apply(new WindowFunction&lt;WaterSensor, String, String, TimeWindow&gt;() {  
+//            /**  
+//             * 老写法  
+//             * @param s 分组key  
+//             * @param window 窗口对象  
+//             * @param input 存的数据  
+//             * @param out 采集器  
+//             * @throws Exception  
+//             */  
+//            @Override  
+//            public void apply(String s, TimeWindow window, Iterable&lt;WaterSensor&gt; input, Collector&lt;String&gt; out) throws Exception {  
+//  
+//            }  
+//        })  
+  
+        SingleOutputStreamOperator&lt;String&gt; process = sensorWS.process(new ProcessWindowFunction&lt;WaterSensor, String, String, TimeWindow&gt;() {  
+            /**  
+             * 全窗口函数计算逻辑（新写法）：窗口触发时才调用一次， 统一计算窗口所有数据             * @param s 分组key  
+             * @param context 上下文  
+             * @param elements 存的数据  
+             * @param out 采集器  
+             * @throws Exception  
+             */            
+             @Override  
+            public void process(String s, Context context, Iterable&lt;WaterSensor&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+  
+                long start = context.window().getStart();  
+                long end = context.window().getEnd();  
+  
+                String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+                String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+                long count = elements.spliterator().estimateSize();  
+                out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+            }  
+        });
+</code></pre>
+<h6 id="增量聚合窗口结合最为全面">增量聚合窗口结合(最为全面)</h6>
+<pre><code class="language-java">// WindowAggregateAndProcessDemo
+KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(value -&gt; value.getId());  
+  
+// 窗口分配器  
+WindowedStream&lt;WaterSensor, String, TimeWindow&gt; sensorWS = sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(5)));  
+  
+//窗口函数  
+SingleOutputStreamOperator&lt;String&gt; result = sensorWS.aggregate(new MyAgg(), new MyProc());  
+  
+result.print();  
+  
+env.execute();
+
+public static class MyAgg implements AggregateFunction&lt;WaterSensor, Integer, String&gt; {  
+    @Override  
+    public Integer createAccumulator() {  
+        System.out.println(&quot;创建累加器&quot;);  
+        return 0;  
+    }  
+  
+    @Override  
+    public Integer add(WaterSensor value, Integer accumulator) {  
+        System.out.println(&quot;调研add方法, value=&quot; + value);  
+        return accumulator + value.getVc();  
+    }  
+  
+    @Override  
+    public String getResult(Integer accumulator) {  
+        System.out.println(&quot;调研getResult方法&quot;);  
+        return accumulator.toString();  
+    }  
+  
+    @Override  
+    public Integer merge(Integer a, Integer b) {  
+        System.out.println(&quot;调研merge方法&quot;);  
+        return null;    }  
+  
+}  
+  
+public static class MyProc extends ProcessWindowFunction&lt;String, String, String, TimeWindow&gt; {  
+  
+    @Override  
+    public void process(String s, Context context, Iterable&lt;String&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+  
+        long start = context.window().getStart();  
+        long end = context.window().getEnd();  
+  
+        String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+        String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+        long count = elements.spliterator().estimateSize();  
+        out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+    }  
+}
+
+
+// WindowReduceAndProcessDemo
+KeyedStream&lt;WaterSensor, String&gt; sensorKS = sensorDS.keyBy(value -&gt; value.getId());  
+  
+// 窗口分配器  
+WindowedStream&lt;WaterSensor, String, TimeWindow&gt; sensorWS = sensorKS.window(TumblingProcessingTimeWindows.of(Time.seconds(5)));  
+  
+//窗口函数  
+/**  
+ * 窗口的reduce 
+ * 1. 相同key的第一条数据来的时候，不会调用reduce方法 
+ * 2. 增量聚合：来一条数据后， 就会计算一次，但不会输出 
+ * 3. 在窗口触发的时候才会输出整个窗口的最终计算结*/
+SingleOutputStreamOperator&lt;String&gt; reduce = sensorWS.reduce(new MyReduce(), new MyProc());  
+  
+reduce.print();  
+  
+env.execute();
+
+
+public static class MyReduce implements ReduceFunction&lt;WaterSensor&gt; {  
+    @Override  
+    public WaterSensor reduce(WaterSensor value1, WaterSensor value2) throws Exception {  
+        System.out.println(&quot;调研reduce方法， value1=&quot; + value1 + &quot;, value2=&quot; + value2);  
+        return new WaterSensor(value1.getId(), value2.getTs(), value1.getVc() + value2.getVc());  
+    }  
+}  
+  
+public static class MyProc extends ProcessWindowFunction&lt;WaterSensor, String, String, TimeWindow&gt; {  
+  
+    @Override  
+    public void process(String s, Context context, Iterable&lt;WaterSensor&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+  
+        long start = context.window().getStart();  
+        long end = context.window().getEnd();  
+  
+        String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+        String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+        long count = elements.spliterator().estimateSize();  
+        out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+    }  
+}
+</code></pre>
+<h6 id="其他api">其他API</h6>
+<ul>
+<li>触发器
+触发器主要是用来控制窗口什么时候触发计算。所谓的“触发计算”，本质上就是执行窗口函数，所以可以认为是计算得到结果并输出的过程。
+基于WindowedStream调用.trigger()方法，就可以传入一个自定义的窗口触发器（Trigger）。</li>
+</ul>
+<pre><code class="language-java">stream.keyBy(...)
+       .window(...)
+       .trigger(new MyTrigger())
+</code></pre>
+<ul>
+<li>移除器
+移除器主要用来定义移除某些数据的逻辑。基于WindowedStream调用.evictor()方法，就可以传入一个自定义的移除器（Evictor）。Evictor是一个接口，不同的窗口类型都有各自预实现的移除器。</li>
+</ul>
+<pre><code class="language-java">stream.keyBy(...)
+       .window(...)
+       .evictor(new MyEvictor())
+</code></pre>
+<h3 id="时间语义">时间语义</h3>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171702406.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171702406"></p>
+<ul>
+<li>事件时间</li>
+<li>处理时间
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171719793.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171719793"></li>
+</ul>
+<h3 id="水位线">水位线</h3>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171736540.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171736540">
+在Flink中，用来衡量事件时间进展的标记，就被称作“水位线”（Watermark)。</p>
+<h5 id="设置事件时间语义及水位线">设置事件时间语义及水位线</h5>
+<ul>
+<li>单调上升水位线策略（有序流）</li>
+</ul>
+<pre><code class="language-java">// 1. 定义watermark策略  
+WatermarkStrategy&lt;WaterSensor&gt; watermarkStrategy = WatermarkStrategy  
+        // 升序watermark， 没有等待时间  
+        .&lt;WaterSensor&gt;forMonotonousTimestamps()  
+        // 指定时间分配器，从数据中提取  
+        .withTimestampAssigner(new SerializableTimestampAssigner&lt;WaterSensor&gt;() {  
+            @Override  
+            public long extractTimestamp(WaterSensor element, long recordTimestamp) {  
+                // 返回的时间戳要为毫秒  
+                System.out.println(&quot;数据=&quot; + element + &quot;, recordTs=&quot; + recordTimestamp);  
+                return element.getTs() * 1000L;  
+            }  
+        });  
+// 2. 指定watermark策略  
+SingleOutputStreamOperator&lt;WaterSensor&gt; sensorDSwithWatermark = sensorDS.assignTimestampsAndWatermarks(watermarkStrategy);  
+
+sensorDSwithWatermark.keyBy(value -&gt; value.getId())  
+        // 指定使用事件事件语义窗口  
+        .window(TumblingEventTimeWindows.of(Time.seconds(10)))  
+        .process(new ProcessWindowFunction&lt;WaterSensor, String, String, TimeWindow&gt;() {  
+
+            @Override  
+            public void process(String s, Context context, Iterable&lt;WaterSensor&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+      
+                long start = context.window().getStart();  
+                long end = context.window().getEnd();  
+      
+                String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+                String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+      
+                long count = elements.spliterator().estimateSize();  
+                out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+      
+            }  
+        }).print();
+
+</code></pre>
+<ul>
+<li>乱序水位线策略</li>
+</ul>
+<pre><code class="language-java">// 1. 定义watermark策略  
+WatermarkStrategy&lt;WaterSensor&gt; watermarkStrategy = WatermarkStrategy  
+        // 乱序watermark， 等待3s  
+        .&lt;WaterSensor&gt;forBoundedOutOfOrderness(Duration.ofSeconds(3))  
+        // 指定时间分配器，从数据中提取  
+        .withTimestampAssigner((element, recordTimestamp) -&gt; {  
+            // 返回的时间戳要为毫秒  
+            System.out.println(&quot;数据=&quot; + element + &quot;, recordTs=&quot; + recordTimestamp);  
+            return element.getTs() * 1000L;  
+        });  
+// 2. 指定watermark策略  
+SingleOutputStreamOperator&lt;WaterSensor&gt; sensorDSwithWatermark = sensorDS.assignTimestampsAndWatermarks(watermarkStrategy);  
+  
+sensorDSwithWatermark.keyBy(value -&gt; value.getId())  
+        // 指定使用事件事件语义窗口  
+        .window(TumblingEventTimeWindows.of(Time.seconds(10)))  
+        .process(new ProcessWindowFunction&lt;WaterSensor, String, String, TimeWindow&gt;() {  
+  
+            @Override  
+            public void process(String s, Context context, Iterable&lt;WaterSensor&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+  
+                long start = context.window().getStart();  
+                long end = context.window().getEnd();  
+  
+                String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+                String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+                long count = elements.spliterator().estimateSize();  
+                out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+            }  
+        }).print();
+</code></pre>
+<ul>
+<li>自定义水位线</li>
+</ul>
+<pre><code class="language-java">WatermarkStrategy&lt;WaterSensor&gt; watermarkStrategy = WatermarkStrategy  
+//                .forGenerator(new WatermarkGeneratorSupplier&lt;WaterSensor&gt;() {  
+//                    @Override  
+//                    public WatermarkGenerator&lt;WaterSensor&gt; createWatermarkGenerator(Context context) {  
+//                        return new MyPeriodWatermarkGenerator&lt;&gt;(3000L);  
+//                    }  
+//                })  
+                // 指定自定义的生成器, 周期性生成//                .&lt;WaterSensor&gt;forGenerator(context -&gt; new MyPeriodWatermarkGenerator&lt;&gt;(3000L))  
+                // 指定自定义的生成器，断点式生成                .&lt;WaterSensor&gt;forGenerator(context -&gt; new MyPuntuatedWatermarkGenerator&lt;&gt;(3000L))  
+                .withTimestampAssigner((element, recordTimestamp) -&gt; {  
+                    System.out.println(&quot;数据=&quot; + element + &quot;, recordTs=&quot; + recordTimestamp);  
+                    return element.getTs() * 1000L;  
+                });
+public class MyPeriodWatermarkGenerator&lt;T&gt; implements WatermarkGenerator&lt;T&gt; {  
+
+    // 用来保存乱序等待时间  
+    private long delayTs;  
+    // 用来保存当前最大的事件时间  
+    private long maxTs;  
+      
+    public MyPeriodWatermarkGenerator(long delayTs) {  
+        this.delayTs = delayTs;  
+        this.maxTs = Long.MIN_VALUE + this.delayTs + 1;  
+    }  
+      
+    /**  
+     * 每条数据来都会被调用一次，用来提取最大事件事件，保存下来     * @param event  
+     * @param eventTimestamp 提取到的数据的 事件时间  
+     * @param output  
+     */  
+    @Override  
+    public void onEvent(T event, long eventTimestamp, WatermarkOutput output) {  
+        maxTs = Math.max(maxTs, eventTimestamp);  
+        System.out.println(&quot;调用了onEvent方法，获取目前为止的最大时间戳=&quot; + maxTs);  
+    }  
+      
+    /**  
+     * 周期性调用：发射 watermark     * @param output  
+     */  
+    @Override  
+    public void onPeriodicEmit(WatermarkOutput output) {  
+        output.emitWatermark(new Watermark(maxTs - delayTs - 1));  
+        System.out.println(&quot;调用了onPeriodicEmit方法，生成watermark=&quot; + (maxTs - delayTs - 1));  
+    }  
+}
+
+public class MyPuntuatedWatermarkGenerator&lt;T&gt; implements WatermarkGenerator&lt;T&gt; {  
+
+    // 用来保存乱序等待时间  
+    private long delayTs;  
+    // 用来保存当前最大的事件时间  
+    private long maxTs;  
+      
+    public MyPuntuatedWatermarkGenerator(long delayTs) {  
+        this.delayTs = delayTs;  
+        this.maxTs = Long.MIN_VALUE + this.delayTs + 1;  
+    }  
+      
+    /**  
+     * 每条数据来都会被调用一次，用来提取最大事件事件，保存下来, 并发射watermark     * @param event  
+     * @param eventTimestamp 提取到的数据的 事件时间  
+     * @param output  
+     */  
+    @Override  
+    public void onEvent(T event, long eventTimestamp, WatermarkOutput output) {  
+        maxTs = Math.max(maxTs, eventTimestamp);  
+        output.emitWatermark(new Watermark(maxTs - delayTs - 1));  
+        System.out.println(&quot;调用了onEvent方法，获取目前为止的最大时间戳=&quot; + maxTs + &quot;, watermark = &quot; + (maxTs - delayTs - 1));  
+    }  
+      
+    /**  
+     * 周期性调用：不需要     * @param output  
+     */  
+    @Override  
+    public void onPeriodicEmit(WatermarkOutput output) {  
+      
+    }  
+}
+
+</code></pre>
+<ul>
+<li>源算子中设置</li>
+</ul>
+<pre><code class="language-java">env.fromSource(  
+        kafkaSource,  
+        // 使用源算子中的水位线策略, 乱序，提取字符串中关键字  
+        WatermarkStrategy  
+                .&lt;String&gt;forBoundedOutOfOrderness(Duration.ofSeconds(3))  
+                .withTimestampAssigner((element, recordTimestamp) -&gt; {  
+                    return Long.valueOf(element.split(&quot;,&quot;)[1]);  
+                }),  
+        &quot;kafkasource&quot;  
+).print();
+</code></pre>
+<h5 id="水位线的传递">水位线的传递</h5>
+<p><img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305171842090.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305171842090">
+在流处理中，上游任务处理完水位线、时钟改变之后，要把当前的水位线再次发出，广播给所有的下游子任务。而当一个任务接收到多个上游并行任务传递来的水位线时，应该以<strong>最小</strong>的那个作为当前任务的事件时钟。
+水位线在上下游任务之间的传递，非常巧妙地避免了分布式系统中没有统一时钟的问题，每个任务都以“处理完之前所有数据”为标准来确定自己的时钟。</p>
+<h5 id="延迟数据处理">延迟数据处理</h5>
+<ul>
+<li>
+<p>问题1：水位线在多并行度中传递取最小</p>
+<p>通过设置延迟等待时间,防止某个分区一直没有数据造成整体水位无法提升的问题</p>
+</li>
+</ul>
+<pre><code class="language-java">StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();  
+env.setParallelism(2);  
+  
+// 自定义分区器，数据%分区数，只输入奇数都知会去往map的一个子任务  
+SingleOutputStreamOperator&lt;Integer&gt; socketDS = env  
+        .socketTextStream(&quot;localhost&quot;, 7777)  
+        .partitionCustom(new MyPartitioner(), r -&gt; r) //以自身数据为key，通过奇偶性判定分区  
+        .map(r -&gt; Integer.parseInt(r))  
+        .assignTimestampsAndWatermarks(WatermarkStrategy  
+                .&lt;Integer&gt;forMonotonousTimestamps()  
+                .withTimestampAssigner((r,rs) -&gt; r * 1000L)  
+                .withIdleness(Duration.ofSeconds(5)) //设置空闲等待时间，防止某个分区一直没有数据造成整体水位无法提升的问题  
+        );  
+  
+// 分成两组，奇数一组，偶数一组， 开10s的事件时间滚动窗口  
+socketDS.keyBy( r -&gt; r % 2)  
+        .window(TumblingEventTimeWindows.of(Time.seconds(10)))  
+        .process(new ProcessWindowFunction&lt;Integer, String, Integer, TimeWindow&gt;() {  
+            @Override  
+            public void process(Integer s, Context context, Iterable&lt;Integer&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+                long start = context.window().getStart();  
+                long end = context.window().getEnd();  
+  
+                String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+                String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+                long count = elements.spliterator().estimateSize();  
+                out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+            }  
+        })  
+        .print();
+</code></pre>
+<ul>
+<li>问题2：乱序中的迟到数据
+<ul>
+<li>解决方法1：设置推迟水位推进</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">	WatermarkStrategy.&lt;WaterSensor&gt;forBoundedOutOfOrderness(Duration.ofSeconds(3) 
+</code></pre>
+<ul>
+<li>解决方法2：设置窗口延迟关闭（触发计算后来的迟到数据会再次触发计算）</li>
+</ul>
+<pre><code class="language-java">	.window(TumblingEventTimeWindows.of(Time.seconds(10)))  
+	.allowedLateness(Time.seconds(2)) // 推迟2s关窗
+</code></pre>
+<ul>
+<li>解决方法3：使用侧输出流</li>
+</ul>
+<pre><code class="language-java">OutputTag&lt;WaterSensor&gt; lateTag = new OutputTag&lt;&gt;(&quot;late-data&quot;, Types.POJO(WaterSensor.class));  
+SingleOutputStreamOperator&lt;String&gt; process = sensorDSwithWatermark.keyBy(value -&gt; value.getId())  
+        .window(TumblingEventTimeWindows.of(Time.seconds(10)))  
+        .allowedLateness(Time.seconds(2)) // 推迟2s关窗  
+        .sideOutputLateData(lateTag) // 关窗后的迟到数据，放到侧输出流  
+        .process(new ProcessWindowFunction&lt;WaterSensor, String, String, TimeWindow&gt;() {  
+  
+            @Override  
+            public void process(String s, Context context, Iterable&lt;WaterSensor&gt; elements, Collector&lt;String&gt; out) throws Exception {  
+  
+                long start = context.window().getStart();  
+                long end = context.window().getEnd();  
+  
+                String windowStart = DateFormatUtils.format(start, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+                String windowEnd = DateFormatUtils.format(end, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);  
+  
+                long count = elements.spliterator().estimateSize();  
+                out.collect(&quot;key=&quot; + s + &quot;的窗口【&quot; + windowStart + &quot;, &quot; + windowEnd + &quot;]包含&quot; + count + &quot;条数据 ---&gt; &quot; + elements);  
+  
+            }  
+        });  
+process.print();  
+  
+  
+// 从主流获取侧输出流，打印  
+process.getSideOutput(lateTag).printToErr(&quot;关窗后的迟到数据&quot;);
+</code></pre>
+<h3 id="基于时间的合流--双向联结join">基于时间的合流&ndash;双向联结（join）</h3>
+<h4 id="窗口连接window-join">窗口连接（window join）</h4>
+<pre><code class="language-java">DataStream&lt;String&gt; join = ds1.join(ds2)  
+        .where(r1 -&gt; r1.f0)  
+        .equalTo(r2 -&gt; r2.f0)  
+        .window(TumblingEventTimeWindows.of(Time.seconds(5)))  
+        .apply(new JoinFunction&lt;Tuple2&lt;String, Integer&gt;, Tuple3&lt;String, Integer, Integer&gt;, String&gt;() {  
+  
+            /**  
+             * 关联上的数据，调用join方法             * @param first ds1的数据  
+             * @param second ds2的数据  
+             * @return  
+             * @throws Exception  
+             */            @Override  
+            public String join(Tuple2&lt;String, Integer&gt; first, Tuple3&lt;String, Integer, Integer&gt; second) throws Exception {  
+                return first + &quot;&lt;---&gt;&quot; + second;  
+            }  
+        });  
+  
+join.print();
+</code></pre>
+<h4 id="间隔联结interval-join">间隔联结（interval join）</h4>
+<p>只能支持事件时间
+<img src="https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/image-20250305172028549.png?x-oss-process=image/watermark,text_c3RhbmxleWxvZy5jb20=,type_ZHJvaWRzYW5zZmFsbGJhY2s,size_50,shadow_50,t_85,g_se,x_10,y_10,color_D6D6D6" alt="image-20250305172028549"></p>
+<pre><code class="language-java">KeyedStream&lt;Tuple2&lt;String, Integer&gt;, String&gt; ks1 = ds1.keyBy(r -&gt; r.f0);  
+KeyedStream&lt;Tuple3&lt;String, Integer, Integer&gt;, String&gt; ks2 = ds2.keyBy(r -&gt; r.f0);
+
+ks1.intervalJoin(ks2).between(Time.seconds(-2), Time.seconds(2))
+</code></pre>
+<h2 id="处理函数process">处理函数（Process）</h2>
+<ul>
+<li>
+<p>ProcessFunction</p>
+<p>最基本的处理函数，基于DataStream直接调用.process()时作为参数传入。</p>
+</li>
+<li>
+<p>KeyedProcessFunction</p>
+<p>对流按键分区后的处理函数，基于KeyedStream调用.process()时作为参数传入。要想使用定时器，比如基于KeyedStream。</p>
+</li>
+<li>
+<p>ProcessWindowFunction</p>
+<p>开窗之后的处理函数，也是全窗口函数的代表。基于WindowedStream调用.process()时作为参数传入。</p>
+</li>
+<li>
+<p>ProcessAllWindowFunction</p>
+<p>同样是开窗之后的处理函数，基于AllWindowedStream调用.process()时作为参数传入。</p>
+</li>
+<li>
+<p>CoProcessFunction</p>
+<p>合并（connect）两条流之后的处理函数，基于ConnectedStreams调用.process()时作为参数传入。关于流的连接合并操作，我们会在后续章节详细介绍。</p>
+</li>
+<li>
+<p>ProcessJoinFunction</p>
+<p>间隔连接（interval join）两条流之后的处理函数，基于IntervalJoined调用.process()时作为参数传入。</p>
+</li>
+<li>
+<p>BroadcastProcessFunction</p>
+<p>广播连接流处理函数，基于BroadcastConnectedStream调用.process()时作为参数传入。这里的“广播连接流”BroadcastConnectedStream，是一个未keyBy的普通DataStream与一个广播流（BroadcastStream）做连接（conncet）之后的产物。</p>
+</li>
+<li>
+<p>KeyedBroadcastProcessFunction</p>
+<p>按键分区的广播连接流处理函数，同样是基于BroadcastConnectedStream调用.process()时作为参数传入。与BroadcastProcessFunction不同的是，这时的广播连接流，是一个KeyedStream与广播流（BroadcastStream）做连接之后的产物。</p>
+</li>
+</ul>
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/flink/">
+                    #flink</a></span>
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/bigdata/">
+                    #bigdata</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" https://blog-img-stanleylog.oss-cn-beijing.aliyuncs.com/img/e49b252a78147069c496fc7e45e6689f.jpeg" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.com/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.com/post/%E7%96%AB%E6%83%85%E4%B8%89%E5%B9%B4/" class="prev" rel="prev" title="疫情三年"><i class="iconfont icon-left"></i>&nbsp;疫情三年</a>
+         
+        
+        <a href="https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="Git常用命令">Git常用命令&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2025</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.com/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?481adac29b01c4869c3b1dce857d4cfe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>
