@@ -17,7 +17,7 @@
       <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
       
       <guid>https://stanleylog.com/post/hadoop%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>HDFS 格式化NameNode bin/hdfs namenode -format 启停NameNode sbin/hadoop-daemon.sh start/stop namenode 启停DataNode sbin/hadoop-daemon.sh start/stop datanode 启停HDFS集群 sbin/start/stop-dfs.sh YARN 启停ResourceManager sbin/yarn-daemon.sh start/stop resourcemanager 启停NodeManager sbin/yarn-daemon.sh start/stop nodemanager 启停WebAppProxy服务 sbin/yarn-daemon.sh start/stop proxyserver 启停MapReduce JobHistory Server sbin/mr-jobhistory-daemon.sh start/stop historyserver 启停所有Yarn服务 sbin/start/stop-yarn.sh 状态查询 可是用jps命令查看各个服务是否启动，各个服务/进程的对应关系 进程 所属服务 备注 NameNode HDFS sbin/hadoop-daemon.sh hdfs start namenode DataNode HDFS sbin/hadoop-daemon.sh hdfs start datanode SecondaryNameNode HDFS ResourceManager YARN NodeManager YARN WebAppProxy YARN JobHistoryServer MapReduce QuorumPeerMain Zookeeper DFSZKFailoverController</description>
+      <description>&lt;p&gt;罗列出Hadoop中常用命令，用于日后查阅。&lt;/p&gt;</description>
     </item>
     
   </channel>
