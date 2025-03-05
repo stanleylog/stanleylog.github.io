@@ -84,20 +84,20 @@
     </item>
     
     <item>
-      <title>Git入门（二）- 基础（一）</title>
-      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
+      <title>Git入门-Part2</title>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8-part2/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
       
-      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8-part2/</guid>
       <description>&lt;p&gt;上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Git入门（一）- 起步</title>
-      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <title>Git入门-Part1</title>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8-part1/</link>
       <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
       
-      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8-part1/</guid>
       <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
     </item>
     
