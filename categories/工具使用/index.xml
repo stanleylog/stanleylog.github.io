@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>RHEL各个版本的通用管理命令</title>
+      <link>https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;这篇文章实为转载的Redhat的官方文档中的内容，本人认为它对于非系统管理员的开发人员实为非常好的速查资料，文章里分别列举了RHEL5、RHEL6、RHEL7中不同的管理命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Git入门（二）- 基础（一）</title>
       <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
       <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
