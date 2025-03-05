@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具使用 on StanleyLog - 自留地</title>
+    <link>https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</link>
+    <description>Recent content in 工具使用 on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Mar 2025 10:41:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git常用命令</title>
+      <link>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>配置 # 配置示例 git config --global user.name &#39;your_name&#39; git config --global user.eamil &#39;your_mail&#39; # 三个作用域 git config --local #只对某个仓库生效, [DEFAULT] git config --global #对当前用户所有仓库生效 git config --system #对系统所有登陆用户有效 # 查看配置 git config --list -- local git config --list -- global git config --list -- system 创建仓库 # 已有项目 git init # 新建项目 git init your_project 基础操作 git add &amp;lt;your_file&amp;gt; # 管理文件 git status # 查看状态 git commit -m &#39;msg...&#39; # 提交 git add -u # 更新暂存区中文件变化 git reset --hard #清除暂存区中的变化 git mv &amp;lt;oldname&amp;gt; &amp;lt;newname&amp;gt; #文件更名 git rm &amp;lt;filename&amp;gt; # 删除文件 git log --oneline # 单行历史信息 git log -n4 # 查看最近4次历史 git log</description>
+    </item>
+    
+    <item>
+      <title>软件清单（2025年）</title>
+      <link>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952025%E5%B9%B4/</link>
+      <pubDate>Tue, 11 Feb 2025 15:52:31 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952025%E5%B9%B4/</guid>
+      <description>&lt;p&gt;2025年开年电脑挂了，很快就定下了重新买一台MacBook Pro的想法。电脑虽好，但新老电脑的数据迁移、软件选型、整体重新配置还是很繁琐的。对之前买过的License的软件升级（带💰符号），寻找更为人性化的替代软件确实花费了不少的精力，主要目标还是寻找开源免费的软件，在这里也把挑选出的软件进行分享。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prometheus介绍</title>
+      <link>https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Mon, 07 Sep 2020 19:53:29 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/prometheus%E4%BB%8B%E7%BB%8D/</guid>
+      <description>&lt;p&gt;Prometheus是一套开源的监控&amp;amp;报警&amp;amp;时间序列数据库的组合,起始是由SoundCloud公司开发的。成立于2012年，之后许多公司和组织接受和采用prometheus,他们便将它独立成开源项目，并且有公司来运作.该项目有非常活跃的社区和开发人员，目前是独立的开源项目，任何公司都可以使用它，2016年，Prometheus加入了云计算基金会，成为kubernetes之后的第二个托管项目。Google SRE的书内也曾提到跟他们BorgMon监控系统相似的实现是Prometheus。现在最常见的Kubernetes容器管理系统中，通常会搭配Prometheus进行监控。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker常用命令</title>
+      <link>https://stanleylog.com/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;本篇文章为干货，罗列出Docker使用过程中最为常用的命令集合。 其中包括：镜像、容器、制作镜像的相关内容。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NTP安装与配置</title>
+      <link>https://stanleylog.com/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/ntp%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;在现在跨主机集群大行其道的时代里，在使用多台Linux服务器过程中，保持时间的一致尤为重要。时长发现跨主机的软件集群发生莫名其妙的问题，大多数的时候都会和时间不一致有关系。像Hadoop、Oracle RAC等主流集群软件在部署前都是需要配置NTP服务。这篇文章简单介绍一下NTP的快捷配置，没有原理分析，只是快捷部署手册。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS安装Docker</title>
+      <link>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</link>
+      <pubDate>Mon, 11 Feb 2019 15:15:55 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</guid>
+      <description>&lt;p&gt;对于现有可落地、先进的开发工艺流程概念中最为耀眼的具体产品莫非Docker了，它强大之处在于完美的解决了复杂软件的部署及敏捷开发中的频率部署的问题，结合CI/CD与k8s形成了强大的生产力。而CentOS则是现在云环境中最为炙手可热的操作系统，它拥有这RHEL的稳定性及开源免费的优点，是很多互联网企业的最佳原则。今天我就尝试一下在CentOS上安装Docker，其中也包括国内的一些特殊原因的workaround方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git入门（二）- 基础（一）</title>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</link>
+      <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%BA%8C-%E5%9F%BA%E7%A1%801/</guid>
+      <description>&lt;p&gt;上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git入门（一）- 起步</title>
+      <link>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</link>
+      <pubDate>Tue, 08 Jan 2019 20:07:55 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/git%E5%85%A5%E9%97%A8%E4%B8%80-%E8%B5%B7%E6%AD%A5/</guid>
+      <description>与众不同的Git Git是分布式的版本控制系统（Distributed Version Control System），可以在完全没有网络的情况下进行使用。 而其它像subversion、cvs等则无法做到，这些系统在无法连接到中央服务器的时候是无法提交内容或无法修改文件内容的。 Git会为每个版本都创建整个项目的快照，而不像其它VCS一样进行文件的增量变更叠加。 Git的每个客户端都是会同步真个项目中的所有的文件版本到本地，这样做的</description>
+    </item>
+    
+    <item>
+      <title>Ghost使用感受</title>
+      <link>https://stanleylog.com/post/ghost/</link>
+      <pubDate>Sat, 22 Dec 2018 16:00:32 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/ghost/</guid>
+      <description>在此之前使用过很长时间的WordPress博客系统，WP采用的PHP开发实现的，对于安装的话现在很多空间服务商都已经内建的一键安装的功能，安装起来也不难。即使使用VPS的话也是有很多的一键安装脚本。 基本上就是如下的组件： Nginx PHP MySQL WordPress Ghost相对于WordPress来说轻巧很多，安装需要用到如下的组件： Nginx NodeJS MySQL Ghost Ghost需要安装的组件数量不多，但是由于之前我没有接触过NodeJS，所以浪费的不少的时间</description>
+    </item>
+    
+  </channel>
+</rss>

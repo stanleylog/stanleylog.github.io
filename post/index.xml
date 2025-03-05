@@ -6,10 +6,19 @@
     <description>Recent content in Posts on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Mar 2025 13:21:19 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 10:41:17 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git常用命令</title>
+      <link>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>配置 # 配置示例 git config --global user.name &#39;your_name&#39; git config --global user.eamil &#39;your_mail&#39; # 三个作用域 git config --local #只对某个仓库生效, [DEFAULT] git config --global #对当前用户所有仓库生效 git config --system #对系统所有登陆用户有效 # 查看配置 git config --list -- local git config --list -- global git config --list -- system 创建仓库 # 已有项目 git init # 新建项目 git init your_project 基础操作 git add &amp;lt;your_file&amp;gt; # 管理文件 git status # 查看状态 git commit -m &#39;msg...&#39; # 提交 git add -u # 更新暂存区中文件变化 git reset --hard #清除暂存区中的变化 git mv &amp;lt;oldname&amp;gt; &amp;lt;newname&amp;gt; #文件更名 git rm &amp;lt;filename&amp;gt; # 删除文件 git log --oneline # 单行历史信息 git log -n4 # 查看最近4次历史 git log</description>
+    </item>
     
     <item>
       <title>教育到底怎么了！</title>

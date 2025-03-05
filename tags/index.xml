@@ -6,10 +6,19 @@
     <description>Recent content in Tags on StanleyLog - 自留地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Mar 2025 13:21:19 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 10:41:17 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://stanleylog.com/tags/git/</link>
+      <pubDate>Wed, 05 Mar 2025 10:41:17 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/git/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>孩子</title>
@@ -192,6 +201,15 @@
     </item>
     
     <item>
+      <title>docker</title>
+      <link>https://stanleylog.com/tags/docker/</link>
+      <pubDate>Fri, 21 Jun 2019 22:34:08 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ntp</title>
       <link>https://stanleylog.com/tags/ntp/</link>
       <pubDate>Sun, 12 May 2019 10:50:25 +0800</pubDate>
@@ -224,15 +242,6 @@
       <pubDate>Fri, 08 Feb 2019 19:30:15 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/rhel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://stanleylog.com/tags/git/</link>
-      <pubDate>Sun, 03 Feb 2019 20:42:11 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/git/</guid>
       <description></description>
     </item>
     
