@@ -58,7 +58,7 @@
     "dateModified" : "2025-03-05 10:04:22 \u002b0800 CST",
     "url" : "https:\/\/stanleylog.com\/post\/ubuntu%E5%AE%89%E8%A3%85docker\/",
     "wordCount" : "268",
-    "keywords" : [ "docker", "StanleyLog - 自留地"]
+    "keywords" : [ "docker","ubuntu", "StanleyLog - 自留地"]
 }
 </script>
 
@@ -151,6 +151,7 @@
           <p>基于Ubuntu 22.04 LTS系统上安装Docker Engine28.0.1的操作手册。</p>
 <h3 id="检查已安装或冲突的包">检查已安装或冲突的包</h3>
 <pre><code class="language-sh">for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
 </code></pre>
 <h3 id="安装docker-apt仓库">安装Docker Apt仓库</h3>
 <pre><code class="language-sh"># Add Docker's official GPG key:
@@ -170,6 +171,7 @@ sudo apt-get update
 </code></pre>
 <h3 id="安装docker-engine">安装Docker Engine</h3>
 <pre><code class="language-sh">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 </code></pre>
 <h3 id="验证安装">验证安装</h3>
 <pre><code class="language-sh">### 验证镜像拉取和运行容器
@@ -180,6 +182,7 @@ ls -l /lib/systemd/system/docker.service
 
 ### 查看docker.service状态
 sudo systemctl status docker
+
 </code></pre>
 <h3 id="配置docker">配置Docker</h3>
 <pre><code class="language-sh">sudo cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
@@ -188,6 +191,7 @@ sudo systemctl status docker
   &quot;storage-driver&quot;: &quot;overlay2&quot;
 }
 EOF
+
 </code></pre>
     </div>
 
@@ -198,6 +202,9 @@ EOF
             
             <span class="tag"><a href="https://stanleylog.com/tags/docker/">
                     #docker</a></span>
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/ubuntu/">
+                    #ubuntu</a></span>
             
             </section>
         

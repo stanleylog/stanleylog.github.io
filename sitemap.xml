@@ -114,6 +114,20 @@
     </url>
   
     <url>
+      <loc>https://stanleylog.com/tags/ubuntu/</loc>
+      
+      <lastmod>2025-03-05T10:04:22+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.com/post/ubuntu%E5%AE%89%E8%A3%85docker/</loc>
       
       <lastmod>2025-03-05T10:04:22+08:00</lastmod>
@@ -688,7 +702,7 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</loc>
+      <loc>https://stanleylog.com/tags/centos/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
       
@@ -702,7 +716,7 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.com/tags/cloud/</loc>
+      <loc>https://stanleylog.com/post/centos%E5%AE%89%E8%A3%85docker/</loc>
       
       <lastmod>2019-02-11T15:15:55+08:00</lastmod>
       
