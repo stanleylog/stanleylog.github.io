@@ -46,7 +46,7 @@
     "articleSection" : "post",
     "name" : "Docker笔记-Part3.创建Docker镜像",
     "headline" : "Docker笔记-Part3.创建Docker镜像",
-    "description" : "创建Dockerfile FROM busybox:latest COPY --chmod=755 \u0026lt;\u0026lt;\u0026quot;EOF\u0026quot; \/start.sh echo \u0026quot;Starting...\u0026quot; for i in $(seq 1 5); do echo \u0026quot;$i\u0026quot; sleep 1 done echo \u0026quot;Exiting...\u0026quot; exit 1 EOF ENTRYPOINT \/start.sh 创建镜像 ➜ docker build -t startstop . [\u002b] Building 9.9s (7\/7) FINISHED docker:default =\u0026gt; [internal] load build definition from Dockerfile 0.0s =\u0026gt; =\u0026gt; transferring dockerfile: 215B 0.0s =\u0026gt; [internal] load metadata for docker.io\/library\/busybox:latest 8.0s =\u0026gt; [internal] load .dockerignore 0.0s =\u0026gt; =\u0026gt; transferring context: 2B 0.0s =\u0026gt; [internal] preparing inline document 0.0s =\u0026gt; [1\/2] FROM docker.io\/library\/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 1.7s =\u0026gt; =\u0026gt; resolve docker.io\/library\/busybox:latest@sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 0.0s =\u0026gt; =\u0026gt; sha256:498a000f370d8c37927118ed80afe8adc38d1edcbfc071627d17b25c88efcab0 10.20kB \/ 10.20kB 0.0s =\u0026gt; =\u0026gt; sha256:42279ede3600b4e63af075a5e27d68232ff837d9cdcaba74feffc7ab0dfec0dc 610B \/ 610B 0.0s =\u0026gt; =\u0026gt; sha256:31311c5853a22c04d692f6581b4faa25771d915c1ba056c74e5ec82606eefdfa 459B \/ 459B 0.0s =\u0026gt; =\u0026gt; sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 2.16MB \/ 2.16MB 1.6s =\u0026gt; =\u0026gt; extracting sha256:9c0abc9c5bd3a7854141800ba1f4a227baa88b11b49d8207eadc483c3f2496de 0.0s =\u0026gt; [2\/2] COPY --chmod=755 \u0026lt;\u0026lt;EOF \/start.sh 0.0s =\u0026gt; exporting to image 0.0s =\u0026gt; =\u0026gt; exporting layers 0.0s =\u0026gt; =\u0026gt; writing image sha256:56b8a880daa5e3b8a5d47d440b37ae234020a755f1c3c6f16939aca5a0490dc3 0.0s =\u0026gt; =\u0026gt; naming to docker.io\/library\/startstop 0.0s 1 warning found (use docker --debug to expand): - JSONArgsRecommended: JSON arguments recommended for ENTRYPOINT to prevent unintended behavior related to OS signals (line 11) ➜ docker images REPOSITORY TAG IMAGE ID CREATED SIZE startstop",
+    "description" : "\u003cp\u003e演示Docker创建自有镜像的方式，以及如何查看镜像内容。\u003c\/p\u003e",
     "inLanguage" : "zh-cn",
     "author" : "Stanley Sun",
     "creator" : "Stanley Sun",
@@ -57,7 +57,7 @@
     "datePublished": "2025-03-05 14:03:14 \u002b0800 CST",
     "dateModified" : "2025-03-05 14:03:14 \u002b0800 CST",
     "url" : "https:\/\/stanleylog.com\/post\/docker%E7%AC%94%E8%AE%B0-part3-%E5%88%9B%E5%BB%BAdocker%E9%95%9C%E5%83%8F\/",
-    "wordCount" : "309",
+    "wordCount" : "338",
     "keywords" : [ "docker", "StanleyLog - 自留地"]
 }
 </script>
@@ -148,7 +148,8 @@
           
           
 
-          <h3 id="创建dockerfile">创建Dockerfile</h3>
+          <p>演示Docker创建自有镜像的方式，以及如何查看镜像内容。</p>
+<h3 id="创建dockerfile">创建Dockerfile</h3>
 <pre><code class="language-sh">FROM busybox:latest
 COPY --chmod=755 &lt;&lt;&quot;EOF&quot; /start.sh
 echo &quot;Starting...&quot;
@@ -217,7 +218,6 @@ nginx:v2
 </ul>
 <pre><code class="language-shell">docker history 镜像名 
 </code></pre>
-
     </div>
 
     <div class="post-tags">
