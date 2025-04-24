@@ -248,16 +248,12 @@ sudo ctr t rm nginx1
 sudo ctr c rm nginx1
 </code></pre>
 <h3 id="镜像仓库">镜像仓库</h3>
-<blockquote>
-<p>配置镜像仓库主机名</p>
-</blockquote>
+<h4 id="配置镜像仓库主机名">配置镜像仓库主机名</h4>
 <pre><code class="language-shell">vi /etc/hosts
 
 192.168.0.165 harbor.stanleylog.com
 </code></pre>
-<blockquote>
-<p>修改ContainerD配置文件</p>
-</blockquote>
+<h4 id="修改containerd配置文件">修改ContainerD配置文件</h4>
 <pre><code class="language-shell">vi /etc/containerd/config.toml
 
 [plugins.cri.registry.mirrors.&quot;harbor.stanleylog.com&quot;]
@@ -268,9 +264,7 @@ sudo ctr c rm nginx1
 # 重启containerd
 sudo systemctl restart containerd
 </code></pre>
-<blockquote>
-<p>操作命令</p>
-</blockquote>
+<h4 id="操作命令">操作命令</h4>
 <pre><code class="language-shell"># 修改镜像名
 sudo ctr i tag docker.io/library/nginx:alpine harbor.stanleylog.com/library/nginx:alpine
 
