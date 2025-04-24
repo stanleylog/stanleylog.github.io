@@ -17,7 +17,7 @@
       <pubDate>Thu, 24 Apr 2025 15:01:40 +0800</pubDate>
       
       <guid>https://stanleylog.com/post/containerd%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>自Kubernetes 1.24版本开始不在支持Docker，其实问题并没有那么大。Kubernetes只是不再直接支持docker-shim垫片，而是使用直接对接Docker中的ContainerD。 Docker从很早就开始剥离containerd以及runc组件，使之可以更好的融入开源社区。本篇文章将介绍containerd的一些基本使用命令。 ContainerD生态圈 配置管理 # 生成配置文件 sudo containerd</description>
+      <description>&lt;p&gt;自Kubernetes 1.24版本开始不在支持Docker，其实问题并没有那么大。Kubernetes只是不再直接支持docker-shim垫片，而是使用直接对接Docker中的ContainerD。 Docker从很早就开始剥离containerd以及runc组件，使之可以更好的融入开源社区。本篇文章将介绍containerd的一些基本使用命令。&lt;/p&gt;</description>
     </item>
     
   </channel>
