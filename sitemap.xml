@@ -4,7 +4,7 @@
     <url>
       <loc>https://stanleylog.com/categories/</loc>
       
-      <lastmod>2026-11-03T14:50:38+08:00</lastmod>
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -18,7 +18,7 @@
     <url>
       <loc>https://stanleylog.com/post/</loc>
       
-      <lastmod>2026-11-03T14:50:38+08:00</lastmod>
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -32,7 +32,35 @@
     <url>
       <loc>https://stanleylog.com/</loc>
       
-      <lastmod>2026-11-03T14:50:38+08:00</lastmod>
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/%E4%BB%A5%E6%97%A5%E4%B8%BA%E9%89%B4/</loc>
+      
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+      
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
