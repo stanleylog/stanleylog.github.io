@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Stanley Sun">
+  <meta name="description" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  <meta name="keywords" content="[StanleyLog 庸人志 个人博客 技术博客]">
+  
+  <link rel="prev" href="https://stanleylog.com/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/" />
+  <link rel="next" href="https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" />
+  <link rel="canonical" href="https://stanleylog.com/post/git%E5%85%A5%E9%97%A8-part2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Git入门-Part2 | StanleyLog - 自留地
+       
+  </title>
+  <meta name="title" content="Git入门-Part2 | StanleyLog - 自留地">
+    
+  
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/stanleylog.com\/"
+    },
+    "articleSection" : "post",
+    "name" : "Git入门-Part2",
+    "headline" : "Git入门-Part2",
+    "description" : "\u003cp\u003e上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。\u003c\/p\u003e",
+    "inLanguage" : "zh-cn",
+    "author" : "Stanley Sun",
+    "creator" : "Stanley Sun",
+    "publisher": "Stanley Sun",
+    "accountablePerson" : "Stanley Sun",
+    "copyrightHolder" : "Stanley Sun",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-02-03 20:42:11 \u002b0800 CST",
+    "dateModified" : "2019-02-03 20:42:11 \u002b0800 CST",
+    "url" : "https:\/\/stanleylog.com\/post\/git%E5%85%A5%E9%97%A8-part2\/",
+    "wordCount" : "532",
+    "keywords" : [ "git", "StanleyLog - 自留地"]
+}
+</script>
+
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	&nbsp;<a href="https://stanleylog.com/">stanleylog.com</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div> &nbsp;<a href="https://stanleylog.com/">stanleylog.com</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/post/" title="">归档</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Git入门-Part2</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://stanleylog.com/" rel="author">Stanley Sun</a> 
+                <span class="post-time">
+                on <time datetime=2019-02-03 itemprop="datePublished">2019-02-03</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://stanleylog.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>上篇文章介绍的了一下Git的基本概念内容，本篇文章继续Git相关的概念介绍及基础命令的演示。</p>
+<h2 id="获取git仓库">获取Git仓库</h2>
+<p>获取Git仓库存在两种方法：</p>
+<ul>
+<li>
+<p>使用<code>git init</code>在本地初始化仓库</p>
+<pre><code class="language-shell">$ git init
+Initialized empty Git repository in /Users/stanley/git_demo/.git/
+</code></pre>
+</li>
+<li>
+<p>使用<code>git clone</code>克隆远程服务器中仓库</p>
+<pre><code class="language-shell">$ git clone https://github.com/libgit2/libgit2
+Cloning into 'libgit2'...
+remote: Enumerating objects: 88874, done.
+remote: Counting objects: 100% (88874/88874), done.
+remote: Compressing objects: 100% (24728/24728), done.
+remote: Total 88874 (delta 62425), reused 88873 (delta 62424), pack-reused 0
+Receiving objects: 100% (88874/88874), 40.79 MiB | 57.00 KiB/s, done.
+Resolving deltas: 100% (62425/62425), done.
+Checking out files: 100% (10168/10168), done.
+</code></pre>
+</li>
+</ul>
+<h2 id="查看文件状态">查看文件状态</h2>
+<p>git中的文件存在四种状态, 我们可以使用<code>git status</code>命令查看文件的状态：</p>
+<pre><code class="language-x">Untracked            UnModified            Modified            Staged
+     |                     |                    |                  |   
+     |---Add the file --------------------------------------------&gt;|  
+     |                     |                    |                  |      
+     |                     |---Edit the file---&gt;|                  |      
+     |                     |                    |                  |      
+     |                     |                    |--Stage the file-&gt;|      
+     |                     |                    |                  |      
+     |&lt;--Remove the file---|                    |                  |      
+     |                     |                    |                  |      
+     |                     |&lt;-----------------------------Commit---|      
+     |                     |                    |                  |  
+</code></pre>
+<h3 id="文件状态">文件状态</h3>
+<ul>
+<li>
+<p>Untracked：未跟踪的文件， 还未使用<code>git add</code>添加到暂存区的文件。</p>
+</li>
+<li>
+<p>Unmodified： 已经<code>git commit</code>的文件</p>
+</li>
+<li>
+<p>Modified：已经使用<code>git commit</code>提交， 之后又被修改了的文件。</p>
+</li>
+<li>
+<p>Staged：使用<code>git add</code>提交到暂存区的文件。</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="状态转换">状态转换:</h3>
+<ul>
+<li>
+<p>Untracked -&gt; Staged: 通过<code>git add</code> 来完成</p>
+</li>
+<li>
+<p>UnModified -&gt; Modified: 修改文件内容来完成，比如<code>vi</code>命令</p>
+</li>
+<li>
+<p>Modified -&gt; Staged: 通过<code>git add</code> 来完成</p>
+</li>
+<li>
+<p>UnModified -&gt; Untracked: 通过<code>git rm</code> 来完成</p>
+</li>
+<li>
+<p>Staged -&gt; UnModified: 通过<code>git commit</code> 来完成</p>
+<p>​</p>
+</li>
+</ul>
+<p>如果认为查看文件状态的命令过于啰嗦，可以使用<code>git status -s</code>以精简的形式展示文件状态， 如下：</p>
+<pre><code class="language-shell">$ git status -s 
+ M README 
+MM Rakefile 
+A lib/git.rb 
+M lib/simplegit.rb 
+?? LICENSE.txt
+</code></pre>
+<p>​</p>
+<hr>
+<p>​</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Pro Git</a></li>
+<li><a href="http://www.itshouce.com.cn/linux/linux-git.html">http://www.itshouce.com.cn/linux/linux-git.html</a></li>
+</ul>
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://stanleylog.com/tags/git/">
+                    #git</a></span>
+            
+            </section>
+        
+    </div>
+
+
+    <div class="post-copyright">
+
+             
+              <aside class="post-author">
+                <figure class="post-author-avatar avatar">
+                    <img src=" https://gravatar.loli.net/avatar/e49b252a78147069c496fc7e45e6689f?s=250&amp;amp;d=mm&amp;amp;r=x" alt=" Stanley Sun">
+                </figure>
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="/"> Stanley Sun</a></h4>
+                    <p class="post-author-about"> 不要忽略任何一个可预见的问题，因为它一定会在此之后的某一天被暴露出来，把你搞得焦头烂额。</p>
+                    <div class="post-social">
+                      <span class="post-author-website"><i class="ic ic-link"> <a href=" https://stanleylog.com/">Website</a></i></span>
+                      <span class="post-author-weibo"><i class="ic ic-weibo"> <a href=" https://www.weibo.com/StanleyLog">Weibo</a></i></span>
+                      <span class="post-author-twitter"><i class="ic ic-twitter"> <a target="_blank" href=" https://twitter.com/@stanleyl0g">Twitter</a></i></span>
+                      <span class="post-author-github"><i class="ic ic-github"> <a target="_blank" href=" https://github.com/stanleylog">Github</a></i></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="post-author-title"><i class="icon icon-edit icon-rspace"></i>Author</div>
+                <div class="post-author-qr qr">
+                    <img src=" /weixin_qr_code.png" alt=" Stanley Sun">
+                </div>
+              </aside>
+            
+
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://stanleylog.com/post/%E4%BC%A0%E6%9F%93%E6%80%A7%E5%85%B8%E5%9E%8B%E4%B8%AD%E5%B9%B4%E7%B2%BE%E7%A5%9E%E7%97%85/" class="prev" rel="prev" title="传染性典型中年精神病"><i class="iconfont icon-left"></i>&nbsp;传染性典型中年精神病</a>
+         
+        
+        <a href="https://stanleylog.com/post/rhel%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="RHEL各个版本的通用管理命令">RHEL各个版本的通用管理命令&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+
+  
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://stanleylog.com/">StanleyLog - 自留地</a> | Theme by <a href="https://github.com/StanleyLog/ma.theme.hugo">MA</a></span> 
+         
+
+         
+    </div>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131043652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131043652-1');
+    </script>
+    
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?481adac29b01c4869c3b1dce857d4cfe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

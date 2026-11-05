@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hadoop on StanleyLog - 自留地</title>
+    <link>https://stanleylog.com/tags/hadoop/</link>
+    <description>Recent content in hadoop on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 05 Mar 2019 09:49:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.com/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hadoop常用命令</title>
+      <link>https://stanleylog.com/post/hadoop%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 05 Mar 2019 09:49:15 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/hadoop%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;罗列出Hadoop中常用命令，用于日后查阅。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>containerd on StanleyLog - 自留地</title>
+    <link>https://stanleylog.com/tags/containerd/</link>
+    <description>Recent content in containerd on StanleyLog - 自留地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Apr 2025 15:01:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://stanleylog.com/tags/containerd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ContainerD学习笔记</title>
+      <link>https://stanleylog.com/post/containerd%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 24 Apr 2025 15:01:40 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/containerd%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;自Kubernetes 1.24版本开始不在支持Docker，其实问题并没有那么大。Kubernetes只是不再直接支持docker-shim垫片，而是使用直接对接Docker中的ContainerD。 Docker从很早就开始剥离containerd以及runc组件，使之可以更好的融入开源社区。本篇文章将介绍containerd的一些基本使用命令。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
