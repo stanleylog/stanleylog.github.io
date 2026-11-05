@@ -30,20 +30,6 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.com/</loc>
-      
-      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://stanleylog.com/tags/</loc>
       
       <lastmod>2026-11-05T15:38:52+08:00</lastmod>
@@ -59,6 +45,20 @@
   
     <url>
       <loc>https://stanleylog.com/post/%E4%BB%A5%E6%97%A5%E4%B8%BA%E9%89%B4/</loc>
+      
+      <lastmod>2026-11-05T15:38:52+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/</loc>
       
       <lastmod>2026-11-05T15:38:52+08:00</lastmod>
       
