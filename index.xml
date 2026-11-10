@@ -396,5 +396,27 @@
       
     </item>
     
+    <item>
+      <title>About</title>
+      <link>https://stanleylog.com/about/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanleylog.com/about/</guid>
+      
+        <description>欢迎来到冷泉说的博客，一块不受平台算法约束的自留地。 在这里，记录偶尔的所思所想，不刻意，不迎合流量。 这里没有日更的压力，只在有所得、有记录价值的时候动笔。很高兴你来到这里，若文章对你有帮助，便是最好的事。 联系方式 邮件：11581194@qq.com 微博：weibo.com/StanleyLog Github：github.com/stanleylog</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stanleylog.com/post/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanleylog.com/post/about/</guid>
+      
+        <description>这就是我的介绍页</description>
+      
+    </item>
+    
   </channel>
 </rss>

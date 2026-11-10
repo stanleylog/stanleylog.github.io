@@ -330,5 +330,14 @@
       <description>​ 2009-2012年期间我是一直在折腾博客网站，虽然之前也一直零零散散的使用过各种博客平台，但是这个期间使用的最为频繁。当时是一个阶段是为了外汇投资公司，另一个阶段是为了记录学习的成果。此后由于工作内容的变化，之前的博客就耽误和废弃了，时至今日连之前注册的域名也过期了。 那么又为什么现在又搭建起博客系统呢?原因就是自己还是需要有记录和回顾往事的需求，而记录在电子笔记软件中过于随意，恐怕很难坚持。为</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://stanleylog.com/post/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanleylog.com/post/about/</guid>
+      <description>这就是我的介绍页</description>
+    </item>
+    
   </channel>
 </rss>
