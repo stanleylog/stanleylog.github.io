@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>app on 冷泉说 - StanleyLog</title>
-    <link>https://stanleylog.com/tags/app/</link>
-    <description>Recent content in app on 冷泉说 - StanleyLog</description>
+    <title>macos on 冷泉说 - StanleyLog</title>
+    <link>https://stanleylog.com/tags/macos/</link>
+    <description>Recent content in macos on 冷泉说 - StanleyLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Feb 2025 15:52:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 10:55:33 +0800</lastBuildDate>
     
-	<atom:link href="https://stanleylog.com/tags/app/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stanleylog.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>软件清单（2026年）</title>
+      <link>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952026%E5%B9%B4/</link>
+      <pubDate>Thu, 19 Nov 2026 10:55:33 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/post/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%952026%E5%B9%B4/</guid>
+      <description>&lt;p&gt;自从25年发布的软件清单已经过去一年的时间了，在这段时间里随着软件版本的更新和使用侧重点的变化，macos中的软件还是有些变化的。今天我们就重新更新了软件清单，不说废话，内容如下：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>软件清单（2025年）</title>

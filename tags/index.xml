@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 冷泉说 - StanleyLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Nov 2026 11:52:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 10:55:33 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>macos</title>
+      <link>https://stanleylog.com/tags/macos/</link>
+      <pubDate>Thu, 19 Nov 2026 10:55:33 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://stanleylog.com/tags/software/</link>
+      <pubDate>Thu, 19 Nov 2026 10:55:33 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/software/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>余华</title>
@@ -152,24 +170,6 @@
       <pubDate>Fri, 21 Feb 2025 20:07:39 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>app</title>
-      <link>https://stanleylog.com/tags/app/</link>
-      <pubDate>Tue, 11 Feb 2025 15:52:31 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/app/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>software</title>
-      <link>https://stanleylog.com/tags/software/</link>
-      <pubDate>Tue, 11 Feb 2025 15:52:31 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/software/</guid>
       <description></description>
     </item>
     
