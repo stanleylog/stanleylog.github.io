@@ -4,7 +4,7 @@
     <url>
       <loc>https://stanleylog.com/categories/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -18,7 +18,7 @@
     <url>
       <loc>https://stanleylog.com/post/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -32,21 +32,7 @@
     <url>
       <loc>https://stanleylog.com/tags/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/post/%E6%B4%BB%E7%9D%80%E4%B9%8B%E4%BA%8C/</loc>
-      
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -60,7 +46,7 @@
     <url>
       <loc>https://stanleylog.com/tags/%E4%BD%99%E5%8D%8E/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -74,7 +60,7 @@
     <url>
       <loc>https://stanleylog.com/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -88,7 +74,21 @@
     <url>
       <loc>https://stanleylog.com/tags/%E6%82%B2%E5%89%A7/</loc>
       
-      <lastmod>2026-11-20T12:06:14+08:00</lastmod>
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/%E6%B4%BB%E7%9D%80%E4%B9%8B%E4%B8%89/</loc>
+      
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -101,6 +101,20 @@
   
     <url>
       <loc>https://stanleylog.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+      
+      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/%E6%B4%BB%E7%9D%80%E4%B9%8B%E4%BA%8C/</loc>
       
       <lastmod>2026-11-20T12:06:14+08:00</lastmod>
       
