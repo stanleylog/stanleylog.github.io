@@ -2,9 +2,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://stanleylog.com/tags/agent/</loc>
+      
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/post/agent%E6%97%B6%E4%BB%A3/</loc>
+      
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/tags/ai/</loc>
+      
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://stanleylog.com/categories/</loc>
       
-      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -18,7 +60,7 @@
     <url>
       <loc>https://stanleylog.com/post/</loc>
       
-      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -32,7 +74,35 @@
     <url>
       <loc>https://stanleylog.com/tags/</loc>
       
-      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/</loc>
+      
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://stanleylog.com/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/</loc>
+      
+      <lastmod>2026-11-28T14:51:42+08:00</lastmod>
       
       
       <changefreq>weekly</changefreq>
@@ -59,20 +129,6 @@
   
     <url>
       <loc>https://stanleylog.com/tags/%E4%BD%99%E5%8D%8E/</loc>
-      
-      <lastmod>2026-11-23T13:29:06+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/</loc>
       
       <lastmod>2026-11-23T13:29:06+08:00</lastmod>
       
@@ -422,35 +478,7 @@
     </url>
   
     <url>
-      <loc>https://stanleylog.com/tags/ai/</loc>
-      
-      <lastmod>2025-03-07T18:28:50+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://stanleylog.com/post/ai%E4%BC%9A%E9%94%81%E6%AD%BB%E7%A7%91%E6%8A%80%E5%90%97/</loc>
-      
-      <lastmod>2025-03-07T18:28:50+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://stanleylog.com/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/</loc>
       
       <lastmod>2025-03-07T18:28:50+08:00</lastmod>
       

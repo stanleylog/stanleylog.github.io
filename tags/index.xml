@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 冷泉说 - StanleyLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Nov 2026 13:29:06 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 14:51:42 +0800</lastBuildDate>
     
 	<atom:link href="https://stanleylog.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>agent</title>
+      <link>https://stanleylog.com/tags/agent/</link>
+      <pubDate>Sat, 28 Nov 2026 14:51:42 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ai</title>
+      <link>https://stanleylog.com/tags/ai/</link>
+      <pubDate>Sat, 28 Nov 2026 14:51:42 +0800</pubDate>
+      
+      <guid>https://stanleylog.com/tags/ai/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>余华</title>
@@ -125,15 +143,6 @@
       <pubDate>Thu, 24 Apr 2025 15:01:40 +0800</pubDate>
       
       <guid>https://stanleylog.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ai</title>
-      <link>https://stanleylog.com/tags/ai/</link>
-      <pubDate>Fri, 07 Mar 2025 18:28:50 +0800</pubDate>
-      
-      <guid>https://stanleylog.com/tags/ai/</guid>
       <description></description>
     </item>
     
